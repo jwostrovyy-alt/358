@@ -1,0 +1,31 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { PRICING_PACKAGES } from '../data/pricing.ts';
+import { TEAM_PROFILES } from '../data/site.ts';
+import { buildServiceSchema } from '../utils/seo.ts';
+
+const pkg = PRICING_PACKAGES[2];
+const schema = [
+  buildServiceSchema({
+    name: 'Ремонтні та оздоблювальні роботи у Львові за готовим проєктом',
+    description: pkg.description,
+    areaServed: ['Львів'],
+    urlPath: '/renovation',
+  }),
+];
+---
+<BaseLayout
+  title="Ремонтні роботи у Львові за готовим проєктом — Керівник Віталій • 358"
+  description="Виконання ремонтних робіт у новобудовах Львова. Особистий нагляд Віталія (10+ років стажу), власноручне шпаклювання монолітних стель і стін, малярні та плиточні роботи."
+  canonicalPath="/renovation"
+  schema={schema}
+  basePrefix=".."
+>
+  <section class="page-hero">
+    <h1>Ремонтні роботи у Львові за готовим проєктом</h1>
+    <p class="page-lead">
+      Реалізація ремонтів під особистим керівництвом Віталія (понад 10 років практичного досвіду). Власноручне виконання чистових шпаклювальних, малярних і плиточних робіт та залучення перевірених майстрів на інженерні етапи.
+    </p>
+  </section>
+</BaseLayout>
+

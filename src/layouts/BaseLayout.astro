@@ -1,0 +1,53 @@
+---
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import MobileContactBar from '../components/MobileContactBar.astro';
+import { SITE_CONFIG } from '../data/site.ts';
+import { buildLocalBusinessSchema } from '../utils/seo.ts';
+
+export interface Props {
+  title: string;
+  description: string;
+  canonicalPath?: string;
+  schema?: object[];
+  basePrefix?: string;
+}
+
+const {
+  title,
+  description,
+  canonicalPath = '/',
+  schema = [],
+  basePrefix = '.',
+} = Astro.props;
+
+const allSchemas = [buildLocalBusinessSchema(), ...schema];
+const canonicalUrl = `${SITE_CONFIG.siteUrl}${canonicalPath === '/' ? '/' : canonicalPath}`;
+---
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalUrl} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="uk_UA" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalUrl} />
+    {allSchemas.map((item) => (
+      <script type="application/ld+json" set:html={JSON.stringify(item)} />
+    ))}
+  </head>
+  <body>
+    <Header currentPath={canonicalPath} basePrefix={basePrefix} />
+    <main class="site-main max-w-[1600px] min-[2200px]:text-xl">
+      <slot />
+    </main>
+    <Footer />
+    <MobileContactBar />
+  </body>
+</html>
+

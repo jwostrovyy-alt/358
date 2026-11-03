@@ -1,0 +1,31 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { PRICING_PACKAGES } from '../data/pricing.ts';
+import { TEAM_PROFILES } from '../data/site.ts';
+import { buildServiceSchema } from '../utils/seo.ts';
+
+const pkg = PRICING_PACKAGES[1];
+const schema = [
+  buildServiceSchema({
+    name: 'Архітектурний дизайн інтер\'єру у Львові та дистанційно по Україні',
+    description: pkg.description,
+    areaServed: ['Львів', 'Україна'],
+    urlPath: '/design',
+  }),
+];
+---
+<BaseLayout
+  title="Дизайн інтер'єру у Львові та по Україні — Архітектор Наталя • 358"
+  description="Розробка дизайн-проєктів квартир: планування, 3D-візуалізації, робочі креслення за ДБН та специфікації матеріалів. Магістр архітектури, 20+ років стажу."
+  canonicalPath="/design"
+  schema={schema}
+  basePrefix=".."
+>
+  <section class="page-hero">
+    <h1>Архітектурний дизайн інтер'єру у Львові та по Україні</h1>
+    <p class="page-lead">
+      Проєктування житлового простору на базі диплома магістра архітектури та понад 20 років практичного досвіду Наталі. Кожне креслення створюється за нормами ДБН і перевіряється на технологічність реалізації.
+    </p>
+  </section>
+</BaseLayout>
+

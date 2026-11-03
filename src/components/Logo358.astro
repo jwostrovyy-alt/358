@@ -1,0 +1,11 @@
+---
+export interface Props {
+  basePrefix?: string;
+}
+const { basePrefix = '.' } = Astro.props;
+---
+<a href={`${basePrefix}/`} class="logo-358" aria-label="358 — На головну сторінку">
+  <span class="logo-358__mark">358</span>
+  <span class="logo-358__sub">дизайн та ремонт • Львів</span>
+</a>
+

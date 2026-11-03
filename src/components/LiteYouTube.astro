@@ -1,0 +1,21 @@
+---
+export interface Props {
+  videoId: string;
+  title: string;
+  summary?: string;
+}
+const { videoId, title, summary } = Astro.props;
+---
+<div class="lite-youtube" data-video-id={videoId}>
+  <button type="button" class="lite-youtube__trigger" aria-label={`Відтворити відео: ${title}`}>
+    <img
+      src={`https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`}
+      alt={title}
+      loading="lazy"
+      class="lite-youtube__poster"
+    />
+    <span class="lite-youtube__play">▶ Дивитися огляд на YouTube «Розумний ремонт»</span>
+  </button>
+  {summary && <p class="lite-youtube__summary">{summary}</p>}
+</div>
+

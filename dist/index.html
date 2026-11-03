@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>358 — Студія дизайну інтер'єру та ремонту квартир у Львові</title>
+  <meta name="description" content="Розробляємо архітектурні дизайн-проєкти за ДБН та виконуємо комплексний ремонт квартир під ключ у Львові. Сімейний тандем архітектора Наталі та керівника робіт Віталія.">
+  <link rel="canonical" href="https://jwostrovyy-alt.github.io/358/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="uk_UA">
+  <meta property="og:title" content="358 — Студія дизайну інтер'єру та ремонту квартир у Львові">
+  <meta property="og:description" content="Розробляємо архітектурні дизайн-проєкти за ДБН та виконуємо комплексний ремонт квартир під ключ у Львові. Сімейний тандем архітектора Наталі та керівника робіт Віталія.">
+  <meta property="og:url" content="https://jwostrovyy-alt.github.io/358/">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"HomeAndConstructionBusiness","name":"Студія дизайну та ремонту «358»","description":"Архітектурний дизайн інтер'єру та комплексний ремонт квартир під ключ у Львові. Розробка робочих креслень за ДБН, інженерія та чистове оздоблення.","url":"https://jwostrovyy-alt.github.io/358","telephone":"+380973580000","address":{"@type":"PostalAddress","addressLocality":"Львів","addressRegion":"Львівська область","addressCountry":"UA"},"areaServed":["Львів","Україна"],"sameAs":["https://t.me/studio358_lviv","https://www.youtube.com/@rozumnyy-remont"]}</script>
+  <style>
+  *, *::before, *::after { box-sizing: border-box; }
+  html { font-size: 16px; scroll-behavior: smooth; }
+  @media (min-width: 2200px) { html { font-size: 20px; } }
+  body {
+    margin: 0;
+    padding: 0;
+    background: #ffffff;
+    color: #1c1917;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: clip;
+    line-height: 1.6;
+  }
+  ::selection { background: #1c1917; color: #ffffff; }
+  :focus-visible { outline: 2px solid #1c1917; outline-offset: 3px; }
+
+  @keyframes floatSpiralFullScreen {
+    0% { transform: translate3d(-30px, -20px, 0) rotate(0deg) scale(1); }
+    25% { transform: translate3d(240px, -70px, 0) rotate(7deg) scale(1.08); }
+    50% { transform: translate3d(520px, 50px, 0) rotate(16deg) scale(1.14); }
+    75% { transform: translate3d(260px, 140px, 0) rotate(6deg) scale(0.98); }
+    90% { transform: translate3d(-80px, 60px, 0) rotate(-6deg) scale(1.04); }
+    100% { transform: translate3d(-30px, -20px, 0) rotate(0deg) scale(1); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .golden-spiral-floating { animation: none !important; }
+  }
+  .golden-spiral-floating {
+    animation: floatSpiralFullScreen 22s ease-in-out infinite;
+    transform-origin: 320px 300px;
+    will-change: transform;
+  }
+
+  .container-358 {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding-left: clamp(1.15rem, 4vw, 3rem);
+    padding-right: clamp(1.15rem, 4vw, 3rem);
+  }
+
+  /* Sticky Header */
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    padding: 0.95rem 0;
+  }
+  .site-header__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.85rem;
+  }
+  .logo-link {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    text-decoration: none;
+    color: #1c1917;
+  }
+  .logo-mark {
+    font-size: 1.85rem;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    color: #1c1917;
+  }
+  .logo-sub {
+    font-size: 0.85rem;
+    color: #78716c;
+    font-weight: 500;
+  }
+  .site-nav {
+    display: flex;
+    gap: 0.35rem;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .site-nav a {
+    color: #57534e;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 0.45rem 0.75rem;
+    border-radius: 6px;
+    transition: background 0.15s ease, color 0.15s ease;
+    white-space: nowrap;
+  }
+  .site-nav a:hover {
+    background: #f5f5f4;
+    color: #1c1917;
+  }
+  .site-nav a.active {
+    background: #1c1917;
+    color: #ffffff;
+    font-weight: 600;
+  }
+  .header-contacts {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    flex-wrap: wrap;
+  }
+  .chip-link {
+    background: #f5f5f4;
+    color: #1c1917;
+    text-decoration: none;
+    font-size: 0.84rem;
+    font-weight: 600;
+    padding: 0.45rem 0.8rem;
+    border-radius: 6px;
+    transition: background 0.15s ease;
+    white-space: nowrap;
+  }
+  .chip-link:hover {
+    background: #e7e5e4;
+  }
+
+  /* Buttons */
+  .btn-arch-action {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    background: #1c1917;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 0.85rem 1.55rem;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.2s ease, background 0.2s ease;
+  }
+  .btn-arch-action:hover {
+    background: #292524;
+    transform: translateY(-1px);
+  }
+  .btn-arch-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #f5f5f4;
+    color: #1c1917;
+    text-decoration: none;
+    font-size: 0.92rem;
+    font-weight: 600;
+    padding: 0.8rem 1.35rem;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.15s ease;
+  }
+  .btn-arch-secondary:hover {
+    background: #e7e5e4;
+  }
+
+  /* Grids & Sections */
+  .section-white {
+    background: #ffffff;
+    padding: clamp(3rem, 6vw, 5.25rem) 0;
+    position: relative;
+    z-index: 10;
+  }
+  .section-limestone {
+    background: #fafaf9;
+    padding: clamp(3rem, 6vw, 5.25rem) 0;
+    position: relative;
+    z-index: 10;
+  }
+  .hero-responsive-grid {
+    display: grid;
+    grid-template-columns: 1.12fr 1fr;
+    gap: 3rem;
+    align-items: center;
+    position: relative;
+    min-height: 420px;
+  }
+  .services-clean-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.75rem;
+  }
+  .team-clean-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
+  .cards-2col-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+  .surface-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: clamp(1.5rem, 3vw, 2.35rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .surface-card--limestone {
+    background: #fafaf9;
+    border-radius: 12px;
+    padding: clamp(1.5rem, 3vw, 2.35rem);
+  }
+
+  /* Tables & Filters */
+  .filter-bar {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+    margin-bottom: 1.75rem;
+    align-items: center;
+  }
+  .filter-btn {
+    padding: 0.55rem 1.05rem;
+    border-radius: 6px;
+    border: none;
+    background: #f5f5f4;
+    color: #1c1917;
+    font-size: 0.88rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease;
+  }
+  .filter-btn:hover { background: #e7e5e4; }
+  .filter-btn.active { background: #1c1917; color: #ffffff; }
+  .search-input {
+    padding: 0.65rem 1rem;
+    border-radius: 6px;
+    border: 1px solid #d6d3d1;
+    font-size: 0.95rem;
+    color: #1c1917;
+    background: #ffffff;
+    min-width: 240px;
+    flex: 1;
+    max-width: 380px;
+  }
+  .price-table-wrap {
+    overflow-x: auto;
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 1rem;
+  }
+  table.arch-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+    font-variant-numeric: tabular-nums;
+  }
+  table.arch-table th {
+    padding: 0.9rem 1rem;
+    font-size: 0.84rem;
+    color: #57534e;
+    background: #fafaf9;
+    font-weight: 600;
+  }
+  table.arch-table td {
+    padding: 0.95rem 1rem;
+    font-size: 0.95rem;
+    color: #1c1917;
+    vertical-align: top;
+  }
+  table.arch-table tr:nth-child(even) td {
+    background: #fafaf9;
+  }
+
+  /* Lite YouTube */
+  .lite-yt-card {
+    background: #1c1917;
+    color: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+  }
+  .lite-yt-poster {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    display: block;
+    opacity: 0.82;
+  }
+  .lite-yt-overlay {
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    background: #1c1917;
+  }
+
+  /* Mobile bottom bar */
+  .mobile-contact-bar {
+    display: none;
+  }
+
+  @media (max-width: 960px) {
+    .hero-responsive-grid,
+    .services-clean-grid,
+    .team-clean-grid,
+    .cards-2col-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    .site-nav {
+      overflow-x: auto;
+      flex-wrap: nowrap;
+      width: 100%;
+      padding-bottom: 0.25rem;
+      -webkit-overflow-scrolling: touch;
+    }
+    .header-contacts {
+      display: none;
+    }
+    body {
+      padding-bottom: 72px;
+    }
+    .mobile-contact-bar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.35rem;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 60;
+      background: rgba(255, 255, 255, 0.97);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      padding: 0.55rem 0.75rem calc(0.55rem + env(safe-area-inset-bottom, 0px));
+      box-shadow: 0 -4px 20px rgba(28, 25, 23, 0.08);
+    }
+    .mobile-contact-bar a {
+      text-align: center;
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 0.55rem 0.25rem;
+      border-radius: 6px;
+      background: #f5f5f4;
+      color: #1c1917;
+    }
+    .mobile-contact-bar a.primary {
+      background: #1c1917;
+      color: #ffffff;
+    }
+  }
+</style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container-358 site-header__inner">
+      <a href="./" class="logo-link" aria-label="358 — На головну сторінку">
+        <span class="logo-mark">358</span>
+        <span class="logo-sub">дизайн та ремонт • Львів</span>
+      </a>
+      <nav class="site-nav" aria-label="Основна навігація">
+        <a href="./" class="active">Головна</a>
+          <a href="./turnkey/" class="">Комплекс</a>
+          <a href="./design/" class="">Дизайн</a>
+          <a href="./renovation/" class="">Ремонт</a>
+          <a href="./portfolio/" class="">Портфоліо</a>
+          <a href="./pricing/" class="">Ціни</a>
+          <a href="./about/" class="">Про нас</a>
+          <a href="./blog/" class="">Блог / Відео</a>
+          <a href="./contacts/" class="">Контакти</a>
+      </nav>
+      <div class="header-contacts">
+        <a href="tel:+380973580000" class="chip-link">+38 (097) 358-00-00</a>
+        <a href="https://t.me/studio358_lviv" target="_blank" rel="noopener noreferrer" class="chip-link">Telegram</a>
+        <a href="viber://chat?number=%2B380973580000" class="chip-link">Viber</a>
+        <a href="https://www.youtube.com/@rozumnyy-remont" target="_blank" rel="noopener noreferrer" class="chip-link">YouTube</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+  <section style="position: relative; overflow: clip; padding: clamp(2.5rem, 5vw, 4.5rem) 0; background: #ffffff;">
+    
+  <div id="spiralWrapper4" style="position: absolute; left: -60px; top: -60px; width: 1040px; height: 100%; max-height: 540px; pointer-events: none; z-index: 1; opacity: 0.22;">
+    <div id="spiralFloatingEl" class="golden-spiral-floating" style="width: 100%; height: 100%;">
+      <svg viewBox="0 0 700 550" width="100%" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg" style="overflow: visible;">
+        <defs>
+          <linearGradient id="spiralDarkGrad4" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#0c0a09" stop-opacity="1" />
+            <stop offset="50%" stop-color="#1c1917" stop-opacity="0.9" />
+            <stop offset="85%" stop-color="#292524" stop-opacity="0.75" />
+            <stop offset="100%" stop-color="#57534e" stop-opacity="0.4" />
+          </linearGradient>
+        </defs>
+        <g stroke="#1c1917" stroke-width="1" stroke-dasharray="4 4" opacity="0.25">
+          <circle cx="320" cy="300" r="144" />
+          <circle cx="320" cy="300" r="233" />
+        </g>
+        <path d="M 322.5 300.0 L 322.6 300.4 L 322.6 300.9 L 322.6 301.3 L 322.4 301.9 L 322.2 302.4 L 321.9 302.7 L 321.6 303.1 L 321.2 303.5 L 320.7 303.8 L 320.2 304.0 L 319.7 304.1 L 319.2 304.2 L 318.6 304.2 L 318.1 304.2 L 317.5 304.1 L 316.9 303.9 L 316.3 303.6 L 315.8 303.3 L 315.2 302.9 L 314.8 302.4 L 314.3 301.8 L 313.9 301.1 L 313.6 300.4 L 313.3 299.6 L 313.2 298.8 L 313.1 297.9 L 313.2 297.0 L 313.4 296.0 L 313.7 295.1 L 314.1 294.2 L 314.6 293.3 L 315.1 292.7 L 315.8 291.8 L 316.4 291.3 L 317.4 290.6 L 318.5 290.0 L 319.7 289.5 L 321.0 289.2 L 322.3 289.0 L 323.8 288.9 L 325.3 289.1 L 326.8 289.4 L 328.3 289.9 L 329.8 290.6 L 331.3 291.6 L 332.6 292.7 L 333.9 294.1 L 335.1 295.6 L 336.1 297.4 L 336.9 299.3 L 337.5 301.3 L 337.8 303.6 L 337.9 305.9 L 337.7 308.3 L 337.3 310.7 L 336.4 313.2 L 335.3 315.6 L 333.8 318.0 L 332.0 320.3 L 329.8 322.4 L 327.3 324.3 L 324.6 325.9 L 321.5 327.2 L 318.1 328.2 L 314.6 328.8 L 310.8 329.0 L 306.9 328.8 L 303.0 328.0 L 299.0 326.7 L 295.0 324.9 L 291.2 322.6 L 287.5 319.7 L 284.1 316.2 L 281.0 312.3 L 278.3 307.8 L 276.1 302.8 L 274.4 297.5 L 273.4 291.7 L 273.1 285.7 L 273.4 279.4 L 274.5 273.0 L 276.5 266.6 L 279.4 260.2 L 283.1 253.9 L 287.7 248.0 L 293.2 242.4 L 299.5 237.4 L 306.7 232.9 L 314.6 229.3 L 323.3 226.5 L 332.5 224.7 L 342.2 224.0 L 352.3 224.5 L 362.7 226.2 L 373.1 229.3 L 383.5 233.8 L 393.6 239.7 L 403.3 247.0 L 412.4 255.8 L 420.7 265.9 L 427.9 277.4 L 434.0 290.1 L 438.6 304.0 L 441.7 318.8 L 443.0 334.5 L 442.4 350.8 L 439.7 367.5 L 434.9 384.4 L 427.9 401.2 L 418.5 417.7 L 406.9 433.4 L 392.9 448.2 L 376.7 461.7 L 358.3 473.6 L 337.9 483.6 L 315.6 491.3 L 291.7 496.5 L 266.5 498.9 L 240.2 498.2 L 213.2 494.2 L 185.8 486.8 L 158.6 475.7 L 132.0 461.0 L 106.3 442.4 L 82.2 420.2 L 60.2 394.2 L 40.7 364.8 L 24.3 332.1 L 11.4 296.3 L 2.6 257.8 L -1.7 217.2 L -1.0 174.7 L 4.9 131.1 L 16.4 86.9 L 33.8 42.8 L 57.2 -0.4 L 86.6 -42.1 L 122.1 -81.3 L 163.5 -117.4 L 210.6 -149.3 L 263.2 -176.4 L 300.9 -191.3"
+          stroke="url(#spiralDarkGrad4)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" />
+      </svg>
+    </div>
+  </div>
+    <div class="container-358 hero-responsive-grid">
+      <div style="position: relative; z-index: 2;">
+        <h1 style="font-size: clamp(1.9rem, 3.6vw, 2.85rem); line-height: 1.15; color: #1c1917; margin: 0 0 1.25rem 0; letter-spacing: -0.025em; font-weight: 700;">
+          Дизайн інтер'єру та ремонт квартир у Львові
+        </h1>
+        <p style="font-size: 1.08rem; line-height: 1.65; color: #292524; margin: 0 0 2rem 0; max-width: 560px;">
+          Розробляємо архітектурні дизайн-проєкти та виконуємо комплексний ремонт під ключ. Робочі креслення за чинними будівельними нормами, продумана інженерія, чистове оздоблення та єдина відповідальність за кінцевий результат.
+        </p>
+        <div style="display: flex; gap: 0.85rem; flex-wrap: wrap;">
+          <a href="./portfolio/" class="btn-arch-action">
+            <span>Переглянути реалізовані проєкти</span>
+            <span>→</span>
+          </a>
+          <a href="./pricing/" class="btn-arch-secondary">
+            <span>Відкритий прайс-лист</span>
+          </a>
+        </div>
+      </div>
+
+      <div style="position: relative; z-index: 2; border-radius: 12px; overflow: hidden; background: #f5f5f4;">
+        <div style="height: 320px; width: 100%; position: relative;">
+          <img
+            src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1000&q=80"
+            alt="Реалізований об'єкт студії 358 у Львові"
+            style="width: 100%; height: 100%; object-fit: cover; display: block;"
+          />
+        </div>
+        <div style="background: #1c1917; color: #ffffff; padding: 1.15rem 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem;">
+          <div>
+            <div style="font-size: 0.78rem; color: #a8a29e;">Флагманський кейс 358 • Львів</div>
+            <div style="font-size: 1.05rem; font-weight: 600;">Смарт-квартира 27 м² та ЖК Велика Британія • 76 м²</div>
+          </div>
+          <a href="./portfolio/smart-27m2-lviv/" style="font-size: 0.88rem; color: #ffffff; font-weight: 600; text-decoration: underline;">Огляд та кошторис →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-limestone">
+    <div class="container-358">
+      <div style="margin-bottom: 2.5rem;">
+        <h2 style="font-size: clamp(1.55rem, 2.5vw, 1.95rem); font-weight: 700; color: #1c1917; margin: 0 0 0.45rem 0;">Формати співпраці</h2>
+        <p style="font-size: 1.05rem; color: #57534e; margin: 0;">Можна замовити весь комплекс під ключ у Львові або залучити нас на окремий етап.</p>
+      </div>
+      <div class="services-clean-grid">
+        
+        <article class="surface-card">
+          <div>
+            <h3 style="font-size: 1.3rem; font-weight: 700; margin: 0 0 0.4rem 0; color: #1c1917;">Комплекс «під ключ»</h3>
+            <div style="height: 180px; border-radius: 8px; overflow: hidden; margin-bottom: 1.15rem;">
+              <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=80" alt="Комплекс «під ключ»" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+            </div>
+            <div style="font-size: 0.88rem; font-weight: 600; color: #78716c; margin-bottom: 0.55rem;">Повний цикл • Львів</div>
+            <p style="font-size: 0.98rem; color: #44403c; margin: 0;">Повний цикл робіт в одних руках: від обмірного плану та робочих креслень за ДБН до інженерії, чистового оздоблення, комплектації корпусними меблями та здачі готової квартири.</p>
+          </div>
+          <div style="margin-top: 1.75rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
+            <span style="font-size: 1.08rem; font-weight: 700; color: #1c1917;">від 8 500 грн / м²</span>
+            <a href="./turnkey/" style="color: #1c1917; font-weight: 600; font-size: 0.9rem; text-decoration: none;">Детальніше →</a>
+          </div>
+        </article>
+        <article class="surface-card">
+          <div>
+            <h3 style="font-size: 1.3rem; font-weight: 700; margin: 0 0 0.4rem 0; color: #1c1917;">Дизайн інтер'єру</h3>
+            <div style="height: 180px; border-radius: 8px; overflow: hidden; margin-bottom: 1.15rem;">
+              <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80" alt="Дизайн інтер'єру" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+            </div>
+            <div style="font-size: 0.88rem; font-weight: 600; color: #78716c; margin-bottom: 0.55rem;">Проєктування • Вся Україна</div>
+            <p style="font-size: 0.98rem; color: #44403c; margin: 0;">Архітектурне проєктування від Наталі (магістр архітектури, 20+ років стажу): ергономічні планувальні рішення, реалістичні 3D-візуалізації, будівельні креслення за ДБН та специфікації матеріалів.</p>
+          </div>
+          <div style="margin-top: 1.75rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
+            <span style="font-size: 1.08rem; font-weight: 700; color: #1c1917;">від 950 грн / м²</span>
+            <a href="./design/" style="color: #1c1917; font-weight: 600; font-size: 0.9rem; text-decoration: none;">Детальніше →</a>
+          </div>
+        </article>
+        <article class="surface-card">
+          <div>
+            <h3 style="font-size: 1.3rem; font-weight: 700; margin: 0 0 0.4rem 0; color: #1c1917;">Ремонтні роботи</h3>
+            <div style="height: 180px; border-radius: 8px; overflow: hidden; margin-bottom: 1.15rem;">
+              <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1200&q=80" alt="Ремонтні роботи" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+            </div>
+            <div style="font-size: 0.88rem; font-weight: 600; color: #78716c; margin-bottom: 0.55rem;">Реалізація • Львів</div>
+            <p style="font-size: 0.98rem; color: #44403c; margin: 0;">Виконання ремонтних робіт у Львові за готовим дизайн-проєктом під особистим керівництвом Віталія (10+ років практичного досвіду). Власноручне чистове оздоблення та залучення перевірених майстрів.</p>
+          </div>
+          <div style="margin-top: 1.75rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
+            <span style="font-size: 1.08rem; font-weight: 700; color: #1c1917;">від 7 600 грн / м²</span>
+            <a href="./renovation/" style="color: #1c1917; font-weight: 600; font-size: 0.9rem; text-decoration: none;">Детальніше →</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-white">
+    <div class="container-358">
+      <div style="margin-bottom: 2.5rem;">
+        <h2 style="font-size: clamp(1.55rem, 2.5vw, 1.95rem); font-weight: 700; color: #1c1917; margin: 0 0 0.45rem 0;">Хто відповідає за об'єкт</h2>
+        <p style="font-size: 1.05rem; color: #57534e; margin: 0;">Двоє досвідчених практиків із прямим контролем якості кожного процесу.</p>
+      </div>
+      <div class="team-clean-grid">
+        <article class="surface-card--limestone">
+          <h3 style="font-size: 1.4rem; font-weight: 700; color: #1c1917; margin: 0 0 0.35rem 0;">Наталя (46 років)</h3>
+          <div style="font-size: 0.92rem; font-weight: 600; color: #78716c; margin-bottom: 1rem;">Архітектура та дизайн інтер'єру</div>
+          <p style="font-size: 1rem; color: #292524; margin: 0 0 1.35rem 0;">Диплом магістра архітектури, понад 20 років практичного стажу в дизайні інтер'єрів. Розробляє ергономічні планування, реалістичні 3D-візуалізації та точні робочі креслення з урахуванням чинних будівельних норм (ДБН) та інженерії.</p>
+          <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; font-size: 0.82rem; color: #57534e;">
+            <span style="background: #ffffff; padding: 5px 12px; border-radius: 4px; font-weight: 500;">20+ років стажу</span><span style="background: #ffffff; padding: 5px 12px; border-radius: 4px; font-weight: 500;">Магістр архітектури</span><span style="background: #ffffff; padding: 5px 12px; border-radius: 4px; font-weight: 500;">Креслення за ДБН</span><span style="background: #ffffff; padding: 5px 12px; border-radius: 4px; font-weight: 500;">3D-візуалізації та ергономіка</span>
+          </div>
+        </article>
+        <article class="surface-card--limestone">
+          <h3 style="font-size: 1.4rem; font-weight: 700; color: #1c1917; margin: 0 0 0.35rem 0;">Віталій (46 років)</h3>
+          <div style="font-size: 0.92rem; font-weight: 600; color: #78716c; margin-bottom: 1rem;">Керівництво об'єктом та чистове оздоблення</div>
+          <p style="font-size: 1rem; color: #292524; margin: 0 0 1.35rem 0;">Понад 10 років практичного досвіду в ремонтах. Особисто веде об'єкт від першого дня до здачі ключів, власноруч виконує чистові шпаклювальні, малярні та плиточні роботи. Електрику, сантехніку, машинну стяжку, гіпсокартон і корпусні меблі виконують перевірені майстри під його щоденним наглядом.</p>
+          <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; font-size: 0.82rem; color: #57534e;">
+            <span style="background: #ffffff; padding: 5px 12px; border-radius: 4px; font-weight: 500;">10+ років досвіду</span><span style="background: #ffffff; padding: 5px 12px; border-radius: 4px; font-weight: 500;">Щоденний нагляд</span><span style="background: #ffffff; padding: 5px 12px; border-radius: 4px; font-weight: 500;">Власноручне чистове оздоблення</span><span style="background: #ffffff; padding: 5px 12px; border-radius: 4px; font-weight: 500;">Координація майстрів</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-limestone">
+    <div class="container-358">
+      <div style="margin-bottom: 2.25rem; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 1rem;">
+        <div>
+          <h2 style="font-size: clamp(1.55rem, 2.5vw, 1.95rem); font-weight: 700; color: #1c1917; margin: 0 0 0.45rem 0;">Реалізовані об'єкти та проєкти</h2>
+          <p style="font-size: 1.05rem; color: #57534e; margin: 0;">Порівняння інженерних задумів, креслень та реального виконання на квартирах у Львові.</p>
+        </div>
+        <a href="./portfolio/" class="btn-arch-secondary">Усі об'єкти портфоліо →</a>
+      </div>
+      <div class="cards-2col-grid">
+        
+        <article class="surface-card">
+          <div>
+            <div style="height: 240px; border-radius: 8px; overflow: hidden; margin-bottom: 1.25rem;">
+              <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=80" alt="Смарт-квартира 27 м² у Львові: 6 функціональних зон, монолітна стеля та чесний кошторис" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+            </div>
+            <div style="font-size: 0.84rem; font-weight: 600; color: #78716c; margin-bottom: 0.4rem;">Комплекс під ключ • м. Львів (новобудова) • 27 м²</div>
+            <h3 style="font-size: 1.25rem; font-weight: 700; color: #1c1917; margin: 0 0 0.65rem 0;">Смарт-квартира 27 м² у Львові: 6 функціональних зон, монолітна стеля та чесний кошторис</h3>
+            <p style="font-size: 0.96rem; color: #44403c; margin: 0;">Власний інвестиційний об'єкт Наталі та Віталія площею 27 м² (придбаний на стадії котловану 20 вересня 2020 року за 14 500 $). Пошпакльована монолітна стеля 2,5 м без втрати висоти, тепла підлога у 3 контури з Wi-Fi, повноцінна ванна, прально-сушильна колона, бойлер 80 л із термозмішувачем, посудомийна машина, двоспальне ліжко та диван.</p>
+          </div>
+          <div style="margin-top: 1.5rem;">
+            <a href="./portfolio/smart-27m2-lviv/" class="btn-arch-action">Детальний розбір кейсу →</a>
+          </div>
+        </article>
+        <article class="surface-card">
+          <div>
+            <div style="height: 240px; border-radius: 8px; overflow: hidden; margin-bottom: 1.25rem;">
+              <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80" alt="ЖК Велика Британія • 76 м²: сімейна квартира з кабінетом та просторою кухнею-вітальнею" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+            </div>
+            <div style="font-size: 0.84rem; font-weight: 600; color: #78716c; margin-bottom: 0.4rem;">Комплекс під ключ • Львів, ЖК Велика Британія • 76 м²</div>
+            <h3 style="font-size: 1.25rem; font-weight: 700; color: #1c1917; margin: 0 0 0.65rem 0;">ЖК Велика Британія • 76 м²: сімейна квартира з кабінетом та просторою кухнею-вітальнею</h3>
+            <p style="font-size: 0.96rem; color: #44403c; margin: 0;">Повний цикл від архітектурних креслень за ДБН до чистового оздоблення та монтажу корпусних меблів до стелі. Звукоізоляція спальні, водяна тепла підлога та спокійна світла гама.</p>
+          </div>
+          <div style="margin-top: 1.5rem;">
+            <a href="./portfolio/zhk-velyka-brytaniya-76m2/" class="btn-arch-action">Детальний розбір кейсу →</a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-white">
+    <div class="container-358">
+      <div style="background: #fafaf9; border-radius: 16px; padding: clamp(1.75rem, 4vw, 3rem); display: flex; justify-content: space-between; align-items: center; gap: 2rem; flex-wrap: wrap;">
+        <div style="max-width: 680px;">
+          <h2 style="font-size: 1.5rem; font-weight: 700; color: #1c1917; margin: 0 0 0.35rem 0;">Реальний процес ремонту на об'єктах</h2>
+          <div style="font-size: 0.92rem; font-weight: 600; color: #dc2626; margin-bottom: 0.75rem;">YouTube-канал та блог «Розумний ремонт»</div>
+          <p style="font-size: 1.02rem; color: #44403c; margin: 0;">
+            Корисні відеоогляди з наших об'єктів у Львові, розбір монолітних стель, 3-контурної теплої підлоги з Wi-Fi, сантехнічних вузлів та реального рукописного кошторису на 27 м².
+          </p>
+        </div>
+        <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+          <a href="./blog/" class="btn-arch-action">
+            <span>Перейти до статей та відео</span>
+            <span>→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  </main>
+
+  <footer class="section-white" style="padding: 3.25rem 0;">
+    <div class="container-358" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; color: #78716c; font-size: 0.9rem;">
+      <div>
+        <div style="font-size: 1.4rem; font-weight: 800; letter-spacing: -0.03em; color: #1c1917;">358</div>
+        <div style="margin-top: 0.25rem;">© 2026 Студія дизайну та ремонту «358» • Львів, Україна</div>
+      </div>
+      <div style="display: flex; gap: 1.25rem; flex-wrap: wrap; align-items: center;">
+        <a href="tel:+380973580000" style="font-weight: 600; color: #1c1917; text-decoration: none;">+38 (097) 358-00-00</a>
+        <a href="https://t.me/studio358_lviv" target="_blank" rel="noopener noreferrer" style="color: #57534e; text-decoration: none;">Telegram</a>
+        <a href="viber://chat?number=%2B380973580000" style="color: #57534e; text-decoration: none;">Viber</a>
+        <a href="https://www.youtube.com/@rozumnyy-remont" target="_blank" rel="noopener noreferrer" style="color: #57534e; text-decoration: none;">YouTube «Розумний ремонт»</a>
+        <a href="./shooting-companion.html" style="color: #78716c; text-decoration: none; font-size: 0.82rem;">Знімальна шпаргалка 27 м²</a>
+      </div>
+    </div>
+  </footer>
+
+  <div class="mobile-contact-bar" aria-label="Швидкий зв'язок зі смартфона">
+    <a href="tel:+380973580000" class="primary">Дзвінок</a>
+    <a href="https://t.me/studio358_lviv" target="_blank" rel="noopener noreferrer">Telegram</a>
+    <a href="viber://chat?number=%2B380973580000">Viber</a>
+    <a href="https://www.youtube.com/@rozumnyy-remont" target="_blank" rel="noopener noreferrer">YouTube</a>
+  </div>
+</body>
+</html>

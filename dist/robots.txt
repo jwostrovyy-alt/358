@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://jwostrovyy-alt.github.io/358/sitemap-index.xml
+

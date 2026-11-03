@@ -1,0 +1,10 @@
+---
+import { SITE_CONFIG } from '../data/site.ts';
+---
+<div class="mobile-contact-bar" aria-label="Швидкий зв'язок зі смартфона">
+  <a href={SITE_CONFIG.phoneHref} class="mobile-contact-bar__btn mobile-contact-bar__btn--primary">Дзвінок</a>
+  <a href={SITE_CONFIG.telegramUrl} target="_blank" rel="noopener noreferrer" class="mobile-contact-bar__btn">Telegram</a>
+  <a href={SITE_CONFIG.viberUrl} class="mobile-contact-bar__btn">Viber</a>
+  <a href={SITE_CONFIG.youtubeUrl} target="_blank" rel="noopener noreferrer" class="mobile-contact-bar__btn">YouTube</a>
+</div>
+

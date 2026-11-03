@@ -1,0 +1,36 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LiteYouTube from '../../components/LiteYouTube.astro';
+import { BLOG_ITEMS } from '../../data/content-items.ts';
+import { buildVideoSchema } from '../../utils/seo.ts';
+
+export function getStaticPaths() {
+  return BLOG_ITEMS.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const schema = [
+  buildVideoSchema({
+    videoId: post.youtubeId,
+    title: post.title,
+    description: post.excerpt,
+    uploadDate: post.publishedAt,
+  }),
+];
+---
+<BaseLayout
+  title={`${post.title} — Розумний ремонт • 358`}
+  description={post.excerpt}
+  canonicalPath={`/blog/${post.slug}`}
+  schema={schema}
+  basePrefix="../.."
+>
+  <article class="blog-post">
+    <h1>{post.title}</h1>
+    <LiteYouTube videoId={post.youtubeId} title={post.title} summary={post.excerpt} />
+  </article>
+</BaseLayout>
+

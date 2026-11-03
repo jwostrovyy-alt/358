@@ -1,0 +1,27 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import LiteYouTube from '../../components/LiteYouTube.astro';
+import { PORTFOLIO_ITEMS } from '../../data/content-items.ts';
+
+export function getStaticPaths() {
+  return PORTFOLIO_ITEMS.map((item) => ({
+    params: { slug: item.slug },
+    props: { item },
+  }));
+}
+
+const { item } = Astro.props;
+---
+<BaseLayout
+  title={`${item.title} — Портфоліо 358`}
+  description={item.summary}
+  canonicalPath={`/portfolio/${item.slug}`}
+  basePrefix="../.."
+>
+  <article class="case-study">
+    <h1>{item.title}</h1>
+    <p>{item.summary}</p>
+    {item.youtubeId && <LiteYouTube videoId={item.youtubeId} title={item.title} />}
+  </article>
+</BaseLayout>
+

@@ -1,0 +1,35 @@
+---
+import { SITE_CONFIG, NAV_ITEMS } from '../data/site.ts';
+import Logo358 from './Logo358.astro';
+
+export interface Props {
+  currentPath?: string;
+  basePrefix?: string;
+}
+const { currentPath = '/', basePrefix = '.' } = Astro.props;
+---
+<header class="site-header">
+  <div class="site-header__inner">
+    <Logo358 basePrefix={basePrefix} />
+    <nav class="site-nav" aria-label="Основна навігація">
+      {NAV_ITEMS.map((item) => {
+        const href = item.href === '/' ? `${basePrefix}/` : `${basePrefix}${item.href}/`;
+        const isActive = currentPath === item.href;
+        return (
+          <a href={href} class={isActive ? 'site-nav__link active' : 'site-nav__link'}>
+            {item.label}
+          </a>
+        );
+      })}
+    </nav>
+    <div class="site-header__contacts">
+      <a href={SITE_CONFIG.phoneHref} class="header-phone">{SITE_CONFIG.phoneDisplay}</a>
+      <div class="header-messengers">
+        <a href={SITE_CONFIG.telegramUrl} target="_blank" rel="noopener noreferrer">Telegram</a>
+        <a href={SITE_CONFIG.viberUrl}>Viber</a>
+        <a href={SITE_CONFIG.youtubeUrl} target="_blank" rel="noopener noreferrer">YouTube</a>
+      </div>
+    </div>
+  </div>
+</header>
+

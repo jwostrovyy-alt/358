@@ -1,0 +1,31 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { PRICING_PACKAGES } from '../data/pricing.ts';
+import { TEAM_PROFILES } from '../data/site.ts';
+import { buildServiceSchema } from '../utils/seo.ts';
+
+const pkg = PRICING_PACKAGES[0];
+const schema = [
+  buildServiceSchema({
+    name: 'Комплексний ремонт квартир під ключ у Львові (Дизайн + Ремонт)',
+    description: pkg.description,
+    areaServed: ['Львів'],
+    urlPath: '/turnkey',
+  }),
+];
+---
+<BaseLayout
+  title="Комплекс «Дизайн + Ремонт під ключ» у Львові — Студія 358"
+  description="Повний цикл створення житла у Львові: архітектурний дизайн-проєкт за ДБН від Наталі та реалізація ремонту під ключ під щоденним керівництвом Віталія."
+  canonicalPath="/turnkey"
+  schema={schema}
+  basePrefix=".."
+>
+  <section class="page-hero">
+    <h1>Комплекс «Дизайн + Ремонт під ключ» у Львові</h1>
+    <p class="page-lead">
+      Флагманський формат співпраці, де архітектор Наталя та керівник будівельних робіт Віталій працюють як єдина родина і команда. Жодних розбіжностей між кресленнями на папері та реальністю на будівельному майданчику.
+    </p>
+  </section>
+</BaseLayout>
+

@@ -1,0 +1,97 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import GoldenSpiral from '../components/GoldenSpiral.astro';
+import { PRICING_PACKAGES } from '../data/pricing.ts';
+import { TEAM_PROFILES } from '../data/site.ts';
+import { PORTFOLIO_ITEMS } from '../data/content-items.ts';
+---
+<BaseLayout
+  title="358 — Дизайн інтер'єру та ремонт квартир у Львові"
+  description="Розробляємо архітектурні дизайн-проєкти за ДБН та виконуємо комплексний ремонт квартир під ключ у Львові. Сімейний тандем архітектора Наталі та керівника робіт Віталія."
+  canonicalPath="/"
+  basePrefix="."
+>
+  <section class="hero-section">
+    <GoldenSpiral />
+    <div class="hero-responsive-grid">
+      <div class="hero-copy">
+        <h1 class="hero-title">Дизайн інтер'єру та ремонт квартир у Львові</h1>
+        <p class="hero-lead">
+          Розробляємо архітектурні дизайн-проєкти та виконуємо комплексний ремонт під ключ. Робочі креслення за чинними будівельними нормами, продумана інженерія, чистове оздоблення та єдина відповідальність за кінцевий результат.
+        </p>
+        <div>
+          <a href="./portfolio/" class="btn-arch-action">
+            <span>Переглянути реалізовані проєкти</span>
+            <span>→</span>
+          </a>
+        </div>
+      </div>
+      <div class="hero-feature-card">
+        <img
+          src={PORTFOLIO_ITEMS[0].heroImage}
+          alt="Реалізований об'єкт студії 358 у Львові"
+          class="hero-feature-img"
+        />
+        <div class="hero-feature-caption">
+          <div>
+            <div class="hero-feature-sub">Проєкт 358 • Львів</div>
+            <div class="hero-feature-name">Смарт-квартира 27 м² та ЖК Велика Британія • 76 м²</div>
+          </div>
+          <a href="./portfolio/smart-27m2-lviv/" class="hero-feature-link">Огляд кейсу 27 м² →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-limestone" id="turnkey">
+    <div class="section-header">
+      <h2>Формати співпраці</h2>
+      <p>Можна замовити весь комплекс під ключ або залучити нас на окремий етап.</p>
+    </div>
+    <div class="services-clean-grid">
+      {PRICING_PACKAGES.map((pkg) => (
+        <article class="service-card">
+          <h3>{pkg.title}</h3>
+          <div class="service-meta">{pkg.subtitle}</div>
+          <p>{pkg.description}</p>
+          <div class="service-price">{pkg.priceFrom} / {pkg.unit}</div>
+          <a href={`.${pkg.href}/`} class="text-link">Детальніше про формат →</a>
+        </article>
+      ))}
+    </div>
+  </section>
+
+  <section class="section-white" id="about">
+    <div class="section-header">
+      <h2>Хто відповідає за об'єкт</h2>
+      <p>Двоє досвідчених практиків із прямим контролем якості кожного процесу.</p>
+    </div>
+    <div class="team-clean-grid">
+      <article class="team-card">
+        <h3>{TEAM_PROFILES.natalia.name} ({TEAM_PROFILES.natalia.age} років)</h3>
+        <div class="team-role">{TEAM_PROFILES.natalia.role}</div>
+        <p>{TEAM_PROFILES.natalia.summary}</p>
+      </article>
+      <article class="team-card">
+        <h3>{TEAM_PROFILES.vitaliy.name} ({TEAM_PROFILES.vitaliy.age} років)</h3>
+        <div class="team-role">{TEAM_PROFILES.vitaliy.role}</div>
+        <p>{TEAM_PROFILES.vitaliy.summary}</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section-limestone" id="blog">
+    <div class="youtube-banner">
+      <div>
+        <h3>Реальний процес ремонту на об'єктах</h3>
+        <div class="youtube-label">YouTube-канал та блог «Розумний ремонт»</div>
+        <p>Корисні відеоогляди з наших об'єктів у Львові, розбір технічних вузлів, монолітних стель, теплої підлоги та реальних кошторисів.</p>
+      </div>
+      <a href="./blog/" class="btn-arch-action">
+        <span>Перейти до статей та відео</span>
+        <span>→</span>
+      </a>
+    </div>
+  </section>
+</BaseLayout>
+

@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Шпаргалка для зйомки: Смарт 27 м² • Розумний ремонт / 358</title>
+  <style>
+    :root {
+      --bg: #fafaf9;
+      --surface: #ffffff;
+      --surface-alt: #f4f4f1;
+      --text: #18181b;
+      --muted: #52525b;
+      --accent: #18181b;
+      --accent-soft: #e4e4e7;
+      --highlight: #fef3c7;
+      --green: #15803d;
+      --green-bg: #dcfce7;
+      --blue-bg: #e0f2fe;
+      --blue-text: #0369a1;
+    }
+
+    body.dark {
+      --bg: #111113;
+      --surface: #1c1c1f;
+      --surface-alt: #27272a;
+      --text: #f4f4f5;
+      --muted: #a1a1aa;
+      --accent: #f4f4f5;
+      --accent-soft: #3f3f46;
+      --highlight: #3f3212;
+      --green: #4ade80;
+      --green-bg: #143620;
+      --blue-bg: #0c2d48;
+      --blue-text: #7dd3fc;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.55;
+      padding-bottom: 90px;
+      font-size: 18px;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: var(--surface);
+      padding: 14px 16px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    }
+
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 860px;
+      margin: 0 auto 12px auto;
+    }
+
+    .brand {
+      font-weight: 800;
+      font-size: 19px;
+      letter-spacing: -0.02em;
+    }
+
+    .brand span {
+      font-weight: 500;
+      color: var(--muted);
+      font-size: 14px;
+      margin-left: 6px;
+    }
+
+    .theme-btn {
+      background: var(--surface-alt);
+      color: var(--text);
+      border: none;
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .tabs {
+      display: flex;
+      gap: 8px;
+      max-width: 860px;
+      margin: 0 auto;
+      overflow-x: auto;
+      padding-bottom: 2px;
+    }
+
+    .tab-btn {
+      flex: 1;
+      min-width: max-content;
+      padding: 10px 16px;
+      border: none;
+      border-radius: 10px;
+      background: var(--surface-alt);
+      color: var(--text);
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: 0.15s;
+    }
+
+    .tab-btn.active {
+      background: var(--accent);
+      color: var(--bg);
+    }
+
+    main {
+      max-width: 860px;
+      margin: 20px auto;
+      padding: 0 16px;
+    }
+
+    .panel {
+      display: none;
+    }
+
+    .panel.active {
+      display: block;
+    }
+
+    .scene-card {
+      background: var(--surface);
+      border-radius: 16px;
+      padding: 22px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    }
+
+    .scene-header {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .scene-num {
+      font-size: 14px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+    }
+
+    .camera-badge {
+      padding: 4px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      background: var(--blue-bg);
+      color: var(--blue-text);
+    }
+
+    .scene-title {
+      font-size: 22px;
+      font-weight: 800;
+      margin-bottom: 14px;
+      line-height: 1.3;
+    }
+
+    .dialogue-box {
+      background: var(--surface-alt);
+      border-radius: 12px;
+      padding: 16px;
+      margin-bottom: 12px;
+    }
+
+    .speaker {
+      font-weight: 800;
+      font-size: 15px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      margin-bottom: 6px;
+      display: block;
+    }
+
+    .speaker.vitaliy {
+      color: #0284c7;
+    }
+
+    .speaker.natalia {
+      color: #b45309;
+    }
+
+    body.dark .speaker.vitaliy {
+      color: #38bdf8;
+    }
+
+    body.dark .speaker.natalia {
+      color: #fbbf24;
+    }
+
+    ul.points {
+      padding-left: 20px;
+      margin-top: 8px;
+    }
+
+    ul.points li {
+      margin-bottom: 10px;
+    }
+
+    .highlight-pill {
+      background: var(--highlight);
+      padding: 2px 7px;
+      border-radius: 6px;
+      font-weight: 700;
+    }
+
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+
+    .kpi-card {
+      background: var(--surface);
+      padding: 18px;
+      border-radius: 14px;
+    }
+
+    .kpi-label {
+      font-size: 14px;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+
+    .kpi-val {
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .kpi-sub {
+      font-size: 14px;
+      color: var(--muted);
+      margin-top: 6px;
+    }
+
+    .payback-box {
+      background: var(--surface);
+      border-radius: 16px;
+      padding: 22px;
+      margin-bottom: 24px;
+    }
+
+    .payback-box h3 {
+      font-size: 20px;
+      margin-bottom: 14px;
+    }
+
+    .check-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      background: var(--surface);
+      padding: 16px;
+      border-radius: 12px;
+      margin-bottom: 10px;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .check-item input[type="checkbox"] {
+      width: 24px;
+      height: 24px;
+      margin-top: 2px;
+      flex-shrink: 0;
+      accent-color: var(--green);
+    }
+
+    .check-item.done {
+      opacity: 0.55;
+      text-decoration: line-through;
+    }
+
+    table.budget-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--surface);
+      border-radius: 14px;
+      overflow: hidden;
+      font-size: 16px;
+    }
+
+    table.budget-table th,
+    table.budget-table td {
+      padding: 12px 14px;
+      text-align: left;
+    }
+
+    table.budget-table tr:nth-child(even) {
+      background: var(--surface-alt);
+    }
+
+    .amount {
+      font-weight: 800;
+      white-space: nowrap;
+      text-align: right !important;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-top">
+      <div class="brand">358 • Смарт 27 м² <span>Шпаргалка для зйомки</span></div>
+      <button class="theme-btn" id="themeToggle" type="button">Темний режим</button>
+    </div>
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="scenes" type="button">1. Сцени та Діалог (1–6)</button>
+      <button class="tab-btn" data-tab="numbers" type="button">2. Цифри, Окупність і Блокнот</button>
+      <button class="tab-btn" data-tab="shots" type="button">3. Чек-лист кадрів (14)</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ПАНЕЛЬ 1: СЦЕНИ -->
+    <section class="panel active" id="panel-scenes">
+      <div class="scene-card">
+        <div class="scene-header">
+          <span class="scene-num">Сцена 1 • 00:00 – 03:00</span>
+          <span class="camera-badge">Камера на штативі • Вдвох у кадрі</span>
+        </div>
+        <h2 class="scene-title">Історія з котловану 2020 року та головна дилема: продавати чи здавати?</h2>
+        <div class="dialogue-box">
+          <span class="speaker vitaliy">Віталій (починає):</span>
+          <ul class="points">
+            <li>Придбали цю смарт-квартиру <span class="highlight-pill">27 м² (2-й поверх)</span> ще <span class="highlight-pill">20 вересня 2020 року</span> на стадії котловану за <span class="highlight-pill">14 500 $</span>.</li>
+            <li>На каналі вже є відео, як ми робили тут ремонт. Зараз усе завершено на 100%.</li>
+            <li>Квартира стала як <strong>магніт</strong> — сюди заходиш, і не хочеться виходити. Шкода продавати!</li>
+          </ul>
+        </div>
+        <div class="dialogue-box">
+          <span class="speaker natalia">Наталя (доповнює):</span>
+          <ul class="points">
+            <li>Наше головне питання сьогодні: продати її зараз (такі квартири з ремонтом у будинку оцінюють у <span class="highlight-pill">75 000 – 80 000 $</span>) і купити нову під ремонт, чи залишити в оренду за <span class="highlight-pill">~500 $/міс.</span>?</li>
+            <li>Зараз покажемо всі технічні й планувальні рішення на 27 м², а в кінці відкриємо наш рукописний блокнот і порахуємо кожну гривню та окупність.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="scene-card">
+        <div class="scene-header">
+          <span class="scene-num">Сцена 2 • 03:00 – 05:30</span>
+          <span class="camera-badge">Жива зйомка біля входу • Шафа</span>
+        </div>
+        <h2 class="scene-title">Чому для себе робили без 3D-візуалізацій + чотиридверна шафа</h2>
+        <div class="dialogue-box">
+          <span class="speaker vitaliy">Питання Віталія до Наталі:</span>
+          «Для клієнтів у «358» ти завжди робиш повний дизайн-проєкт із кресленнями та візуалізаціями. Чому тут для себе ми обійшлися без візуалізацій?»
+        </div>
+        <div class="dialogue-box">
+          <span class="speaker natalia">Відповідь Наталі + показ шафи:</span>
+          <ul class="points">
+            <li>Ми погодили між собою тільки <strong>точне планування</strong>, бо за роки спільної роботи вже бачимо весь об'єм без картинок.</li>
+            <li>Але без чіткого планування з розмірами на 27 м² неможливо вмістити стільки зон.</li>
+            <li>Показуємо <strong>чотиридверну шафу до стелі</strong> при вході з чорною відкритою нішею та шухлядами — вона забрала весь одяг і побут, звільнивши кімнату.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="scene-card">
+        <div class="scene-header">
+          <span class="scene-num">Сцена 3 • 05:30 – 09:30</span>
+          <span class="camera-badge">Зйомка з рук впритул • Санвузол</span>
+        </div>
+        <h2 class="scene-title">Санвузол: двері всередину, бойлер 80 л із термозмішувачем, захист та ванна</h2>
+        <div class="dialogue-box">
+          <span class="speaker vitaliy">Що обов'язково показуємо наживо в кадрі:</span>
+          <ul class="points">
+            <li><strong>1. Двері санвузла відкриваються всередину в сторону ванни:</strong> не перекривають вузький коридор, у відкритому стані лягають уздовж ванни, зручно зайти й закрити за собою.</li>
+            <li><strong>2. Колона з пральної та сушильної машин + шафа зверху:</strong> відкриваємо дверцята шафи над сушилкою.</li>
+            <li><strong>3. Горизонтальний бойлер на 80 л + термозмішувальний вузол під ним:</strong> через обмежену висоту бойлер розташований горизонтально. Щоб мати великий запас гарячої води, бойлер гріє воду гарячіше, а <strong>термозмішувальний клапан</strong> знизу змішує її до стабільної комфортної температури.</li>
+            <li><strong>4. Безпека та комфорт:</strong> встановлено <strong>редуктор тиску</strong>, <strong>антипотоп на 2 датчики</strong>, повноцінну ванну зі скляною шторкою, підвісний унітаз із гігієнічним душем і накладний умивальник.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="scene-card">
+        <div class="scene-header">
+          <span class="scene-num">Сцена 4 • 09:30 – 14:30</span>
+          <span class="camera-badge">Проходка по кімнаті та кухні</span>
+        </div>
+        <h2 class="scene-title">Монолітна стеля 2,5 м, тепла підлога з Wi-Fi, ліжко + диван і посудомийка</h2>
+        <div class="dialogue-box">
+          <span class="speaker natalia">Питання Наталі про стелю:</span>
+          «Багато хто під час ремонту думає: робити гіпсокартон, натяжну стелю чи шпаклювати бетон? Чому тут ми шпаклювали бетон і що радимо замовникам?»
+        </div>
+        <div class="dialogue-box">
+          <span class="speaker vitaliy">Відповідь Віталія (Стеля + Тепла підлога):</span>
+          <ul class="points">
+            <li><strong>Стеля:</strong> Висота тут близько <span class="highlight-pill">2,5 м</span>. Щоб не втрачати об'єм і висоту, ми пошпаклювали і пофарбували бетонну монолітну стелю. На всіх об'єктах ми радимо саме таку стелю без гіпсокартону і натяжної (натяжну радимо лише тоді, коли треба суттєво зекономити бюджет).</li>
+            <li><strong>Опалення:</strong> Виконано теплою підлогою у <span class="highlight-pill">3 контури</span> з зональними терморегуляторами і керуванням через <span class="highlight-pill">Wi-Fi</span>.</li>
+            <li><strong>Зонування 27 м²:</strong> Повноцінне двоспальне ліжко з тумбами і підвісами + окремий диван біля панорамного вікна + круглий обідній стіл.</li>
+            <li><strong>Дзеркала та кухня:</strong> Дві вертикальні смуги дзеркал до стелі з бра обабіч ТВ і столика візуально подвоюють ширину. У кухні до стелі вбудована <strong>посудомийна машина</strong>, духовка, поверхня, витяжка, холодильник + кондиціонер.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="scene-card">
+        <div class="scene-header">
+          <span class="scene-num">Сцена 5 • 14:30 – 18:30</span>
+          <span class="camera-badge">Штатив за столом • Блокнот у руках</span>
+        </div>
+        <h2 class="scene-title">Відкриваємо рукописний блокнот: 16 000 $ витрат + 13 000 $ праці та окупність</h2>
+        <div class="dialogue-box">
+          <span class="speaker vitaliy">Розкладаємо цифри по поличках (див. вкладку «2. Цифри»):</span>
+          <ul class="points">
+            <li>Витрачено живими грошима за блокнотом: <span class="highlight-pill">700 000 грн (~16 000 $)</span> — сюди увійшли ВСІ матеріали, меблі, техніка + робота лише по 3 позиціях (стяжка, виготовлення меблів, укладання плитки).</li>
+            <li>Усі інші роботи виконали самі. Якби робили на замовлення за оплату — наша робота коштувала б ще <span class="highlight-pill">~13 000 $</span> (разом ринкова вартість такого ремонту з меблями й технікою = <span class="highlight-pill">~29 000 $</span>).</li>
+            <li>Купили з котловану (20.09.2020) за <span class="highlight-pill">14 500 $</span>. Зараз без ремонту в будинку — <span class="highlight-pill">~50 000 $</span>, з ремонтом — <span class="highlight-pill">75 000 – 80 000 $</span>.</li>
+            <li><strong>Окупність оренди по ~500 $/міс. (6 000 $/рік):</strong> від наших живих вкладень (<span class="highlight-pill">30 500 $</span>) окупається за <strong>5 років (~20% річних)</strong>, а від ринкової ціни продажу (<span class="highlight-pill">75–80 тис. $</span>) — за <strong>12,5–13 років (~7,5–8% річних)</strong>.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="scene-card">
+        <div class="scene-header">
+          <span class="scene-num">Сцена 6 • 18:30 – 20:00</span>
+          <span class="camera-badge">Штатив • Фінал удвох</span>
+        </div>
+        <h2 class="scene-title">Підсумок: чому схиляємось до оренди та ремонтів на замовлення</h2>
+        <div class="dialogue-box">
+          <span class="speaker vitaliy">Фінальне звернення до глядачів:</span>
+          <ul class="points">
+            <li>Серцем схиляємося залишити під оренду, бо таких за якістю квартир у будинку немає і відпускати її шкода.</li>
+            <li>Для себе зрозуміли: наше головне покликання в «358» — робити якісні проєкти та ремонти під ключ на замовлення, а не просто перепродавати бетон.</li>
+            <li><strong>Питання в коментарі:</strong> «А що б ви обрали на нашому місці — здавати за 500+ $/міс. (окупність вкладених 30 500 $ за 5 років) чи продати за 75–80 тис. $ і взяти новий об'єкт?»</li>
+            <li>Посилання на наш сайт «358» з усіма фото та таблицею витрат — в описі під відео.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ПАНЕЛЬ 2: ЦИФРИ І БЛОКНОТ -->
+    <section class="panel" id="panel-numbers">
+      <div class="kpi-grid">
+        <div class="kpi-card">
+          <div class="kpi-label">Купівля з котловану (20.09.2020)</div>
+          <div class="kpi-val">14 500 $</div>
+          <div class="kpi-sub">27 м², 2-й поверх (~537 $/м²)</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Сьогодні БЕЗ ремонту (30.10.2026)</div>
+          <div class="kpi-val">~50 000 $</div>
+          <div class="kpi-sub">У цьому ж будинку</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Ремонт + меблі + техніка (грошима)</div>
+          <div class="kpi-val">16 000 $</div>
+          <div class="kpi-sub">700 000 грн за блокнотом</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Власна праця (ринкова оцінка)</div>
+          <div class="kpi-val">~13 000 $</div>
+          <div class="kpi-sub">Разом ринкова ціна ремонту: ~29 000 $</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Всього вкладено живих грошей</div>
+          <div class="kpi-val">30 500 $</div>
+          <div class="kpi-sub">14 500 $ + 16 000 $ (з працею: 43 500 $)</div>
+        </div>
+        <div class="kpi-card">
+          <div class="kpi-label">Оцінка готової квартири зараз</div>
+          <div class="kpi-val">75 000 – 80 000 $</div>
+          <div class="kpi-sub">Аналогів такої якості в будинку немає</div>
+        </div>
+      </div>
+
+      <div class="payback-box">
+        <h3>Математика оренди (при ставці ~500 $/місяць = 6 000 $/рік)</h3>
+        <ul class="points">
+          <li><strong>Погляд 1 — Від реально витрачених грошей (30 500 $):</strong> дохідність становить <span class="highlight-pill">~19,7% річних</span>, повна окупність вкладених грошей — рівно за <span class="highlight-pill">5 років</span>.</li>
+          <li><strong>Погляд 2 — З урахуванням 13 000 $ власної праці (43 500 $):</strong> дохідність становить <span class="highlight-pill">~13,8% річних</span>, окупність — <span class="highlight-pill">~7,2 року</span>.</li>
+          <li><strong>Погляд 3 — Від сьогоднішньої ринкової ціни продажу (75 000 – 80 000 $):</strong> дохідність становить <span class="highlight-pill">7,5% – 8% річних</span>, окупність — <span class="highlight-pill">12,5 – 13,3 року</span>.</li>
+        </ul>
+      </div>
+
+      <table class="budget-table">
+        <thead>
+          <tr>
+            <th>Позиція з рукописного блокнота</th>
+            <th class="amount">Сума (грн)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Корпусні меблі на замовлення (кухня, шафа, санвузол, столик)</td><td class="amount">137 000</td></tr>
+          <tr><td>Побутова техніка основна (пральна, сушильна, посудомийна, духовка, холодильник, поверхня)</td><td class="amount">100 000</td></tr>
+          <tr><td>Плитка (матеріали + робота майстра)</td><td class="amount">100 000</td></tr>
+          <tr><td>Стіл, крісла, диван, ліжко (43 000 + 3 000)</td><td class="amount">46 000</td></tr>
+          <tr><td>Сантехніка чорнова + тепла підлога 3 контури з Wi-Fi</td><td class="amount">40 000</td></tr>
+          <tr><td>Кондиціонер</td><td class="amount">30 000</td></tr>
+          <tr><td>Двері</td><td class="amount">27 000</td></tr>
+          <tr><td>Змішувачі, крани, термозмішувальний вузол</td><td class="amount">26 000</td></tr>
+          <tr><td>Телевізор 50" TCL QLED MiniLED</td><td class="amount">24 000</td></tr>
+          <tr><td>Електрика (матеріали)</td><td class="amount">20 000</td></tr>
+          <tr><td>Світильники, люстри, бра, треки</td><td class="amount">20 000</td></tr>
+          <tr><td>Стяжка підлоги (робота + матеріал)</td><td class="amount">16 000</td></tr>
+          <tr><td>Покраска (фарба та матеріали для стелі й стін)</td><td class="amount">15 000</td></tr>
+          <tr><td>Унітаз та інсталяція</td><td class="amount">15 000</td></tr>
+          <tr><td>Бойлер горизонтальний 80 л</td><td class="amount">15 000</td></tr>
+          <tr><td>Багети стельові</td><td class="amount">12 000</td></tr>
+          <tr><td>Вентиляція (9 000) + вентилятори (2 600)</td><td class="amount">11 600</td></tr>
+          <tr><td>Плінтуси</td><td class="amount">9 000</td></tr>
+          <tr><td>Дзеркала (вертикальні в кімнаті + у ванній)</td><td class="amount">9 000</td></tr>
+          <tr><td>Ванна повноцінна</td><td class="amount">8 000</td></tr>
+          <tr><td>Штори та тюль</td><td class="amount">8 000</td></tr>
+          <tr><td>Постіль</td><td class="amount">7 000</td></tr>
+          <tr><td>Штукатурка (6 000) + Шпаклівка матеріали (6 000)</td><td class="amount">12 000</td></tr>
+          <tr><td>Килимки зонувальні (2 шт.)</td><td class="amount">6 000</td></tr>
+          <tr><td>Умивальник накладний</td><td class="amount">5 000</td></tr>
+          <tr><td>Редуктор тиску (3 000) + Антипотоп 2 шт. (1 600)</td><td class="amount">4 600</td></tr>
+          <tr><td>Wi-Fi роутер</td><td class="amount">3 500</td></tr>
+          <tr><td>Короб (3 000) + Фуга (2 000) + Гідроізол (1 000)</td><td class="amount">6 000</td></tr>
+          <tr><td>Тумбочки приліжкові</td><td class="amount">2 000</td></tr>
+          <tr><td><strong>РАЗОМ ЗА БЛОКНОТОМ</strong></td><td class="amount"><strong>~700 000 грн (~16 000 $)</strong></td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- ПАНЕЛЬ 3: ЧЕК-ЛИСТ КАДРІВ -->
+    <section class="panel" id="panel-shots">
+      <label class="check-item"><input type="checkbox" data-shot="1" /> <span><strong>1. Загальний план зі штатива:</strong> Віталій і Наталя в кадрі (Сцена 1 — вступ про котлован 2020 року та дилему).</span></label>
+      <label class="check-item"><input type="checkbox" data-shot="2" /> <span><strong>2. Чотиридверна шафа при вході:</strong> відкрити дверцята, показати чорну нішу та місткість до стелі.</span></label>
+      <label class="check-item"><input type="checkbox" data-shot="3" /> <span><strong>3. Двері в санвузол (в дії):</strong> показати, як вони відкриваються всередину в сторону ванни і не заважають у коридорі.</span></label>
+      <label class="check-item"><input type="checkbox" data-shot="4" /> <span><strong>4. Колона пральна + сушильна машини</strong> у вбудованій шафі санвузла.</span></label>
+      <label class="check-item"><input type="checkbox" data-shot="5" /> <span><strong>5. Горизонтальний бойлер 80 л + термозмішувальний клапан під ним:</strong> відкрити верхню шафу й показати вузол крупним планом.</span></label>
+      <label class="check-item"><input type="checkbox" data-shot="6" /> <span><strong>6. Редуктор тиску та датчики антипотопу:</strong> показати вузол захисту води.</span></label>
+      <label class="check-item"><input type="checkbox" data-shot="7" /> <span><strong>7. Ванна зі скляною шторкою, інсталяція з гігієнічним душем і золотисто-білий умивальник.</strong></span></label>
+      <label class="check-item"><input type="checkbox" data-shot="8" /> <span><strong>8. Бетонна монолітна стеля (2,5 м) та багети:</strong> показати ідеальну площину фарбування без гіпсокартону і натяжної плівки.</span></label>
+      <label class="check-item"><input type="checkbox" data-shot="9" /> <span><strong>9. Зональні Wi-Fi терморегулятори теплої підлоги (3 контури):</strong> показати регулятори крупним планом.</span></label>
+      <label class="check-item"><input type="checkbox" data-shot="10" /> <span><strong>10. Спальна зона + диван біля вікна в одному кадрі:</strong> показати, як помістилися обидві зони відпочинку.</span></label>
+      <label class="check-item"><input type="checkbox" data-shot="11" /> <span><strong>11. ТВ 50" TCL MiniLED, підвісний столик і дві вертикальні смуги дзеркал із бра</strong> від підлоги до стелі.</span></label>
+      <label class="check-item"><input type="checkbox" data-shot="12" /> <span><strong>12. Кухня до стелі + відкрита посудомийна машина,</strong> духовка, витяжка, кондиціонер.</span></label>
+      <label class="check-item"><input type="checkbox" data-shot="13" /> <span><strong>13. Розбір блокнота зі штатива за столом:</strong> Сцена 5 (16 000 $ + 13 000 $ праці, окупність 5 років проти 80 000 $).</span></label>
+      <label class="check-item"><input type="checkbox" data-shot="14" /> <span><strong>14. Крупний план рукописного блокнота зверху (5 секунд):</strong> для перебивки під час розповіді про цифри.</span></label>
+    </section>
+  </main>
+
+  <script>
+    // Перемикання вкладок
+    document.querySelectorAll('.tab-btn').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.tab-btn').forEach((b) => b.classList.remove('active'));
+        document.querySelectorAll('.panel').forEach((p) => p.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById('panel-' + btn.dataset.tab).classList.add('active');
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    });
+
+    // Темний режим
+    const themeToggle = document.getElementById('themeToggle');
+    themeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark');
+      themeToggle.textContent = document.body.classList.contains('dark') ? 'Світлий режим' : 'Темний режим';
+    });
+
+    // Збереження чекбоксів
+    document.querySelectorAll('.check-item input').forEach((input) => {
+      const key = 'shot_27m2_' + input.dataset.shot;
+      if (localStorage.getItem(key) === '1') {
+        input.checked = true;
+        input.closest('.check-item').classList.add('done');
+      }
+      input.addEventListener('change', () => {
+        localStorage.setItem(key, input.checked ? '1' : '0');
+        input.closest('.check-item').classList.toggle('done', input.checked);
+      });
+    });
+  </script>
+</body>
+</html>
