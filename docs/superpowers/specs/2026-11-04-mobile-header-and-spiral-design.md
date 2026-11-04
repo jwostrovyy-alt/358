@@ -44,3 +44,4 @@
 ## 6. Що залишається розробнику (What's Left to the Builder)
 - Оновити стилі шапки та спіралі у `scripts/build.ts` і компонентах `src/components/Header.astro`, `src/components/GoldenSpiral.astro`.
 - Додати перевірку мобільної адаптивності в тести, перезібрати всі сторінки сайту та оновити публікацію на GitHub Pages (`https://jwostrovyy-alt.github.io/358/`).
+

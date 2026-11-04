@@ -30,8 +30,26 @@ const SHARED_CSS = `
     90% { transform: translate3d(-80px, 60px, 0) rotate(-6deg) scale(1.04); }
     100% { transform: translate3d(-30px, -20px, 0) rotate(0deg) scale(1); }
   }
+  @keyframes floatSpiralMobile {
+    0% { transform: translate3d(-18px, -8px, 0) rotate(0deg) scale(0.96); }
+    25% { transform: translate3d(20px, -14px, 0) rotate(6deg) scale(1.02); }
+    50% { transform: translate3d(30px, 14px, 0) rotate(11deg) scale(1.05); }
+    75% { transform: translate3d(-12px, 20px, 0) rotate(4deg) scale(0.98); }
+    100% { transform: translate3d(-18px, -8px, 0) rotate(0deg) scale(0.96); }
+  }
   @media (prefers-reduced-motion: reduce) {
     .golden-spiral-floating { animation: none !important; }
+  }
+  .golden-spiral-wrapper {
+    position: absolute;
+    left: -60px;
+    top: -60px;
+    width: 1040px;
+    height: 100%;
+    max-height: 540px;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.22;
   }
   .golden-spiral-floating {
     animation: floatSpiralFullScreen 22s ease-in-out infinite;
@@ -315,12 +333,45 @@ const SHARED_CSS = `
       grid-template-columns: 1fr;
       gap: 1.5rem;
     }
+    .site-header {
+      padding: 0.65rem 0;
+    }
+    .site-header__inner {
+      gap: 0.45rem;
+    }
+    .logo-mark {
+      font-size: 1.55rem;
+    }
+    .logo-sub {
+      font-size: 0.8rem;
+    }
     .site-nav {
-      overflow-x: auto;
-      flex-wrap: nowrap;
+      flex-wrap: wrap;
       width: 100%;
-      padding-bottom: 0.25rem;
-      -webkit-overflow-scrolling: touch;
+      gap: 0.3rem;
+      padding-bottom: 0;
+    }
+    .site-nav a {
+      font-size: 0.78rem;
+      padding: 0.35rem 0.58rem;
+      background: #f5f5f4;
+      color: #1c1917;
+    }
+    .site-nav a.active {
+      background: #1c1917;
+      color: #ffffff;
+    }
+    .golden-spiral-wrapper {
+      left: calc(50% - 155px);
+      top: 10px;
+      width: 310px;
+      height: 255px;
+      max-height: 255px;
+      opacity: 0.20;
+    }
+    .golden-spiral-floating {
+      animation: floatSpiralMobile 18s ease-in-out infinite;
+      transform-origin: 50% 54%;
     }
     .header-contacts {
       display: none;
@@ -362,7 +413,7 @@ const SHARED_CSS = `
 
 function renderSpiralSvg(): string {
   return `
-  <div id="spiralWrapper4" style="position: absolute; left: -60px; top: -60px; width: 1040px; height: 100%; max-height: 540px; pointer-events: none; z-index: 1; opacity: 0.22;">
+  <div id="spiralWrapper4" class="golden-spiral-wrapper">
     <div id="spiralFloatingEl" class="golden-spiral-floating" style="width: 100%; height: 100%;">
       <svg viewBox="0 0 700 550" width="100%" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg" style="overflow: visible;">
         <defs>
@@ -1363,3 +1414,4 @@ function runBuild() {
 }
 
 runBuild();
+

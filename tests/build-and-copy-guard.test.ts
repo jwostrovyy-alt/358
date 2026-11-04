@@ -52,5 +52,12 @@ describe('Full Astro build, 9 routes, SEO metadata, and anti-cliche guard', () =
       });
     }
   });
+
+  it('adapts mobile header navigation to wrap all 9 links and scales golden spiral into mobile viewport', () => {
+    const indexHtml = fs.readFileSync(path.resolve('dist/index.html'), 'utf-8');
+    expect(indexHtml).toContain('@keyframes floatSpiralMobile');
+    expect(indexHtml).toContain('golden-spiral-wrapper');
+    expect(indexHtml).not.toContain('flex-wrap: nowrap');
+  });
 });
 

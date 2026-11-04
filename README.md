@@ -24,3 +24,4 @@
   - **Стаття про 27 м² (продати за 75–80 тис. \$ чи здавати в оренду):** [https://jwostrovyy-alt.github.io/358/blog/smart-27m2-invest-or-rent/](https://jwostrovyy-alt.github.io/358/blog/smart-27m2-invest-or-rent/)
 - **Контакти:** [https://jwostrovyy-alt.github.io/358/contacts/](https://jwostrovyy-alt.github.io/358/contacts/)
 - **Мобільна знімальна шпаргалка (27 м²):** [https://jwostrovyy-alt.github.io/358/shooting-companion.html](https://jwostrovyy-alt.github.io/358/shooting-companion.html)
+
