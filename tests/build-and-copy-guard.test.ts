@@ -60,7 +60,8 @@ describe('Full Astro build, 9 routes, SEO metadata, and anti-cliche guard', () =
     expect(indexHtml).toContain('mobile-menu-toggle');
     expect(indexHtml).toContain('toggleMobileNav');
     expect(indexHtml).toContain('flex-direction: column');
-    expect(indexHtml).toContain('top: calc(100% + 0.55rem)');
+    expect(indexHtml).toContain('width: max-content');
+    expect(indexHtml).toContain('max-height: 320px');
     expect(indexHtml).toContain('class="header-contacts"');
     expect(indexHtml).toContain('class="chip-link chip-link--outline">Telegram</a>');
     expect(indexHtml).toContain('class="chip-link chip-link--outline">Viber</a>');

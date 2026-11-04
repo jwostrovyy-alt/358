@@ -484,53 +484,69 @@ const SHARED_CSS = `
     }
     .site-nav {
       position: absolute;
-      top: calc(100% + 0.55rem);
+      top: calc(100% + 0.35rem);
       right: 0;
-      width: min(260px, calc(100vw - 2.3rem));
+      width: max-content;
+      min-width: 128px;
+      max-height: 0;
+      overflow: hidden;
       display: flex;
       flex-direction: column;
       align-items: stretch;
-      gap: 0.3rem;
-      padding: 0.65rem;
+      gap: 0.18rem;
+      padding: 0 0.35rem;
       background: #ffffff;
-      border-radius: 12px;
-      border: 1px solid #e7e5e4; /* taste-skill-ignore */
-      box-shadow: 0 20px 44px rgba(28, 25, 23, 0.16); /* taste-skill-ignore */
+      border-radius: 10px;
+      border: 1px solid rgba(231, 229, 228, 0); /* taste-skill-ignore */
+      box-shadow: 0 14px 32px rgba(28, 25, 23, 0.14); /* taste-skill-ignore */
       z-index: 120;
       opacity: 0;
       visibility: hidden;
       pointer-events: none;
-      transform: translate3d(0, -10px, 0) scale(0.96);
+      transform: translate3d(0, -6px, 0);
       transform-origin: top right;
       transition:
-        opacity 280ms var(--ease-out),
-        transform 320ms var(--ease-out),
-        visibility 320ms;
+        max-height 480ms cubic-bezier(0.22, 1, 0.36, 1),
+        padding 480ms cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 380ms cubic-bezier(0.22, 1, 0.36, 1),
+        transform 440ms cubic-bezier(0.22, 1, 0.36, 1),
+        border-color 380ms ease,
+        visibility 0s linear 480ms;
     }
     .site-nav.open {
+      max-height: 320px;
+      padding: 0.35rem;
+      border-color: #e7e5e4; /* taste-skill-ignore */
       opacity: 1;
       visibility: visible;
       pointer-events: auto;
-      transform: translate3d(0, 0, 0) scale(1);
+      transform: translate3d(0, 0, 0);
+      transition:
+        max-height 540ms cubic-bezier(0.22, 1, 0.36, 1),
+        padding 420ms cubic-bezier(0.22, 1, 0.36, 1),
+        opacity 420ms cubic-bezier(0.22, 1, 0.36, 1),
+        transform 480ms cubic-bezier(0.22, 1, 0.36, 1),
+        border-color 320ms ease,
+        visibility 0s linear 0s;
     }
     .site-nav a {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+      display: block;
       width: 100%;
-      font-size: var(--step-body) !important;
+      font-size: var(--step-small) !important;
+      line-height: 1.25 !important;
       font-weight: 600;
-      padding: 0.62rem 0.9rem;
+      padding: 0.32rem 0.65rem;
       background: #fafaf9;
       color: #1c1917;
       text-align: left;
-      border-radius: 8px;
+      border-radius: 6px;
       text-decoration: none;
+      white-space: nowrap;
       opacity: 0;
-      transform: translate3d(0, -6px, 0);
+      transform: translate3d(0, -5px, 0);
       transition:
-        opacity 240ms var(--ease-out),
-        transform 280ms var(--ease-out),
+        opacity 360ms cubic-bezier(0.22, 1, 0.36, 1),
+        transform 420ms cubic-bezier(0.22, 1, 0.36, 1),
         background-color 180ms ease,
         color 180ms ease;
     }
@@ -538,15 +554,15 @@ const SHARED_CSS = `
       opacity: 1;
       transform: translate3d(0, 0, 0);
     }
-    .site-nav.open a:nth-child(1) { transition-delay: 20ms; }
-    .site-nav.open a:nth-child(2) { transition-delay: 40ms; }
-    .site-nav.open a:nth-child(3) { transition-delay: 60ms; }
-    .site-nav.open a:nth-child(4) { transition-delay: 80ms; }
-    .site-nav.open a:nth-child(5) { transition-delay: 100ms; }
-    .site-nav.open a:nth-child(6) { transition-delay: 120ms; }
-    .site-nav.open a:nth-child(7) { transition-delay: 140ms; }
-    .site-nav.open a:nth-child(8) { transition-delay: 160ms; }
-    .site-nav.open a:nth-child(9) { transition-delay: 180ms; }
+    .site-nav.open a:nth-child(1) { transition-delay: 30ms; }
+    .site-nav.open a:nth-child(2) { transition-delay: 65ms; }
+    .site-nav.open a:nth-child(3) { transition-delay: 100ms; }
+    .site-nav.open a:nth-child(4) { transition-delay: 135ms; }
+    .site-nav.open a:nth-child(5) { transition-delay: 170ms; }
+    .site-nav.open a:nth-child(6) { transition-delay: 205ms; }
+    .site-nav.open a:nth-child(7) { transition-delay: 240ms; }
+    .site-nav.open a:nth-child(8) { transition-delay: 275ms; }
+    .site-nav.open a:nth-child(9) { transition-delay: 310ms; }
     .site-nav a.active {
       background: #1c1917;
       color: #ffffff;
