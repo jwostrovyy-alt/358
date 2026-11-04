@@ -7,20 +7,58 @@ import { buildLocalBusinessSchema, buildServiceSchema, buildVideoSchema } from '
 
 const SHARED_CSS = `
   *, *::before, *::after { box-sizing: border-box; }
+  :root {
+    --step-display: 46px;
+    --step-h2: 30px;
+    --step-h3: 20px;
+    --step-body: 16px;
+    --step-small: 14px;
+    --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+    --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-in-out: cubic-bezier(0.76, 0, 0.24, 1);
+    --ease-soft: cubic-bezier(0.33, 1, 0.68, 1);
+    --t-press: 140ms;
+    --t-hover: 180ms;
+    --t-reveal: 800ms;
+  }
+  @media (max-width: 960px) {
+    :root {
+      --step-display: 36px;
+      --step-h2: 28px;
+      --step-h3: 20px;
+      --step-body: 16px;
+      --step-small: 14px;
+    }
+  }
+  @media (max-width: 600px) {
+    :root {
+      --step-display: 26.5px;
+      --step-h2: 24px;
+      --step-h3: 20px;
+      --step-body: 16px;
+      --step-small: 14px;
+    }
+  }
   html { font-size: 16px; scroll-behavior: smooth; }
-  @media (min-width: 2200px) { html { font-size: 20px; } }
   body {
     margin: 0;
     padding: 0;
     background: #ffffff;
     color: #1c1917;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, sans-serif;
+    font-size: var(--step-body);
     -webkit-font-smoothing: antialiased;
     overflow-x: clip;
     line-height: 1.6;
   }
   ::selection { background: #1c1917; color: #ffffff; }
   :focus-visible { outline: 2px solid #1c1917; outline-offset: 3px; }
+
+  h1 { font-size: var(--step-display) !important; line-height: 1.12; letter-spacing: -0.028em; font-weight: 700; color: #1c1917; }
+  h2 { font-size: var(--step-h2) !important; line-height: 1.18; letter-spacing: -0.02em; font-weight: 700; color: #1c1917; }
+  h3 { font-size: var(--step-h3) !important; line-height: 1.25; font-weight: 700; color: #1c1917; }
+  p, li, td { font-size: var(--step-body) !important; line-height: 1.6; }
+  .text-small, th { font-size: var(--step-small) !important; }
 
   @keyframes floatSpiralFullScreen {
     0% { transform: translate3d(-30px, -20px, 0) rotate(0deg) scale(1); }
@@ -37,8 +75,64 @@ const SHARED_CSS = `
     75% { transform: translate3d(-12px, 20px, 0) rotate(4deg) scale(0.98); }
     100% { transform: translate3d(-18px, -8px, 0) rotate(0deg) scale(0.96); }
   }
+  @keyframes slowCrossfade1 {
+    0%, 28% { opacity: 1; transform: scale(1); }
+    38%, 90% { opacity: 0; transform: scale(1.04); }
+    100% { opacity: 1; transform: scale(1); }
+  }
+  @keyframes slowCrossfade2 {
+    0%, 28% { opacity: 0; transform: scale(1.04); }
+    38%, 62% { opacity: 1; transform: scale(1); }
+    72%, 100% { opacity: 0; transform: scale(1.04); }
+  }
+  @keyframes slowCrossfade3 {
+    0%, 62% { opacity: 0; transform: scale(1.04); }
+    72%, 92% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(1.04); }
+  }
+  @keyframes tasteLoadRise {
+    from { opacity: 0.01; transform: translate3d(0, 16px, 0); }
+    to { opacity: 1; transform: translate3d(0, 0, 0); }
+  }
+  .hero-crossfade {
+    position: relative;
+    height: 360px;
+    width: 100%;
+    overflow: clip;
+    background: #1c1917;
+  }
+  .hero-crossfade img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    will-change: transform, opacity;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .hero-crossfade img.cf-1 { animation: slowCrossfade1 16s var(--ease-soft) infinite; }
+    .hero-crossfade img.cf-2 { animation: slowCrossfade2 16s var(--ease-soft) infinite; }
+    .hero-crossfade img.cf-3 { animation: slowCrossfade3 16s var(--ease-soft) infinite; }
+    .js [data-load] {
+      animation: tasteLoadRise 680ms var(--ease-expo) both;
+      animation-delay: var(--d, 60ms);
+    }
+    .js [data-reveal] {
+      opacity: 0.01;
+      transform: translate3d(0, 22px, 0);
+      transition: opacity 720ms var(--ease-out), transform 860ms var(--ease-expo);
+      transition-delay: var(--delay, 0ms);
+    }
+    .js [data-reveal].is-in {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
   @media (prefers-reduced-motion: reduce) {
     .golden-spiral-floating { animation: none !important; }
+    .hero-crossfade img.cf-2,
+    .hero-crossfade img.cf-3 { display: none; }
   }
   .golden-spiral-wrapper {
     position: absolute;
@@ -64,106 +158,111 @@ const SHARED_CSS = `
     padding-right: clamp(1.15rem, 4vw, 3rem);
   }
 
-  /* Sticky Header */
+  /* Header */
   .site-header {
-    position: sticky;
-    top: 0;
+    position: relative;
     z-index: 50;
-    background: rgba(255, 255, 255, 0.96);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    padding: 0.95rem 0;
+    background: #ffffff;
+    padding: 1.05rem 0;
   }
   .site-header__inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    gap: 0.85rem;
+    gap: 1rem;
   }
   .logo-link {
     display: inline-flex;
     align-items: baseline;
-    gap: 0.75rem;
+    gap: 0.65rem;
     text-decoration: none;
     color: #1c1917;
   }
   .logo-mark {
-    font-size: 1.85rem;
+    font-size: var(--step-h2) !important;
     font-weight: 800;
     letter-spacing: -0.04em;
     color: #1c1917;
+    line-height: 1;
   }
   .logo-sub {
-    font-size: 0.85rem;
+    font-size: var(--step-small) !important;
     color: #78716c;
     font-weight: 500;
   }
   .site-nav {
     display: flex;
-    gap: 0.35rem;
+    gap: 1.05rem;
     flex-wrap: wrap;
     align-items: center;
   }
   .site-nav a {
     color: #57534e;
-    text-decoration: none;
-    font-size: 0.9rem;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    text-underline-offset: 0.3em;
+    text-decoration-thickness: 2px;
+    font-size: var(--step-body) !important;
     font-weight: 500;
-    padding: 0.45rem 0.75rem;
-    border-radius: 6px;
-    transition: background 0.15s ease, color 0.15s ease;
+    padding: 0.25rem 0;
+    transition: color var(--t-hover) ease, text-decoration-color var(--t-hover) ease;
     white-space: nowrap;
   }
-  .site-nav a:hover {
-    background: #f5f5f4;
-    color: #1c1917;
+  @media (hover: hover) and (pointer: fine) {
+    .site-nav a:hover {
+      color: #1c1917;
+      text-decoration-color: currentColor;
+    }
   }
   .site-nav a.active {
-    background: #1c1917;
-    color: #ffffff;
-    font-weight: 600;
+    color: #1c1917;
+    font-weight: 700;
+    text-decoration-color: #1c1917;
   }
   .header-contacts {
     display: flex;
     align-items: center;
-    gap: 0.45rem;
-    flex-wrap: wrap;
+    gap: 0.5rem;
   }
   .chip-link {
-    background: #f5f5f4;
-    color: #1c1917;
+    background: #1c1917;
+    color: #ffffff;
     text-decoration: none;
-    font-size: 0.84rem;
+    font-size: var(--step-small) !important;
     font-weight: 600;
-    padding: 0.45rem 0.8rem;
+    padding: 0.5rem 0.95rem;
     border-radius: 6px;
-    transition: background 0.15s ease;
+    transition: transform var(--t-press) var(--ease-out), background var(--t-hover) ease;
     white-space: nowrap;
   }
-  .chip-link:hover {
-    background: #e7e5e4;
+  .chip-link:active { transform: scale(0.97); }
+  @media (hover: hover) and (pointer: fine) {
+    .chip-link:hover { background: #292524; }
   }
 
   /* Buttons */
   .btn-arch-action {
     display: inline-flex;
     align-items: center;
-    gap: 0.6rem;
+    gap: 0.55rem;
     background: #1c1917;
     color: #ffffff;
     text-decoration: none;
-    font-size: 0.95rem;
+    font-size: var(--step-body) !important;
     font-weight: 600;
-    padding: 0.85rem 1.55rem;
+    padding: 0.85rem 1.5rem;
     border-radius: 6px;
     border: none;
     cursor: pointer;
-    transition: transform 0.2s ease, background 0.2s ease;
+    transition: transform var(--t-press) var(--ease-out), background var(--t-hover) ease;
   }
-  .btn-arch-action:hover {
-    background: #292524;
-    transform: translateY(-1px);
+  .btn-arch-action:active { transform: scale(0.97); }
+  @media (hover: hover) and (pointer: fine) {
+    .btn-arch-action:hover {
+      background: #292524;
+      transform: translateY(-1px);
+    }
   }
   .btn-arch-secondary {
     display: inline-flex;
@@ -172,16 +271,17 @@ const SHARED_CSS = `
     background: #f5f5f4;
     color: #1c1917;
     text-decoration: none;
-    font-size: 0.92rem;
+    font-size: var(--step-body) !important;
     font-weight: 600;
-    padding: 0.8rem 1.35rem;
+    padding: 0.85rem 1.35rem;
     border-radius: 6px;
     border: none;
     cursor: pointer;
-    transition: background 0.15s ease;
+    transition: transform var(--t-press) var(--ease-out), background var(--t-hover) ease;
   }
-  .btn-arch-secondary:hover {
-    background: #e7e5e4;
+  .btn-arch-secondary:active { transform: scale(0.97); }
+  @media (hover: hover) and (pointer: fine) {
+    .btn-arch-secondary:hover { background: #e7e5e4; }
   }
 
   /* Grids & Sections */
@@ -248,20 +348,20 @@ const SHARED_CSS = `
     border: none;
     background: #f5f5f4;
     color: #1c1917;
-    font-size: 0.88rem;
+    font-size: var(--step-small) !important;
     font-weight: 600;
     cursor: pointer;
-    transition: background 0.15s ease, color 0.15s ease;
+    transition: background var(--t-hover) ease, color var(--t-hover) ease;
   }
   .filter-btn:hover { background: #e7e5e4; }
   .filter-btn.active { background: #1c1917; color: #ffffff; }
   .search-input {
     padding: 0.65rem 1rem;
     border-radius: 6px;
-    border: 1px solid #d6d3d1;
-    font-size: 0.95rem;
+    border: none;
+    font-size: var(--step-body) !important;
     color: #1c1917;
-    background: #ffffff;
+    background: #f5f5f4;
     min-width: 240px;
     flex: 1;
     max-width: 380px;
@@ -280,14 +380,14 @@ const SHARED_CSS = `
   }
   table.arch-table th {
     padding: 0.9rem 1rem;
-    font-size: 0.84rem;
+    font-size: var(--step-small) !important;
     color: #57534e;
     background: #fafaf9;
     font-weight: 600;
   }
   table.arch-table td {
     padding: 0.95rem 1rem;
-    font-size: 0.95rem;
+    font-size: var(--step-body) !important;
     color: #1c1917;
     vertical-align: top;
   }
@@ -337,16 +437,10 @@ const SHARED_CSS = `
       gap: 1.5rem;
     }
     .site-header {
-      padding: 0.7rem 0;
+      padding: 0.75rem 0;
     }
     .site-header__inner {
       gap: 0.5rem;
-    }
-    .logo-mark {
-      font-size: 1.55rem;
-    }
-    .logo-sub {
-      font-size: 0.8rem;
     }
     .mobile-menu-toggle {
       display: inline-flex;
@@ -356,13 +450,14 @@ const SHARED_CSS = `
       color: #1c1917;
       border: none;
       border-radius: 6px;
-      padding: 0.48rem 0.85rem;
-      font-size: 0.86rem;
+      padding: 0.5rem 0.95rem;
+      font-size: var(--step-small) !important;
       font-weight: 600;
       font-family: inherit;
       cursor: pointer;
-      transition: background 0.15s ease, color 0.15s ease;
+      transition: transform var(--t-press) var(--ease-out), background var(--t-hover) ease, color var(--t-hover) ease;
     }
+    .mobile-menu-toggle:active { transform: scale(0.97); }
     .mobile-menu-toggle[aria-expanded="true"] {
       background: #1c1917;
       color: #ffffff;
@@ -377,16 +472,18 @@ const SHARED_CSS = `
       gap: 0.45rem;
       width: 100%;
       margin-top: 0.65rem;
-      padding-top: 0.65rem;
-      border-top: 1px solid #f5f5f4;
+      padding: 0.75rem;
+      background: #fafaf9;
+      border-radius: 8px;
     }
     .site-nav a {
-      font-size: 0.88rem;
+      font-size: var(--step-small) !important;
       padding: 0.6rem 0.75rem;
-      background: #fafaf9;
+      background: #ffffff;
       color: #1c1917;
       text-align: center;
       border-radius: 6px;
+      text-decoration: none;
     }
     .site-nav a:last-child {
       grid-column: span 2;
@@ -410,32 +507,21 @@ const SHARED_CSS = `
     .header-contacts {
       display: none;
     }
-    body {
-      padding-bottom: 72px;
-    }
     .mobile-contact-bar {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 0.35rem;
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      z-index: 60;
-      background: rgba(255, 255, 255, 0.97);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      padding: 0.55rem 0.75rem calc(0.55rem + env(safe-area-inset-bottom, 0px));
-      box-shadow: 0 -4px 20px rgba(28, 25, 23, 0.08);
+      gap: 0.45rem;
+      background: #fafaf9;
+      padding: 0.85rem clamp(1.15rem, 4vw, 3rem);
     }
     .mobile-contact-bar a {
       text-align: center;
       text-decoration: none;
-      font-size: 0.8rem;
+      font-size: var(--step-small) !important;
       font-weight: 600;
-      padding: 0.55rem 0.25rem;
+      padding: 0.6rem 0.25rem;
       border-radius: 6px;
-      background: #f5f5f4;
+      background: #ffffff;
       color: #1c1917;
     }
     .mobile-contact-bar a.primary {
@@ -509,24 +595,21 @@ function renderLayout(opts: {
   <style>${SHARED_CSS}</style>
 </head>
 <body>
+  <script>document.documentElement.classList.add('js');</script>
   <header class="site-header">
     <div class="container-358 site-header__inner">
-      <a href="${basePrefix}/" class="logo-link" aria-label="358 — На головну сторінку">
+      <a href="${basePrefix}/" class="logo-link" aria-label="358: На головну сторінку">
         <span class="logo-mark">${SITE_CONFIG.brandName}</span>
         <span class="logo-sub">${SITE_CONFIG.tagline}</span>
       </a>
       <button type="button" class="mobile-menu-toggle" aria-expanded="false" aria-label="Відкрити меню навігації" onclick="toggleMobileNav(this)">
         <span class="mobile-menu-label">Меню</span>
-        <span class="mobile-menu-icon">☰</span>
       </button>
       <nav class="site-nav" id="siteNav" aria-label="Основна навігація">
         ${navLinks}
       </nav>
       <div class="header-contacts">
         <a href="${SITE_CONFIG.phoneHref}" class="chip-link">${SITE_CONFIG.phoneDisplay}</a>
-        <a href="${SITE_CONFIG.telegramUrl}" target="_blank" rel="noopener noreferrer" class="chip-link">Telegram</a>
-        <a href="${SITE_CONFIG.viberUrl}" class="chip-link">Viber</a>
-        <a href="${SITE_CONFIG.youtubeUrl}" target="_blank" rel="noopener noreferrer" class="chip-link">YouTube</a>
       </div>
     </div>
   </header>
@@ -536,17 +619,17 @@ function renderLayout(opts: {
   </main>
 
   <footer class="section-white" style="padding: 3.25rem 0;">
-    <div class="container-358" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; color: #78716c; font-size: 0.9rem;">
+    <div class="container-358" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; color: #78716c;">
       <div>
-        <div style="font-size: 1.4rem; font-weight: 800; letter-spacing: -0.03em; color: #1c1917;">358</div>
-        <div style="margin-top: 0.25rem;">© 2026 Студія дизайну та ремонту «358» • Львів, Україна</div>
+        <div style="font-weight: 800; color: #1c1917; letter-spacing: -0.02em;">358 • дизайн та ремонт у Львові</div>
+        <div class="text-small" style="margin-top: 0.35rem;">© 2026 Студія дизайну та ремонту «358» • Львів, Україна</div>
       </div>
-      <div style="display: flex; gap: 1.25rem; flex-wrap: wrap; align-items: center;">
-        <a href="${SITE_CONFIG.phoneHref}" style="font-weight: 600; color: #1c1917; text-decoration: none;">${SITE_CONFIG.phoneDisplay}</a>
-        <a href="${SITE_CONFIG.telegramUrl}" target="_blank" rel="noopener noreferrer" style="color: #57534e; text-decoration: none;">Telegram</a>
-        <a href="${SITE_CONFIG.viberUrl}" style="color: #57534e; text-decoration: none;">Viber</a>
-        <a href="${SITE_CONFIG.youtubeUrl}" target="_blank" rel="noopener noreferrer" style="color: #57534e; text-decoration: none;">YouTube «${SITE_CONFIG.youtubeChannelName}»</a>
-        <a href="${basePrefix}/shooting-companion.html" style="color: #78716c; text-decoration: none; font-size: 0.82rem;">Знімальна шпаргалка 27 м²</a>
+      <div class="text-small" style="display: flex; gap: 1.25rem; flex-wrap: wrap; align-items: center;">
+        <a href="${SITE_CONFIG.phoneHref}" class="text-small" style="font-weight: 600; color: #1c1917; text-decoration: none;">${SITE_CONFIG.phoneDisplay}</a>
+        <a href="${SITE_CONFIG.telegramUrl}" target="_blank" rel="noopener noreferrer" class="text-small" style="color: #57534e; text-decoration: none;">Telegram</a>
+        <a href="${SITE_CONFIG.viberUrl}" class="text-small" style="color: #57534e; text-decoration: none;">Viber</a>
+        <a href="${SITE_CONFIG.youtubeUrl}" target="_blank" rel="noopener noreferrer" class="text-small" style="color: #57534e; text-decoration: none;">YouTube «${SITE_CONFIG.youtubeChannelName}»</a>
+        <a href="${basePrefix}/shooting-companion.html" class="text-small" style="color: #78716c; text-decoration: none;">Знімальна шпаргалка 27 м²</a>
       </div>
     </div>
   </footer>
@@ -557,6 +640,7 @@ function renderLayout(opts: {
     <a href="${SITE_CONFIG.viberUrl}">Viber</a>
     <a href="${SITE_CONFIG.youtubeUrl}" target="_blank" rel="noopener noreferrer">YouTube</a>
   </div>
+
   <script>
     function toggleMobileNav(btn) {
       var nav = document.getElementById('siteNav');
@@ -564,10 +648,31 @@ function renderLayout(opts: {
       var isOpen = nav.classList.toggle('open');
       btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
       var label = btn.querySelector('.mobile-menu-label');
-      var icon = btn.querySelector('.mobile-menu-icon');
       if (label) label.textContent = isOpen ? 'Закрити' : 'Меню';
-      if (icon) icon.textContent = isOpen ? '✕' : '☰';
     }
+    (function() {
+      var items = document.querySelectorAll('[data-reveal]');
+      if (!items.length) return;
+      if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        items.forEach(function(el) { el.classList.add('is-in'); });
+        return;
+      }
+      if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-in');
+              entry.target.style.transform = 'translate3d(0, 0, 0)';
+              entry.target.style.opacity = '1';
+              io.unobserve(entry.target);
+            }
+          });
+        }, { rootMargin: '0px 0px -8% 0px', threshold: 0.05 });
+        items.forEach(function(el) { io.observe(el); });
+      } else {
+        items.forEach(function(el) { el.classList.add('is-in'); });
+      }
+    })();
   </script>
 </body>
 </html>`;
@@ -580,13 +685,13 @@ function buildHomePage(): string {
     ${renderSpiralSvg()}
     <div class="container-358 hero-responsive-grid">
       <div style="position: relative; z-index: 2;">
-        <h1 style="font-size: clamp(1.9rem, 3.6vw, 2.85rem); line-height: 1.15; color: #1c1917; margin: 0 0 1.25rem 0; letter-spacing: -0.025em; font-weight: 700;">
+        <h1 data-load style="--d: 40ms; margin: 0 0 1.25rem 0;">
           Дизайн інтер'єру та ремонт квартир у Львові
         </h1>
-        <p style="font-size: 1.08rem; line-height: 1.65; color: #292524; margin: 0 0 2rem 0; max-width: 560px;">
+        <p data-load style="--d: 120ms; color: #292524; margin: 0 0 2rem 0; max-width: 560px;">
           Розробляємо архітектурні дизайн-проєкти та виконуємо комплексний ремонт під ключ. Робочі креслення за чинними будівельними нормами, продумана інженерія, чистове оздоблення та єдина відповідальність за кінцевий результат.
         </p>
-        <div style="display: flex; gap: 0.85rem; flex-wrap: wrap;">
+        <div data-load style="--d: 200ms; display: flex; gap: 0.85rem; flex-wrap: wrap;">
           <a href="./portfolio/" class="btn-arch-action">
             <span>Переглянути реалізовані проєкти</span>
             <span>→</span>
@@ -597,20 +702,30 @@ function buildHomePage(): string {
         </div>
       </div>
 
-      <div style="position: relative; z-index: 2; border-radius: 12px; overflow: hidden; background: #f5f5f4;">
-        <div style="height: 320px; width: 100%; position: relative;">
+      <div data-load style="--d: 160ms; position: relative; z-index: 2; border-radius: 12px; overflow: hidden; background: #f5f5f4;">
+        <div class="hero-crossfade">
           <img
+            class="cf-1"
             src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1000&q=80"
-            alt="Реалізований об'єкт студії 358 у Львові"
-            style="width: 100%; height: 100%; object-fit: cover; display: block;"
+            alt="Реалізований об'єкт студії 358 у Львові: смарт-квартира 27 м²"
+          />
+          <img
+            class="cf-2"
+            src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=80"
+            alt="Реалізований об'єкт студії 358 у Львові: ЖК Велика Британія"
+          />
+          <img
+            class="cf-3"
+            src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1000&q=80"
+            alt="Чистове оздоблення та інженерні вузли студії 358"
           />
         </div>
         <div style="background: #1c1917; color: #ffffff; padding: 1.15rem 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem;">
           <div>
-            <div style="font-size: 0.78rem; color: #a8a29e;">Флагманський кейс 358 • Львів</div>
-            <div style="font-size: 1.05rem; font-weight: 600;">Смарт-квартира 27 м² та ЖК Велика Британія • 76 м²</div>
+            <div style="font-weight: 600;">Смарт-квартира 27 м² та ЖК Велика Британія • 76 м²</div>
+            <div class="text-small" style="color: #d6d3d1; margin-top: 0.15rem;">Флагманські кейси 358 • Львів</div>
           </div>
-          <a href="./portfolio/smart-27m2-lviv/" style="font-size: 0.88rem; color: #ffffff; font-weight: 600; text-decoration: underline;">Огляд та кошторис →</a>
+          <a href="./portfolio/smart-27m2-lviv/" class="text-small" style="color: #ffffff; font-weight: 600; text-decoration: underline;">Огляд та кошторис →</a>
         </div>
       </div>
     </div>
@@ -619,24 +734,24 @@ function buildHomePage(): string {
   <section class="section-limestone">
     <div class="container-358">
       <div style="margin-bottom: 2.5rem;">
-        <h2 style="font-size: clamp(1.55rem, 2.5vw, 1.95rem); font-weight: 700; color: #1c1917; margin: 0 0 0.45rem 0;">Формати співпраці</h2>
-        <p style="font-size: 1.05rem; color: #57534e; margin: 0;">Можна замовити весь комплекс під ключ у Львові або залучити нас на окремий етап.</p>
+        <h2 data-reveal style="margin: 0 0 0.45rem 0;">Формати співпраці</h2>
+        <p data-reveal style="--delay: 70ms; color: #57534e; margin: 0;">Можна замовити весь комплекс під ключ у Львові або залучити нас на окремий етап.</p>
       </div>
       <div class="services-clean-grid">
         ${PRICING_PACKAGES.map(
           (pkg, idx) => `
-        <article class="surface-card">
+        <article class="surface-card" data-reveal style="--delay: ${idx * 80}ms;">
           <div>
-            <h3 style="font-size: 1.3rem; font-weight: 700; margin: 0 0 0.4rem 0; color: #1c1917;">${pkg.title}</h3>
+            <h3 style="margin: 0 0 0.4rem 0;">${pkg.title}</h3>
+            <div class="text-small" style="font-weight: 600; color: #78716c; margin-bottom: 0.85rem;">${pkg.subtitle}</div>
             <div style="height: 180px; border-radius: 8px; overflow: hidden; margin-bottom: 1.15rem;">
-              <img src="${PORTFOLIO_ITEMS[idx]?.heroImage || PORTFOLIO_ITEMS[0].heroImage}" alt="${pkg.title}" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+              <img src="${PORTFOLIO_ITEMS[idx]?.heroImage || PORTFOLIO_ITEMS[0].heroImage}" alt="${pkg.title}" style="width: 100%; height: 100%; object-fit: cover; display: block;" loading="lazy" />
             </div>
-            <div style="font-size: 0.88rem; font-weight: 600; color: #78716c; margin-bottom: 0.55rem;">${pkg.subtitle}</div>
-            <p style="font-size: 0.98rem; color: #44403c; margin: 0;">${pkg.description}</p>
+            <p style="color: #44403c; margin: 0;">${pkg.description}</p>
           </div>
           <div style="margin-top: 1.75rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;">
-            <span style="font-size: 1.08rem; font-weight: 700; color: #1c1917;">${pkg.priceFrom} / ${pkg.unit}</span>
-            <a href=".${pkg.href}/" style="color: #1c1917; font-weight: 600; font-size: 0.9rem; text-decoration: none;">Детальніше →</a>
+            <span style="font-weight: 700; color: #1c1917;">${pkg.priceFrom} / ${pkg.unit}</span>
+            <a href=".${pkg.href}/" class="text-small" style="color: #1c1917; font-weight: 600; text-decoration: none;">Детальніше →</a>
           </div>
         </article>`
         ).join('')}
@@ -647,24 +762,24 @@ function buildHomePage(): string {
   <section class="section-white">
     <div class="container-358">
       <div style="margin-bottom: 2.5rem;">
-        <h2 style="font-size: clamp(1.55rem, 2.5vw, 1.95rem); font-weight: 700; color: #1c1917; margin: 0 0 0.45rem 0;">Хто відповідає за об'єкт</h2>
-        <p style="font-size: 1.05rem; color: #57534e; margin: 0;">Двоє досвідчених практиків із прямим контролем якості кожного процесу.</p>
+        <h2 data-reveal style="margin: 0 0 0.45rem 0;">Хто відповідає за об'єкт</h2>
+        <p data-reveal style="--delay: 70ms; color: #57534e; margin: 0;">Двоє досвідчених практиків із прямим контролем якості кожного процесу.</p>
       </div>
       <div class="team-clean-grid">
-        <article class="surface-card--limestone">
-          <h3 style="font-size: 1.4rem; font-weight: 700; color: #1c1917; margin: 0 0 0.35rem 0;">${TEAM_PROFILES.natalia.name} (${TEAM_PROFILES.natalia.age} років)</h3>
-          <div style="font-size: 0.92rem; font-weight: 600; color: #78716c; margin-bottom: 1rem;">${TEAM_PROFILES.natalia.role}</div>
-          <p style="font-size: 1rem; color: #292524; margin: 0 0 1.35rem 0;">${TEAM_PROFILES.natalia.summary}</p>
-          <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; font-size: 0.82rem; color: #57534e;">
-            ${TEAM_PROFILES.natalia.highlights.map((h) => `<span style="background: #ffffff; padding: 5px 12px; border-radius: 4px; font-weight: 500;">${h}</span>`).join('')}
+        <article class="surface-card--limestone" data-reveal>
+          <h3 style="margin: 0 0 0.35rem 0;">${TEAM_PROFILES.natalia.name} (${TEAM_PROFILES.natalia.age} років)</h3>
+          <div class="text-small" style="font-weight: 600; color: #78716c; margin-bottom: 1rem;">${TEAM_PROFILES.natalia.role}</div>
+          <p style="color: #292524; margin: 0 0 1.35rem 0;">${TEAM_PROFILES.natalia.summary}</p>
+          <div class="text-small" style="display: flex; gap: 0.5rem; flex-wrap: wrap; color: #57534e;">
+            ${TEAM_PROFILES.natalia.highlights.map((h) => `<span class="text-small" style="background: #ffffff; padding: 5px 12px; border-radius: 4px; font-weight: 500;">${h}</span>`).join('')}
           </div>
         </article>
-        <article class="surface-card--limestone">
-          <h3 style="font-size: 1.4rem; font-weight: 700; color: #1c1917; margin: 0 0 0.35rem 0;">${TEAM_PROFILES.vitaliy.name} (${TEAM_PROFILES.vitaliy.age} років)</h3>
-          <div style="font-size: 0.92rem; font-weight: 600; color: #78716c; margin-bottom: 1rem;">${TEAM_PROFILES.vitaliy.role}</div>
-          <p style="font-size: 1rem; color: #292524; margin: 0 0 1.35rem 0;">${TEAM_PROFILES.vitaliy.summary}</p>
-          <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; font-size: 0.82rem; color: #57534e;">
-            ${TEAM_PROFILES.vitaliy.highlights.map((h) => `<span style="background: #ffffff; padding: 5px 12px; border-radius: 4px; font-weight: 500;">${h}</span>`).join('')}
+        <article class="surface-card--limestone" data-reveal style="--delay: 80ms;">
+          <h3 style="margin: 0 0 0.35rem 0;">${TEAM_PROFILES.vitaliy.name} (${TEAM_PROFILES.vitaliy.age} років)</h3>
+          <div class="text-small" style="font-weight: 600; color: #78716c; margin-bottom: 1rem;">${TEAM_PROFILES.vitaliy.role}</div>
+          <p style="color: #292524; margin: 0 0 1.35rem 0;">${TEAM_PROFILES.vitaliy.summary}</p>
+          <div class="text-small" style="display: flex; gap: 0.5rem; flex-wrap: wrap; color: #57534e;">
+            ${TEAM_PROFILES.vitaliy.highlights.map((h) => `<span class="text-small" style="background: #ffffff; padding: 5px 12px; border-radius: 4px; font-weight: 500;">${h}</span>`).join('')}
           </div>
         </article>
       </div>
@@ -675,23 +790,23 @@ function buildHomePage(): string {
     <div class="container-358">
       <div style="margin-bottom: 2.25rem; display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 1rem;">
         <div>
-          <h2 style="font-size: clamp(1.55rem, 2.5vw, 1.95rem); font-weight: 700; color: #1c1917; margin: 0 0 0.45rem 0;">Реалізовані об'єкти та проєкти</h2>
-          <p style="font-size: 1.05rem; color: #57534e; margin: 0;">Порівняння інженерних задумів, креслень та реального виконання на квартирах у Львові.</p>
+          <h2 data-reveal style="margin: 0 0 0.45rem 0;">Реалізовані об'єкти та проєкти</h2>
+          <p data-reveal style="--delay: 70ms; color: #57534e; margin: 0;">Порівняння інженерних задумів, креслень та реального виконання на квартирах у Львові.</p>
         </div>
-        <a href="./portfolio/" class="btn-arch-secondary">Усі об'єкти портфоліо →</a>
+        <a href="./portfolio/" class="btn-arch-secondary" data-reveal>Усі об'єкти портфоліо →</a>
       </div>
       <div class="cards-2col-grid">
         ${PORTFOLIO_ITEMS.slice(0, 2)
           .map(
-            (item) => `
-        <article class="surface-card">
+            (item, idx) => `
+        <article class="surface-card" data-reveal style="--delay: ${idx * 80}ms;">
           <div>
             <div style="height: 240px; border-radius: 8px; overflow: hidden; margin-bottom: 1.25rem;">
-              <img src="${item.heroImage}" alt="${item.title}" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+              <img src="${item.heroImage}" alt="${item.title}" style="width: 100%; height: 100%; object-fit: cover; display: block;" loading="lazy" />
             </div>
-            <div style="font-size: 0.84rem; font-weight: 600; color: #78716c; margin-bottom: 0.4rem;">${item.categoryLabel} • ${item.location} • ${item.areaM2} м²</div>
-            <h3 style="font-size: 1.25rem; font-weight: 700; color: #1c1917; margin: 0 0 0.65rem 0;">${item.title}</h3>
-            <p style="font-size: 0.96rem; color: #44403c; margin: 0;">${item.summary}</p>
+            <h3 style="margin: 0 0 0.4rem 0;">${item.title}</h3>
+            <div class="text-small" style="font-weight: 600; color: #78716c; margin-bottom: 0.75rem;">${item.categoryLabel} • ${item.location} • ${item.areaM2} м²</div>
+            <p style="color: #44403c; margin: 0;">${item.summary}</p>
           </div>
           <div style="margin-top: 1.5rem;">
             <a href="./portfolio/${item.slug}/" class="btn-arch-action">Детальний розбір кейсу →</a>
@@ -705,19 +820,28 @@ function buildHomePage(): string {
 
   <section class="section-white">
     <div class="container-358">
-      <div style="background: #fafaf9; border-radius: 16px; padding: clamp(1.75rem, 4vw, 3rem); display: flex; justify-content: space-between; align-items: center; gap: 2rem; flex-wrap: wrap;">
-        <div style="max-width: 680px;">
-          <h2 style="font-size: 1.5rem; font-weight: 700; color: #1c1917; margin: 0 0 0.35rem 0;">Реальний процес ремонту на об'єктах</h2>
-          <div style="font-size: 0.92rem; font-weight: 600; color: #dc2626; margin-bottom: 0.75rem;">YouTube-канал та блог «Розумний ремонт»</div>
-          <p style="font-size: 1.02rem; color: #44403c; margin: 0;">
+      <div class="cards-2col-grid" style="background: #fafaf9; border-radius: 16px; padding: clamp(1.75rem, 4vw, 3rem); align-items: center;">
+        <div data-reveal>
+          <h2 style="margin: 0 0 0.45rem 0;">Реальний процес ремонту на об'єктах</h2>
+          <div class="text-small" style="font-weight: 600; color: #dc2626; margin-bottom: 0.85rem;">YouTube-канал та блог «Розумний ремонт»</div>
+          <p style="color: #44403c; margin: 0 0 1.5rem 0;">
             Корисні відеоогляди з наших об'єктів у Львові, розбір монолітних стель, 3-контурної теплої підлоги з Wi-Fi, сантехнічних вузлів та реального рукописного кошторису на 27 м².
           </p>
-        </div>
-        <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
           <a href="./blog/" class="btn-arch-action">
             <span>Перейти до статей та відео</span>
             <span>→</span>
           </a>
+        </div>
+        <div data-reveal style="--delay: 90ms; border-radius: 12px; overflow: hidden; background: #1c1917;">
+          <video
+            autoplay
+            muted
+            loop
+            playsinline
+            poster="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1000&q=80"
+            style="width: 100%; height: 260px; object-fit: cover; display: block;"
+            aria-label="Відеоогляд реалізованої смарт-квартири 27 м² на каналі Розумний ремонт"
+          ></video>
         </div>
       </div>
     </div>
@@ -756,13 +880,13 @@ function buildTurnkeyPage(): string {
       <h2 style="font-size: 1.65rem; font-weight: 700; margin: 0 0 1.75rem 0;">Що входить у комплексний формат</h2>
       <div class="cards-2col-grid">
         <div class="surface-card">
-          <h3 style="margin-top: 0;">1. Архітектурний дизайн-проєкт (Наталя)</h3>
+          <h3 style="margin-top: 0;">Архітектурний дизайн-проєкт (Наталя)</h3>
           <ul style="padding-left: 1.2rem; color: #292524; margin: 0;">
             ${pkg.includes.map((inc) => `<li style="margin-bottom: 0.55rem;">${inc}</li>`).join('')}
           </ul>
         </div>
         <div class="surface-card">
-          <h3 style="margin-top: 0;">2. Організація та контроль робіт (Віталій + майстри)</h3>
+          <h3 style="margin-top: 0;">Організація та контроль робіт (Віталій + майстри)</h3>
           <p style="color: #292524; margin-top: 0;">
             Віталій особисто виконує відповідальні чистові процеси (шпаклювання монолітних стель та стін, малярні та плиточні роботи) і координує перевірених вузьких майстрів на електрику, сантехніку, машинну стяжку, гіпсокартон і виготовлення корпусних меблів.
           </p>
@@ -910,8 +1034,8 @@ function buildPortfolioIndexPage(): string {
           <div style="height: 250px; border-radius: 8px; overflow: hidden; margin-bottom: 1.25rem;">
             <img src="${item.heroImage}" alt="${item.title}" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
           </div>
-          <div style="font-size: 0.84rem; font-weight: 600; color: #78716c; margin-bottom: 0.4rem;">${item.categoryLabel} • ${item.location} • ${item.areaM2} м²</div>
-          <h2 style="font-size: 1.3rem; font-weight: 700; color: #1c1917; margin: 0 0 0.65rem 0;">${item.title}</h2>
+          <h2 style="font-size: 1.3rem; font-weight: 700; color: #1c1917; margin: 0 0 0.35rem 0;">${item.title}</h2>
+          <div style="font-size: 0.88rem; font-weight: 600; color: #78716c; margin-bottom: 0.55rem;">${item.categoryLabel} • ${item.location} • ${item.areaM2} м²</div>
           <p style="font-size: 0.96rem; color: #44403c; margin: 0 0 1rem 0;">${item.summary}</p>
         </div>
         <div>
@@ -1023,8 +1147,8 @@ function buildPortfolioDetailPage(item: (typeof PORTFOLIO_ITEMS)[number]): strin
       <div style="margin-bottom: 1.25rem;">
         <a href="../" style="color: #57534e; text-decoration: none; font-weight: 600; font-size: 0.9rem;">← Назад до всіх об'єктів портфоліо</a>
       </div>
-      <div style="font-size: 0.88rem; font-weight: 600; color: #78716c; margin-bottom: 0.45rem;">${item.categoryLabel} • ${item.location} • ${item.areaM2} м² • ${item.year}</div>
-      <h1 style="font-size: clamp(1.75rem, 3.2vw, 2.5rem); font-weight: 700; color: #1c1917; margin: 0 0 1.25rem 0;">${item.title}</h1>
+      <h1 style="font-size: clamp(1.75rem, 3.2vw, 2.5rem); font-weight: 700; color: #1c1917; margin: 0 0 0.5rem 0;">${item.title}</h1>
+      <div style="font-size: 0.88rem; font-weight: 600; color: #78716c; margin-bottom: 1rem;">${item.categoryLabel} • ${item.location} • ${item.areaM2} м² • ${item.year}</div>
       <p style="font-size: 1.08rem; color: #292524; max-width: 820px; margin: 0 0 2rem 0;">${item.summary}</p>
 
       <div style="border-radius: 12px; overflow: hidden; max-height: 460px; margin-bottom: 2.25rem;">
@@ -1076,8 +1200,8 @@ function buildPricingPage(): string {
           (pkg) => `
         <article class="surface-card--limestone">
           <div>
-            <div style="font-size: 0.85rem; font-weight: 600; color: #78716c; margin-bottom: 0.35rem;">${pkg.subtitle}</div>
-            <h2 style="font-size: 1.35rem; font-weight: 700; margin: 0 0 0.5rem 0;">${pkg.title}</h2>
+            <h2 style="font-size: 1.35rem; font-weight: 700; margin: 0 0 0.35rem 0;">${pkg.title}</h2>
+            <div style="font-size: 0.88rem; font-weight: 600; color: #78716c; margin-bottom: 0.5rem;">${pkg.subtitle}</div>
             <div style="font-size: 1.45rem; font-weight: 800; color: #1c1917; margin-bottom: 1rem;">${pkg.priceFrom} / ${pkg.unit}</div>
             <p style="font-size: 0.95rem; color: #44403c; margin: 0 0 1.25rem 0;">${pkg.description}</p>
           </div>
@@ -1249,8 +1373,8 @@ function buildBlogIndexPage(): string {
           <div style="height: 230px; border-radius: 8px; overflow: hidden; margin-bottom: 1.15rem;">
             <img src="${post.heroImage}" alt="${post.title}" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
           </div>
-          <div style="font-size: 0.84rem; font-weight: 600; color: #dc2626; margin-bottom: 0.35rem;">${post.category} • ${post.readingTime}</div>
-          <h2 style="font-size: 1.28rem; font-weight: 700; color: #1c1917; margin: 0 0 0.65rem 0;">${post.title}</h2>
+          <h2 style="font-size: 1.28rem; font-weight: 700; color: #1c1917; margin: 0 0 0.35rem 0;">${post.title}</h2>
+          <div style="font-size: 0.88rem; font-weight: 600; color: #dc2626; margin-bottom: 0.55rem;">${post.category} • ${post.readingTime}</div>
           <p style="font-size: 0.96rem; color: #44403c; margin: 0 0 1.25rem 0;">${post.excerpt}</p>
         </div>
         <div>
@@ -1262,8 +1386,8 @@ function buildBlogIndexPage(): string {
   const bodyHtml = `
   <section class="section-white">
     <div class="container-358">
-      <div style="font-size: 0.9rem; font-weight: 700; color: #dc2626; margin-bottom: 0.35rem;">YouTube-рубрика «${SITE_CONFIG.youtubeChannelName}»</div>
-      <h1 style="font-size: clamp(1.85rem, 3.4vw, 2.65rem); font-weight: 700; color: #1c1917; margin: 0 0 0.85rem 0;">Блог та відеоогляди реальних об'єктів</h1>
+      <h1 style="font-size: clamp(1.85rem, 3.4vw, 2.65rem); font-weight: 700; color: #1c1917; margin: 0 0 0.45rem 0;">Блог та відеоогляди реальних об'єктів</h1>
+      <div style="font-size: 0.9rem; font-weight: 700; color: #dc2626; margin-bottom: 0.85rem;">YouTube-рубрика «${SITE_CONFIG.youtubeChannelName}»</div>
       <p style="font-size: 1.08rem; color: #292524; max-width: 780px; margin: 0 0 2.25rem 0;">
         Ділимося практичним досвідом із будівельних майданчиків у Львові: інженерні вузли, підготовка монолітних стель без втрати висоти, планування смарт-квартир та розбір реальних витрат за блокнотом.
       </p>
@@ -1300,8 +1424,8 @@ function buildBlogDetailPage(post: (typeof BLOG_ITEMS)[number]): string {
       <div style="margin-bottom: 1.25rem;">
         <a href="../" style="color: #57534e; text-decoration: none; font-weight: 600; font-size: 0.9rem;">← Усі статті та випуски «Розумний ремонт»</a>
       </div>
-      <div style="font-size: 0.88rem; font-weight: 600; color: #dc2626; margin-bottom: 0.45rem;">${post.category} • ${post.publishedAt} • ${post.readingTime}</div>
-      <h1 style="font-size: clamp(1.7rem, 3.2vw, 2.4rem); font-weight: 700; color: #1c1917; margin: 0 0 1.25rem 0;">${post.title}</h1>
+      <h1 style="font-size: clamp(1.7rem, 3.2vw, 2.4rem); font-weight: 700; color: #1c1917; margin: 0 0 0.5rem 0;">${post.title}</h1>
+      <div style="font-size: 0.88rem; font-weight: 600; color: #dc2626; margin-bottom: 1rem;">${post.category} • ${post.publishedAt} • ${post.readingTime}</div>
       <p style="font-size: 1.08rem; color: #292524; margin: 0 0 2rem 0;">${post.excerpt}</p>
 
       <div class="lite-yt-card" style="margin-bottom: 2.25rem;">

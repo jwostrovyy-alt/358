@@ -14,20 +14,58 @@
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"HomeAndConstructionBusiness","name":"Студія дизайну та ремонту «358»","description":"Архітектурний дизайн інтер'єру та комплексний ремонт квартир під ключ у Львові. Розробка робочих креслень за ДБН, інженерія та чистове оздоблення.","url":"https://jwostrovyy-alt.github.io/358","telephone":"+380973580000","address":{"@type":"PostalAddress","addressLocality":"Львів","addressRegion":"Львівська область","addressCountry":"UA"},"areaServed":["Львів","Україна"],"sameAs":["https://t.me/studio358_lviv","https://www.youtube.com/@rozumnyy-remont"]}</script>
   <style>
   *, *::before, *::after { box-sizing: border-box; }
+  :root {
+    --step-display: 46px;
+    --step-h2: 30px;
+    --step-h3: 20px;
+    --step-body: 16px;
+    --step-small: 14px;
+    --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+    --ease-expo: cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-in-out: cubic-bezier(0.76, 0, 0.24, 1);
+    --ease-soft: cubic-bezier(0.33, 1, 0.68, 1);
+    --t-press: 140ms;
+    --t-hover: 180ms;
+    --t-reveal: 800ms;
+  }
+  @media (max-width: 960px) {
+    :root {
+      --step-display: 36px;
+      --step-h2: 28px;
+      --step-h3: 20px;
+      --step-body: 16px;
+      --step-small: 14px;
+    }
+  }
+  @media (max-width: 600px) {
+    :root {
+      --step-display: 26.5px;
+      --step-h2: 24px;
+      --step-h3: 20px;
+      --step-body: 16px;
+      --step-small: 14px;
+    }
+  }
   html { font-size: 16px; scroll-behavior: smooth; }
-  @media (min-width: 2200px) { html { font-size: 20px; } }
   body {
     margin: 0;
     padding: 0;
     background: #ffffff;
     color: #1c1917;
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, sans-serif;
+    font-size: var(--step-body);
     -webkit-font-smoothing: antialiased;
     overflow-x: clip;
     line-height: 1.6;
   }
   ::selection { background: #1c1917; color: #ffffff; }
   :focus-visible { outline: 2px solid #1c1917; outline-offset: 3px; }
+
+  h1 { font-size: var(--step-display) !important; line-height: 1.12; letter-spacing: -0.028em; font-weight: 700; color: #1c1917; }
+  h2 { font-size: var(--step-h2) !important; line-height: 1.18; letter-spacing: -0.02em; font-weight: 700; color: #1c1917; }
+  h3 { font-size: var(--step-h3) !important; line-height: 1.25; font-weight: 700; color: #1c1917; }
+  p, li, td { font-size: var(--step-body) !important; line-height: 1.6; }
+  .text-small, th { font-size: var(--step-small) !important; }
 
   @keyframes floatSpiralFullScreen {
     0% { transform: translate3d(-30px, -20px, 0) rotate(0deg) scale(1); }
@@ -44,8 +82,64 @@
     75% { transform: translate3d(-12px, 20px, 0) rotate(4deg) scale(0.98); }
     100% { transform: translate3d(-18px, -8px, 0) rotate(0deg) scale(0.96); }
   }
+  @keyframes slowCrossfade1 {
+    0%, 28% { opacity: 1; transform: scale(1); }
+    38%, 90% { opacity: 0; transform: scale(1.04); }
+    100% { opacity: 1; transform: scale(1); }
+  }
+  @keyframes slowCrossfade2 {
+    0%, 28% { opacity: 0; transform: scale(1.04); }
+    38%, 62% { opacity: 1; transform: scale(1); }
+    72%, 100% { opacity: 0; transform: scale(1.04); }
+  }
+  @keyframes slowCrossfade3 {
+    0%, 62% { opacity: 0; transform: scale(1.04); }
+    72%, 92% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(1.04); }
+  }
+  @keyframes tasteLoadRise {
+    from { opacity: 0.01; transform: translate3d(0, 16px, 0); }
+    to { opacity: 1; transform: translate3d(0, 0, 0); }
+  }
+  .hero-crossfade {
+    position: relative;
+    height: 360px;
+    width: 100%;
+    overflow: clip;
+    background: #1c1917;
+  }
+  .hero-crossfade img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    will-change: transform, opacity;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .hero-crossfade img.cf-1 { animation: slowCrossfade1 16s var(--ease-soft) infinite; }
+    .hero-crossfade img.cf-2 { animation: slowCrossfade2 16s var(--ease-soft) infinite; }
+    .hero-crossfade img.cf-3 { animation: slowCrossfade3 16s var(--ease-soft) infinite; }
+    .js [data-load] {
+      animation: tasteLoadRise 680ms var(--ease-expo) both;
+      animation-delay: var(--d, 60ms);
+    }
+    .js [data-reveal] {
+      opacity: 0.01;
+      transform: translate3d(0, 22px, 0);
+      transition: opacity 720ms var(--ease-out), transform 860ms var(--ease-expo);
+      transition-delay: var(--delay, 0ms);
+    }
+    .js [data-reveal].is-in {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
+    }
+  }
   @media (prefers-reduced-motion: reduce) {
     .golden-spiral-floating { animation: none !important; }
+    .hero-crossfade img.cf-2,
+    .hero-crossfade img.cf-3 { display: none; }
   }
   .golden-spiral-wrapper {
     position: absolute;
@@ -71,106 +165,111 @@
     padding-right: clamp(1.15rem, 4vw, 3rem);
   }
 
-  /* Sticky Header */
+  /* Header */
   .site-header {
-    position: sticky;
-    top: 0;
+    position: relative;
     z-index: 50;
-    background: rgba(255, 255, 255, 0.96);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    padding: 0.95rem 0;
+    background: #ffffff;
+    padding: 1.05rem 0;
   }
   .site-header__inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    gap: 0.85rem;
+    gap: 1rem;
   }
   .logo-link {
     display: inline-flex;
     align-items: baseline;
-    gap: 0.75rem;
+    gap: 0.65rem;
     text-decoration: none;
     color: #1c1917;
   }
   .logo-mark {
-    font-size: 1.85rem;
+    font-size: var(--step-h2) !important;
     font-weight: 800;
     letter-spacing: -0.04em;
     color: #1c1917;
+    line-height: 1;
   }
   .logo-sub {
-    font-size: 0.85rem;
+    font-size: var(--step-small) !important;
     color: #78716c;
     font-weight: 500;
   }
   .site-nav {
     display: flex;
-    gap: 0.35rem;
+    gap: 1.05rem;
     flex-wrap: wrap;
     align-items: center;
   }
   .site-nav a {
     color: #57534e;
-    text-decoration: none;
-    font-size: 0.9rem;
+    text-decoration: underline;
+    text-decoration-color: transparent;
+    text-underline-offset: 0.3em;
+    text-decoration-thickness: 2px;
+    font-size: var(--step-body) !important;
     font-weight: 500;
-    padding: 0.45rem 0.75rem;
-    border-radius: 6px;
-    transition: background 0.15s ease, color 0.15s ease;
+    padding: 0.25rem 0;
+    transition: color var(--t-hover) ease, text-decoration-color var(--t-hover) ease;
     white-space: nowrap;
   }
-  .site-nav a:hover {
-    background: #f5f5f4;
-    color: #1c1917;
+  @media (hover: hover) and (pointer: fine) {
+    .site-nav a:hover {
+      color: #1c1917;
+      text-decoration-color: currentColor;
+    }
   }
   .site-nav a.active {
-    background: #1c1917;
-    color: #ffffff;
-    font-weight: 600;
+    color: #1c1917;
+    font-weight: 700;
+    text-decoration-color: #1c1917;
   }
   .header-contacts {
     display: flex;
     align-items: center;
-    gap: 0.45rem;
-    flex-wrap: wrap;
+    gap: 0.5rem;
   }
   .chip-link {
-    background: #f5f5f4;
-    color: #1c1917;
+    background: #1c1917;
+    color: #ffffff;
     text-decoration: none;
-    font-size: 0.84rem;
+    font-size: var(--step-small) !important;
     font-weight: 600;
-    padding: 0.45rem 0.8rem;
+    padding: 0.5rem 0.95rem;
     border-radius: 6px;
-    transition: background 0.15s ease;
+    transition: transform var(--t-press) var(--ease-out), background var(--t-hover) ease;
     white-space: nowrap;
   }
-  .chip-link:hover {
-    background: #e7e5e4;
+  .chip-link:active { transform: scale(0.97); }
+  @media (hover: hover) and (pointer: fine) {
+    .chip-link:hover { background: #292524; }
   }
 
   /* Buttons */
   .btn-arch-action {
     display: inline-flex;
     align-items: center;
-    gap: 0.6rem;
+    gap: 0.55rem;
     background: #1c1917;
     color: #ffffff;
     text-decoration: none;
-    font-size: 0.95rem;
+    font-size: var(--step-body) !important;
     font-weight: 600;
-    padding: 0.85rem 1.55rem;
+    padding: 0.85rem 1.5rem;
     border-radius: 6px;
     border: none;
     cursor: pointer;
-    transition: transform 0.2s ease, background 0.2s ease;
+    transition: transform var(--t-press) var(--ease-out), background var(--t-hover) ease;
   }
-  .btn-arch-action:hover {
-    background: #292524;
-    transform: translateY(-1px);
+  .btn-arch-action:active { transform: scale(0.97); }
+  @media (hover: hover) and (pointer: fine) {
+    .btn-arch-action:hover {
+      background: #292524;
+      transform: translateY(-1px);
+    }
   }
   .btn-arch-secondary {
     display: inline-flex;
@@ -179,16 +278,17 @@
     background: #f5f5f4;
     color: #1c1917;
     text-decoration: none;
-    font-size: 0.92rem;
+    font-size: var(--step-body) !important;
     font-weight: 600;
-    padding: 0.8rem 1.35rem;
+    padding: 0.85rem 1.35rem;
     border-radius: 6px;
     border: none;
     cursor: pointer;
-    transition: background 0.15s ease;
+    transition: transform var(--t-press) var(--ease-out), background var(--t-hover) ease;
   }
-  .btn-arch-secondary:hover {
-    background: #e7e5e4;
+  .btn-arch-secondary:active { transform: scale(0.97); }
+  @media (hover: hover) and (pointer: fine) {
+    .btn-arch-secondary:hover { background: #e7e5e4; }
   }
 
   /* Grids & Sections */
@@ -255,20 +355,20 @@
     border: none;
     background: #f5f5f4;
     color: #1c1917;
-    font-size: 0.88rem;
+    font-size: var(--step-small) !important;
     font-weight: 600;
     cursor: pointer;
-    transition: background 0.15s ease, color 0.15s ease;
+    transition: background var(--t-hover) ease, color var(--t-hover) ease;
   }
   .filter-btn:hover { background: #e7e5e4; }
   .filter-btn.active { background: #1c1917; color: #ffffff; }
   .search-input {
     padding: 0.65rem 1rem;
     border-radius: 6px;
-    border: 1px solid #d6d3d1;
-    font-size: 0.95rem;
+    border: none;
+    font-size: var(--step-body) !important;
     color: #1c1917;
-    background: #ffffff;
+    background: #f5f5f4;
     min-width: 240px;
     flex: 1;
     max-width: 380px;
@@ -287,14 +387,14 @@
   }
   table.arch-table th {
     padding: 0.9rem 1rem;
-    font-size: 0.84rem;
+    font-size: var(--step-small) !important;
     color: #57534e;
     background: #fafaf9;
     font-weight: 600;
   }
   table.arch-table td {
     padding: 0.95rem 1rem;
-    font-size: 0.95rem;
+    font-size: var(--step-body) !important;
     color: #1c1917;
     vertical-align: top;
   }
@@ -344,16 +444,10 @@
       gap: 1.5rem;
     }
     .site-header {
-      padding: 0.7rem 0;
+      padding: 0.75rem 0;
     }
     .site-header__inner {
       gap: 0.5rem;
-    }
-    .logo-mark {
-      font-size: 1.55rem;
-    }
-    .logo-sub {
-      font-size: 0.8rem;
     }
     .mobile-menu-toggle {
       display: inline-flex;
@@ -363,13 +457,14 @@
       color: #1c1917;
       border: none;
       border-radius: 6px;
-      padding: 0.48rem 0.85rem;
-      font-size: 0.86rem;
+      padding: 0.5rem 0.95rem;
+      font-size: var(--step-small) !important;
       font-weight: 600;
       font-family: inherit;
       cursor: pointer;
-      transition: background 0.15s ease, color 0.15s ease;
+      transition: transform var(--t-press) var(--ease-out), background var(--t-hover) ease, color var(--t-hover) ease;
     }
+    .mobile-menu-toggle:active { transform: scale(0.97); }
     .mobile-menu-toggle[aria-expanded="true"] {
       background: #1c1917;
       color: #ffffff;
@@ -384,16 +479,18 @@
       gap: 0.45rem;
       width: 100%;
       margin-top: 0.65rem;
-      padding-top: 0.65rem;
-      border-top: 1px solid #f5f5f4;
+      padding: 0.75rem;
+      background: #fafaf9;
+      border-radius: 8px;
     }
     .site-nav a {
-      font-size: 0.88rem;
+      font-size: var(--step-small) !important;
       padding: 0.6rem 0.75rem;
-      background: #fafaf9;
+      background: #ffffff;
       color: #1c1917;
       text-align: center;
       border-radius: 6px;
+      text-decoration: none;
     }
     .site-nav a:last-child {
       grid-column: span 2;
@@ -417,32 +514,21 @@
     .header-contacts {
       display: none;
     }
-    body {
-      padding-bottom: 72px;
-    }
     .mobile-contact-bar {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 0.35rem;
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      z-index: 60;
-      background: rgba(255, 255, 255, 0.97);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      padding: 0.55rem 0.75rem calc(0.55rem + env(safe-area-inset-bottom, 0px));
-      box-shadow: 0 -4px 20px rgba(28, 25, 23, 0.08);
+      gap: 0.45rem;
+      background: #fafaf9;
+      padding: 0.85rem clamp(1.15rem, 4vw, 3rem);
     }
     .mobile-contact-bar a {
       text-align: center;
       text-decoration: none;
-      font-size: 0.8rem;
+      font-size: var(--step-small) !important;
       font-weight: 600;
-      padding: 0.55rem 0.25rem;
+      padding: 0.6rem 0.25rem;
       border-radius: 6px;
-      background: #f5f5f4;
+      background: #ffffff;
       color: #1c1917;
     }
     .mobile-contact-bar a.primary {
@@ -453,15 +539,15 @@
 </style>
 </head>
 <body>
+  <script>document.documentElement.classList.add('js');</script>
   <header class="site-header">
     <div class="container-358 site-header__inner">
-      <a href="../" class="logo-link" aria-label="358 — На головну сторінку">
+      <a href="../" class="logo-link" aria-label="358: На головну сторінку">
         <span class="logo-mark">358</span>
         <span class="logo-sub">дизайн та ремонт • Львів</span>
       </a>
       <button type="button" class="mobile-menu-toggle" aria-expanded="false" aria-label="Відкрити меню навігації" onclick="toggleMobileNav(this)">
         <span class="mobile-menu-label">Меню</span>
-        <span class="mobile-menu-icon">☰</span>
       </button>
       <nav class="site-nav" id="siteNav" aria-label="Основна навігація">
         <a href="../" class="">Головна</a>
@@ -476,9 +562,6 @@
       </nav>
       <div class="header-contacts">
         <a href="tel:+380973580000" class="chip-link">+38 (097) 358-00-00</a>
-        <a href="https://t.me/studio358_lviv" target="_blank" rel="noopener noreferrer" class="chip-link">Telegram</a>
-        <a href="viber://chat?number=%2B380973580000" class="chip-link">Viber</a>
-        <a href="https://www.youtube.com/@rozumnyy-remont" target="_blank" rel="noopener noreferrer" class="chip-link">YouTube</a>
       </div>
     </div>
   </header>
@@ -496,8 +579,8 @@
         
         <article class="surface-card--limestone">
           <div>
-            <div style="font-size: 0.85rem; font-weight: 600; color: #78716c; margin-bottom: 0.35rem;">Повний цикл • Львів</div>
-            <h2 style="font-size: 1.35rem; font-weight: 700; margin: 0 0 0.5rem 0;">Комплекс «під ключ»</h2>
+            <h2 style="font-size: 1.35rem; font-weight: 700; margin: 0 0 0.35rem 0;">Комплекс «під ключ»</h2>
+            <div style="font-size: 0.88rem; font-weight: 600; color: #78716c; margin-bottom: 0.5rem;">Повний цикл • Львів</div>
             <div style="font-size: 1.45rem; font-weight: 800; color: #1c1917; margin-bottom: 1rem;">від 8 500 грн / м²</div>
             <p style="font-size: 0.95rem; color: #44403c; margin: 0 0 1.25rem 0;">Повний цикл робіт в одних руках: від обмірного плану та робочих креслень за ДБН до інженерії, чистового оздоблення, комплектації корпусними меблями та здачі готової квартири.</p>
           </div>
@@ -505,8 +588,8 @@
         </article>
         <article class="surface-card--limestone">
           <div>
-            <div style="font-size: 0.85rem; font-weight: 600; color: #78716c; margin-bottom: 0.35rem;">Проєктування • Вся Україна</div>
-            <h2 style="font-size: 1.35rem; font-weight: 700; margin: 0 0 0.5rem 0;">Дизайн інтер'єру</h2>
+            <h2 style="font-size: 1.35rem; font-weight: 700; margin: 0 0 0.35rem 0;">Дизайн інтер'єру</h2>
+            <div style="font-size: 0.88rem; font-weight: 600; color: #78716c; margin-bottom: 0.5rem;">Проєктування • Вся Україна</div>
             <div style="font-size: 1.45rem; font-weight: 800; color: #1c1917; margin-bottom: 1rem;">від 950 грн / м²</div>
             <p style="font-size: 0.95rem; color: #44403c; margin: 0 0 1.25rem 0;">Архітектурне проєктування від Наталі (магістр архітектури, 20+ років стажу): ергономічні планувальні рішення, реалістичні 3D-візуалізації, будівельні креслення за ДБН та специфікації матеріалів.</p>
           </div>
@@ -514,8 +597,8 @@
         </article>
         <article class="surface-card--limestone">
           <div>
-            <div style="font-size: 0.85rem; font-weight: 600; color: #78716c; margin-bottom: 0.35rem;">Реалізація • Львів</div>
-            <h2 style="font-size: 1.35rem; font-weight: 700; margin: 0 0 0.5rem 0;">Ремонтні роботи</h2>
+            <h2 style="font-size: 1.35rem; font-weight: 700; margin: 0 0 0.35rem 0;">Ремонтні роботи</h2>
+            <div style="font-size: 0.88rem; font-weight: 600; color: #78716c; margin-bottom: 0.5rem;">Реалізація • Львів</div>
             <div style="font-size: 1.45rem; font-weight: 800; color: #1c1917; margin-bottom: 1rem;">від 7 600 грн / м²</div>
             <p style="font-size: 0.95rem; color: #44403c; margin: 0 0 1.25rem 0;">Виконання ремонтних робіт у Львові за готовим дизайн-проєктом під особистим керівництвом Віталія (10+ років практичного досвіду). Власноручне чистове оздоблення та залучення перевірених майстрів.</p>
           </div>
@@ -774,17 +857,17 @@
   </main>
 
   <footer class="section-white" style="padding: 3.25rem 0;">
-    <div class="container-358" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; color: #78716c; font-size: 0.9rem;">
+    <div class="container-358" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem; color: #78716c;">
       <div>
-        <div style="font-size: 1.4rem; font-weight: 800; letter-spacing: -0.03em; color: #1c1917;">358</div>
-        <div style="margin-top: 0.25rem;">© 2026 Студія дизайну та ремонту «358» • Львів, Україна</div>
+        <div style="font-weight: 800; color: #1c1917; letter-spacing: -0.02em;">358 • дизайн та ремонт у Львові</div>
+        <div class="text-small" style="margin-top: 0.35rem;">© 2026 Студія дизайну та ремонту «358» • Львів, Україна</div>
       </div>
-      <div style="display: flex; gap: 1.25rem; flex-wrap: wrap; align-items: center;">
-        <a href="tel:+380973580000" style="font-weight: 600; color: #1c1917; text-decoration: none;">+38 (097) 358-00-00</a>
-        <a href="https://t.me/studio358_lviv" target="_blank" rel="noopener noreferrer" style="color: #57534e; text-decoration: none;">Telegram</a>
-        <a href="viber://chat?number=%2B380973580000" style="color: #57534e; text-decoration: none;">Viber</a>
-        <a href="https://www.youtube.com/@rozumnyy-remont" target="_blank" rel="noopener noreferrer" style="color: #57534e; text-decoration: none;">YouTube «Розумний ремонт»</a>
-        <a href="../shooting-companion.html" style="color: #78716c; text-decoration: none; font-size: 0.82rem;">Знімальна шпаргалка 27 м²</a>
+      <div class="text-small" style="display: flex; gap: 1.25rem; flex-wrap: wrap; align-items: center;">
+        <a href="tel:+380973580000" class="text-small" style="font-weight: 600; color: #1c1917; text-decoration: none;">+38 (097) 358-00-00</a>
+        <a href="https://t.me/studio358_lviv" target="_blank" rel="noopener noreferrer" class="text-small" style="color: #57534e; text-decoration: none;">Telegram</a>
+        <a href="viber://chat?number=%2B380973580000" class="text-small" style="color: #57534e; text-decoration: none;">Viber</a>
+        <a href="https://www.youtube.com/@rozumnyy-remont" target="_blank" rel="noopener noreferrer" class="text-small" style="color: #57534e; text-decoration: none;">YouTube «Розумний ремонт»</a>
+        <a href="../shooting-companion.html" class="text-small" style="color: #78716c; text-decoration: none;">Знімальна шпаргалка 27 м²</a>
       </div>
     </div>
   </footer>
@@ -795,6 +878,7 @@
     <a href="viber://chat?number=%2B380973580000">Viber</a>
     <a href="https://www.youtube.com/@rozumnyy-remont" target="_blank" rel="noopener noreferrer">YouTube</a>
   </div>
+
   <script>
     function toggleMobileNav(btn) {
       var nav = document.getElementById('siteNav');
@@ -802,10 +886,31 @@
       var isOpen = nav.classList.toggle('open');
       btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
       var label = btn.querySelector('.mobile-menu-label');
-      var icon = btn.querySelector('.mobile-menu-icon');
       if (label) label.textContent = isOpen ? 'Закрити' : 'Меню';
-      if (icon) icon.textContent = isOpen ? '✕' : '☰';
     }
+    (function() {
+      var items = document.querySelectorAll('[data-reveal]');
+      if (!items.length) return;
+      if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        items.forEach(function(el) { el.classList.add('is-in'); });
+        return;
+      }
+      if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function(entries) {
+          entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-in');
+              entry.target.style.transform = 'translate3d(0, 0, 0)';
+              entry.target.style.opacity = '1';
+              io.unobserve(entry.target);
+            }
+          });
+        }, { rootMargin: '0px 0px -8% 0px', threshold: 0.05 });
+        items.forEach(function(el) { io.observe(el); });
+      } else {
+        items.forEach(function(el) { el.classList.add('is-in'); });
+      }
+    })();
   </script>
 </body>
 </html>
