@@ -863,18 +863,9 @@ function buildHomePage(): string {
         <h1 data-load style="--d: 40ms; margin: 0 0 1.25rem 0;">
           Дизайн інтер'єру та ремонт квартир у Львові
         </h1>
-        <p data-load style="--d: 120ms; color: #292524; margin: 0 0 2rem 0; max-width: 560px;">
+        <p data-load style="--d: 120ms; color: #292524; margin: 0; max-width: 560px;">
           Розробляємо архітектурні дизайн-проєкти та виконуємо комплексний ремонт під ключ. Робочі креслення за чинними будівельними нормами, продумана інженерія, чистове оздоблення та єдина відповідальність за кінцевий результат.
         </p>
-        <div data-load style="--d: 200ms; display: flex; gap: 0.85rem; flex-wrap: wrap;">
-          <a href="./portfolio/" class="btn-arch-action">
-            <span>Переглянути реалізовані проєкти</span>
-            <span>→</span>
-          </a>
-          <a href="./pricing/" class="btn-arch-secondary">
-            <span>Відкритий прайс-лист</span>
-          </a>
-        </div>
       </div>
 
       <div data-load style="--d: 160ms; position: relative; z-index: 2; border-radius: 12px; overflow: hidden; background: #f5f5f4;">
