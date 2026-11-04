@@ -320,7 +320,10 @@ const SHARED_CSS = `
     background: #1c1917;
   }
 
-  /* Mobile bottom bar */
+  /* Mobile menu toggle & bottom bar */
+  .mobile-menu-toggle {
+    display: none;
+  }
   .mobile-contact-bar {
     display: none;
   }
@@ -334,10 +337,10 @@ const SHARED_CSS = `
       gap: 1.5rem;
     }
     .site-header {
-      padding: 0.65rem 0;
+      padding: 0.7rem 0;
     }
     .site-header__inner {
-      gap: 0.45rem;
+      gap: 0.5rem;
     }
     .logo-mark {
       font-size: 1.55rem;
@@ -345,17 +348,48 @@ const SHARED_CSS = `
     .logo-sub {
       font-size: 0.8rem;
     }
-    .site-nav {
-      flex-wrap: wrap;
-      width: 100%;
-      gap: 0.3rem;
-      padding-bottom: 0;
-    }
-    .site-nav a {
-      font-size: 0.78rem;
-      padding: 0.35rem 0.58rem;
+    .mobile-menu-toggle {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
       background: #f5f5f4;
       color: #1c1917;
+      border: none;
+      border-radius: 6px;
+      padding: 0.48rem 0.85rem;
+      font-size: 0.86rem;
+      font-weight: 600;
+      font-family: inherit;
+      cursor: pointer;
+      transition: background 0.15s ease, color 0.15s ease;
+    }
+    .mobile-menu-toggle[aria-expanded="true"] {
+      background: #1c1917;
+      color: #ffffff;
+    }
+    .site-nav {
+      display: none;
+      width: 100%;
+    }
+    .site-nav.open {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.45rem;
+      width: 100%;
+      margin-top: 0.65rem;
+      padding-top: 0.65rem;
+      border-top: 1px solid #f5f5f4;
+    }
+    .site-nav a {
+      font-size: 0.88rem;
+      padding: 0.6rem 0.75rem;
+      background: #fafaf9;
+      color: #1c1917;
+      text-align: center;
+      border-radius: 6px;
+    }
+    .site-nav a:last-child {
+      grid-column: span 2;
     }
     .site-nav a.active {
       background: #1c1917;
@@ -481,7 +515,11 @@ function renderLayout(opts: {
         <span class="logo-mark">${SITE_CONFIG.brandName}</span>
         <span class="logo-sub">${SITE_CONFIG.tagline}</span>
       </a>
-      <nav class="site-nav" aria-label="Основна навігація">
+      <button type="button" class="mobile-menu-toggle" aria-expanded="false" aria-label="Відкрити меню навігації" onclick="toggleMobileNav(this)">
+        <span class="mobile-menu-label">Меню</span>
+        <span class="mobile-menu-icon">☰</span>
+      </button>
+      <nav class="site-nav" id="siteNav" aria-label="Основна навігація">
         ${navLinks}
       </nav>
       <div class="header-contacts">
@@ -519,6 +557,18 @@ function renderLayout(opts: {
     <a href="${SITE_CONFIG.viberUrl}">Viber</a>
     <a href="${SITE_CONFIG.youtubeUrl}" target="_blank" rel="noopener noreferrer">YouTube</a>
   </div>
+  <script>
+    function toggleMobileNav(btn) {
+      var nav = document.getElementById('siteNav');
+      if (!nav) return;
+      var isOpen = nav.classList.toggle('open');
+      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      var label = btn.querySelector('.mobile-menu-label');
+      var icon = btn.querySelector('.mobile-menu-icon');
+      if (label) label.textContent = isOpen ? 'Закрити' : 'Меню';
+      if (icon) icon.textContent = isOpen ? '✕' : '☰';
+    }
+  </script>
 </body>
 </html>`;
 }

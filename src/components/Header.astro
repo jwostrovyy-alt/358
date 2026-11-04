@@ -11,7 +11,17 @@ const { currentPath = '/', basePrefix = '.' } = Astro.props;
 <header class="site-header">
   <div class="site-header__inner">
     <Logo358 basePrefix={basePrefix} />
-    <nav class="site-nav" aria-label="Основна навігація">
+    <button
+      type="button"
+      class="mobile-menu-toggle"
+      aria-expanded="false"
+      aria-label="Відкрити меню навігації"
+      onclick="toggleMobileNav(this)"
+    >
+      <span class="mobile-menu-label">Меню</span>
+      <span class="mobile-menu-icon">☰</span>
+    </button>
+    <nav class="site-nav" id="siteNav" aria-label="Основна навігація">
       {NAV_ITEMS.map((item) => {
         const href = item.href === '/' ? `${basePrefix}/` : `${basePrefix}${item.href}/`;
         const isActive = currentPath === item.href;
