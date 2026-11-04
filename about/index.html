@@ -168,23 +168,26 @@
   /* Header */
   .site-header {
     position: relative;
-    z-index: 50;
+    z-index: 60;
     background: #ffffff;
-    padding: 1.05rem 0;
+    padding: 0.95rem 0;
   }
   .site-header__inner {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
     gap: 1rem;
   }
   .logo-link {
     display: inline-flex;
-    align-items: baseline;
-    gap: 0.65rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.1rem;
     text-decoration: none;
     color: #1c1917;
+    flex-shrink: 0;
   }
   .logo-mark {
     font-size: var(--step-h2) !important;
@@ -197,11 +200,12 @@
     font-size: var(--step-small) !important;
     color: #78716c;
     font-weight: 500;
+    line-height: 1.15;
   }
   .site-nav {
     display: flex;
-    gap: 1.05rem;
-    flex-wrap: wrap;
+    gap: 0.85rem;
+    flex-wrap: nowrap;
     align-items: center;
   }
   .site-nav a {
@@ -210,8 +214,8 @@
     text-decoration-color: transparent;
     text-underline-offset: 0.3em;
     text-decoration-thickness: 2px;
-    font-size: var(--step-body) !important;
-    font-weight: 500;
+    font-size: var(--step-small) !important;
+    font-weight: 600;
     padding: 0.25rem 0;
     transition: color var(--t-hover) ease, text-decoration-color var(--t-hover) ease;
     white-space: nowrap;
@@ -230,7 +234,8 @@
   .header-contacts {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.35rem;
+    flex-shrink: 0;
   }
   .chip-link {
     background: #1c1917;
@@ -238,14 +243,24 @@
     text-decoration: none;
     font-size: var(--step-small) !important;
     font-weight: 600;
-    padding: 0.5rem 0.95rem;
+    padding: 0.45rem 0.78rem;
     border-radius: 6px;
     transition: transform var(--t-press) var(--ease-out), background var(--t-hover) ease;
     white-space: nowrap;
   }
+  .chip-link--outline {
+    background: #f5f5f4;
+    color: #1c1917;
+  }
+  .chip-link--yt {
+    background: #fef2f2;
+    color: #b91c1c;
+  }
   .chip-link:active { transform: scale(0.97); }
   @media (hover: hover) and (pointer: fine) {
     .chip-link:hover { background: #292524; }
+    .chip-link--outline:hover { background: #e7e5e4; }
+    .chip-link--yt:hover { background: #fee2e2; }
   }
 
   /* Buttons */
@@ -449,6 +464,11 @@
     .site-header__inner {
       gap: 0.5rem;
     }
+    .logo-link {
+      flex-direction: row;
+      align-items: baseline;
+      gap: 0.55rem;
+    }
     .mobile-menu-toggle {
       display: inline-flex;
       align-items: center;
@@ -470,31 +490,70 @@
       color: #ffffff;
     }
     .site-nav {
-      display: none;
-      width: 100%;
+      position: absolute;
+      top: calc(100% + 0.55rem);
+      right: 0;
+      width: min(260px, calc(100vw - 2.3rem));
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0.3rem;
+      padding: 0.65rem;
+      background: #ffffff;
+      border-radius: 12px;
+      border: 1px solid #e7e5e4; /* taste-skill-ignore */
+      box-shadow: 0 20px 44px rgba(28, 25, 23, 0.16); /* taste-skill-ignore */
+      z-index: 120;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transform: translate3d(0, -10px, 0) scale(0.96);
+      transform-origin: top right;
+      transition:
+        opacity 280ms var(--ease-out),
+        transform 320ms var(--ease-out),
+        visibility 320ms;
     }
     .site-nav.open {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 0.45rem;
-      width: 100%;
-      margin-top: 0.65rem;
-      padding: 0.75rem;
-      background: #fafaf9;
-      border-radius: 8px;
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transform: translate3d(0, 0, 0) scale(1);
     }
     .site-nav a {
-      font-size: var(--step-small) !important;
-      padding: 0.6rem 0.75rem;
-      background: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      font-size: var(--step-body) !important;
+      font-weight: 600;
+      padding: 0.62rem 0.9rem;
+      background: #fafaf9;
       color: #1c1917;
-      text-align: center;
-      border-radius: 6px;
+      text-align: left;
+      border-radius: 8px;
       text-decoration: none;
+      opacity: 0;
+      transform: translate3d(0, -6px, 0);
+      transition:
+        opacity 240ms var(--ease-out),
+        transform 280ms var(--ease-out),
+        background-color 180ms ease,
+        color 180ms ease;
     }
-    .site-nav a:last-child {
-      grid-column: span 2;
+    .site-nav.open a {
+      opacity: 1;
+      transform: translate3d(0, 0, 0);
     }
+    .site-nav.open a:nth-child(1) { transition-delay: 20ms; }
+    .site-nav.open a:nth-child(2) { transition-delay: 40ms; }
+    .site-nav.open a:nth-child(3) { transition-delay: 60ms; }
+    .site-nav.open a:nth-child(4) { transition-delay: 80ms; }
+    .site-nav.open a:nth-child(5) { transition-delay: 100ms; }
+    .site-nav.open a:nth-child(6) { transition-delay: 120ms; }
+    .site-nav.open a:nth-child(7) { transition-delay: 140ms; }
+    .site-nav.open a:nth-child(8) { transition-delay: 160ms; }
+    .site-nav.open a:nth-child(9) { transition-delay: 180ms; }
     .site-nav a.active {
       background: #1c1917;
       color: #ffffff;
@@ -560,8 +619,11 @@
           <a href="../blog/" class="">Блог / Відео</a>
           <a href="../contacts/" class="">Контакти</a>
       </nav>
-      <div class="header-contacts">
+      <div class="header-contacts" aria-label="Прямий зв'язок">
         <a href="tel:+380973580000" class="chip-link">+38 (097) 358-00-00</a>
+        <a href="https://t.me/studio358_lviv" target="_blank" rel="noopener noreferrer" class="chip-link chip-link--outline">Telegram</a>
+        <a href="viber://chat?number=%2B380973580000" class="chip-link chip-link--outline">Viber</a>
+        <a href="https://www.youtube.com/@rozumnyy-remont" target="_blank" rel="noopener noreferrer" class="chip-link chip-link--yt">YouTube</a>
       </div>
     </div>
   </header>
@@ -659,6 +721,17 @@
       var label = btn.querySelector('.mobile-menu-label');
       if (label) label.textContent = isOpen ? 'Закрити' : 'Меню';
     }
+    document.addEventListener('click', function(e) {
+      var nav = document.getElementById('siteNav');
+      var btn = document.querySelector('.mobile-menu-toggle');
+      if (!nav || !btn || !nav.classList.contains('open')) return;
+      if (!nav.contains(e.target) && !btn.contains(e.target)) {
+        nav.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+        var label = btn.querySelector('.mobile-menu-label');
+        if (label) label.textContent = 'Меню';
+      }
+    });
     (function() {
       var items = document.querySelectorAll('[data-reveal]');
       if (!items.length) return;

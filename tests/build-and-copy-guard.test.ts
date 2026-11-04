@@ -53,12 +53,18 @@ describe('Full Astro build, 9 routes, SEO metadata, and anti-cliche guard', () =
     }
   });
 
-  it('adapts mobile header with single-row Menu toggle button and scales golden spiral into mobile viewport', () => {
+  it('adapts mobile header with single-row Menu toggle button, 1-column smooth overlay menu, desktop contact chips, and mobile golden spiral', () => {
     const indexHtml = fs.readFileSync(path.resolve('dist/index.html'), 'utf-8');
     expect(indexHtml).toContain('@keyframes floatSpiralMobile');
     expect(indexHtml).toContain('golden-spiral-wrapper');
     expect(indexHtml).toContain('mobile-menu-toggle');
     expect(indexHtml).toContain('toggleMobileNav');
+    expect(indexHtml).toContain('flex-direction: column');
+    expect(indexHtml).toContain('top: calc(100% + 0.55rem)');
+    expect(indexHtml).toContain('class="header-contacts"');
+    expect(indexHtml).toContain('class="chip-link chip-link--outline">Telegram</a>');
+    expect(indexHtml).toContain('class="chip-link chip-link--outline">Viber</a>');
+    expect(indexHtml).toContain('class="chip-link chip-link--yt">YouTube</a>');
   });
 });
 
