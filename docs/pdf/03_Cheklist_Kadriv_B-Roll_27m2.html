@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Чек-лист знімальних планів та B-roll: Смарт 27 м²</title>
+  <style>
+    
+  @page {
+    size: A4 portrait;
+    margin: 15mm 15mm 15mm 15mm;
+  }
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #18181b;
+    background: #ffffff;
+    line-height: 1.5;
+    font-size: 13.5px;
+    margin: 0;
+    padding: 0;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .doc-header {
+    border-bottom: 2px solid #18181b;
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .doc-brand {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: #18181b;
+  }
+  .doc-brand span {
+    font-size: 13px;
+    font-weight: 500;
+    color: #71717a;
+    margin-left: 8px;
+  }
+  .doc-title {
+    font-size: 18px;
+    font-weight: 800;
+    color: #18181b;
+    margin: 0 0 4px 0;
+  }
+  .doc-meta {
+    font-size: 12px;
+    color: #71717a;
+    font-weight: 600;
+  }
+  .card {
+    background: #fafaf9;
+    border: 1px solid #e4e4e7;
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin-bottom: 14px;
+    page-break-inside: avoid;
+  }
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    border-bottom: 1px solid #e4e4e7;
+    padding-bottom: 6px;
+  }
+  .card-num {
+    font-weight: 800;
+    font-size: 12px;
+    color: #71717a;
+    text-transform: uppercase;
+  }
+  .card-badge {
+    background: #e0f2fe;
+    color: #0369a1;
+    font-weight: 700;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 999px;
+  }
+  .card-title {
+    font-size: 15px;
+    font-weight: 800;
+    color: #18181b;
+    margin: 0 0 10px 0;
+  }
+  .dialogue-box {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 10px 12px;
+    margin-bottom: 8px;
+    border: 1px solid #f4f4f5;
+  }
+  .dialogue-box:last-child {
+    margin-bottom: 0;
+  }
+  .speaker {
+    display: inline-block;
+    font-weight: 800;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 4px;
+  }
+  .speaker.vitaliy { color: #0284c7; }
+  .speaker.natalia { color: #b45309; }
+  ul.points {
+    padding-left: 18px;
+    margin: 0;
+  }
+  ul.points li {
+    margin-bottom: 4px;
+  }
+  .highlight-pill {
+    background: #fef3c7;
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-weight: 700;
+  }
+  .footer-note {
+    margin-top: 24px;
+    border-top: 1px solid #e4e4e7;
+    padding-top: 8px;
+    font-size: 11px;
+    color: #a1a1aa;
+    display: flex;
+    justify-content: space-between;
+  }
+
+    .check-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 10px 12px;
+      border: 1px solid #e4e4e7;
+      border-radius: 8px;
+      margin-bottom: 8px;
+      background: #fafaf9;
+      page-break-inside: avoid;
+    }
+    .checkbox-box {
+      width: 20px;
+      height: 20px;
+      border: 2px solid #18181b;
+      border-radius: 4px;
+      flex-shrink: 0;
+      margin-top: 1px;
+      background: #ffffff;
+    }
+    .check-content {
+      flex: 1;
+    }
+    .check-title {
+      font-weight: 800;
+      font-size: 13.5px;
+      color: #18181b;
+      margin-bottom: 2px;
+    }
+    .check-desc {
+      font-size: 12.5px;
+      color: #52525b;
+    }
+    .tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 2px 7px;
+      border-radius: 4px;
+      background: #e4e4e7;
+      color: #18181b;
+      margin-right: 6px;
+    }
+  </style>
+</head>
+<body>
+  <div class="doc-header">
+    <div>
+      <div class="doc-brand">358 <span>Студія дизайну та ремонту • Львів</span></div>
+      <div class="doc-title">Режисерський чек-лист знімальних планів та B-roll (14 кадрів)</div>
+    </div>
+    <div style="text-align: right;">
+      <div class="doc-meta">YouTube-канал «Розумний ремонт»</div>
+      <div class="doc-meta">Об'єкт: Смарт 27 м²</div>
+    </div>
+  </div>
+
+  <div style="margin-bottom: 14px; font-size: 12.5px; color: #52525b; background: #e0f2fe; padding: 10px 12px; border-radius: 8px;">
+    <strong>Інструкція для оператора:</strong> Відзначайте галочками кожен кадр після запису. Обов'язково зняти статичні плани на штативі, плавні проходки (gimbal) та макро-деталі інженерних вузлів.
+  </div>
+
+  <div class="check-row">
+    <div class="checkbox-box"></div>
+    <div class="check-content">
+      <div class="check-title"><span class="tag">Штатив</span> 1. Загальний вступний план: Віталій та Наталя в кадрі</div>
+      <div class="check-desc">Сцена 1: вступ про покупку з котловану 2020 року за 14 500 $ та головну дилему (продати за 80 тис. $ чи здавати в оренду).</div>
+    </div>
+  </div>
+
+  <div class="check-row">
+    <div class="checkbox-box"></div>
+    <div class="check-content">
+      <div class="check-title"><span class="tag">Проходка</span> 2. Чотиридверна шафа при вході (до стелі)</div>
+      <div class="check-desc">Відкрити дверцята, показати глибину, відкриту нішу чорного кольору, висувні шухляди та як вона вміщує весь побут.</div>
+    </div>
+  </div>
+
+  <div class="check-row">
+    <div class="checkbox-box"></div>
+    <div class="check-content">
+      <div class="check-title"><span class="tag">Динаміка</span> 3. Двері санвузла з відкриванням всередину (в дії)</div>
+      <div class="check-desc">Показати наживо: двері відчиняються всередину вздовж ванни, не перекривають вузький коридор і дозволяють зручно зайти.</div>
+    </div>
+  </div>
+
+  <div class="check-row">
+    <div class="checkbox-box"></div>
+    <div class="check-content">
+      <div class="check-title"><span class="tag">Середній</span> 4. Колона: пральна машина + сушильна машина у вбудованій шафі</div>
+      <div class="check-desc">Відкрити фасад шафи, показати ідеальне розташування побутової техніки в санвузлі смарт-квартири.</div>
+    </div>
+  </div>
+
+  <div class="check-row">
+    <div class="checkbox-box"></div>
+    <div class="check-content">
+      <div class="check-title"><span class="tag">Макро B-roll</span> 5. Горизонтальний бойлер 80 л + термозмішувальний клапан</div>
+      <div class="check-desc">Крупний план вузла підмішування холодної води під бойлером. Показати, як це економить висоту та збільшує запас гарячої води.</div>
+    </div>
+  </div>
+
+  <div class="check-row">
+    <div class="checkbox-box"></div>
+    <div class="check-content">
+      <div class="check-title"><span class="tag">Макро B-roll</span> 6. Ввідний вузол: редуктор тиску Caleffi та датчики антипотопу</div>
+      <div class="check-desc">Крупний план сантехнічного захисту квартири від високого тиску в мережі новобудови та можливих протікань.</div>
+    </div>
+  </div>
+
+  <div class="check-row">
+    <div class="checkbox-box"></div>
+    <div class="check-content">
+      <div class="check-title"><span class="tag">Панорама</span> 7. Зона ванни: скляна шторка, інсталяція, гігієнічний душ, умивальник</div>
+      <div class="check-desc">Плавний вертикальний кадр чистового оздоблення керамогранітом із зарізкою кутів під 45° та освітленням дзеркала.</div>
+    </div>
+  </div>
+
+  <div class="check-row">
+    <div class="checkbox-box"></div>
+    <div class="check-content">
+      <div class="check-title"><span class="tag">Макро B-roll</span> 8. Бетонна монолітна стеля (висота ~2,5 м) та багети</div>
+      <div class="check-desc">Кадр під косим кутом до світла з вікна: показати бездоганну площину шпаклівки й фарбування бетону без гіпсокартону.</div>
+    </div>
+  </div>
+
+  <div class="check-row">
+    <div class="checkbox-box"></div>
+    <div class="check-content">
+      <div class="check-title"><span class="tag">Макро B-roll</span> 9. Терморегулятори теплої підлоги (3 контури з Wi-Fi)</div>
+      <div class="check-desc">Крупний план сенсорного екрана терморегулятора на стіні та демонстрація керування зі смартфона через додаток.</div>
+    </div>
+  </div>
+
+  <div class="check-row">
+    <div class="checkbox-box"></div>
+    <div class="check-content">
+      <div class="check-title"><span class="tag">Широкий кут</span> 10. Спальне ліжко + диван біля вікна в єдиній перспективі</div>
+      <div class="check-desc">Показати, що на 27 м² є і приватна зона відпочинку (двоспальне ліжко з тумбами), і денна зона з диваном біля вікна.</div>
+    </div>
+  </div>
+
+  <div class="check-row">
+    <div class="checkbox-box"></div>
+    <div class="check-content">
+      <div class="check-title"><span class="tag">Середній</span> 11. Зона ТВ: 50" MiniLED + дві вертикальні смуги дзеркал із бра</div>
+      <div class="check-desc">Показати візуальний ефект розширення простору від дзеркальних смуг від підлоги до стелі з увімкненими бра.</div>
+    </div>
+  </div>
+
+  <div class="check-row">
+    <div class="checkbox-box"></div>
+    <div class="check-content">
+      <div class="check-title"><span class="tag">Проходка</span> 12. Кухня до стелі: відкрити посудомийку, духовку, витяжку</div>
+      <div class="check-desc">Показати компактну, але 100% функціональну кухню: відкрити вбудовану посудомийну машину та холодильник.</div>
+    </div>
+  </div>
+
+  <div class="check-row">
+    <div class="checkbox-box"></div>
+    <div class="check-content">
+      <div class="check-title"><span class="tag">Штатив</span> 13. Розбір рукописного блокнота за круглим столом</div>
+      <div class="check-desc">Сцена 5: Віталій гортає реальний блокнот із кошторисом, Наталя коментує цифри (16 000 $ грошима + 13 000 $ праці).</div>
+    </div>
+  </div>
+
+  <div class="check-row">
+    <div class="checkbox-box"></div>
+    <div class="check-content">
+      <div class="check-title"><span class="tag">Макро Top-Down</span> 14. Крупний план сторінок блокнота зверху (Top-Down, 5–10 сек)</div>
+      <div class="check-desc">Кадр зверху над столом для перебивки під час начитки структури витрат та підсумкових 700 000 грн.</div>
+    </div>
+  </div>
+
+  <div class="footer-note">
+    <span>Студія архітектури та ремонту «358» • Львів</span>
+    <span>Документ 3 із 3 • Чек-лист кадрів</span>
+  </div>
+</body>
+</html>

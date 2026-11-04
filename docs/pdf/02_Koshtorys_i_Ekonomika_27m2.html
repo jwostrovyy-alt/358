@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Кошторис, цифри та економіка окупності: Смарт 27 м²</title>
+  <style>
+    
+  @page {
+    size: A4 portrait;
+    margin: 15mm 15mm 15mm 15mm;
+  }
+  *, *::before, *::after {
+    box-sizing: border-box;
+  }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    color: #18181b;
+    background: #ffffff;
+    line-height: 1.5;
+    font-size: 13.5px;
+    margin: 0;
+    padding: 0;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .doc-header {
+    border-bottom: 2px solid #18181b;
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  .doc-brand {
+    font-size: 22px;
+    font-weight: 800;
+    letter-spacing: -0.03em;
+    color: #18181b;
+  }
+  .doc-brand span {
+    font-size: 13px;
+    font-weight: 500;
+    color: #71717a;
+    margin-left: 8px;
+  }
+  .doc-title {
+    font-size: 18px;
+    font-weight: 800;
+    color: #18181b;
+    margin: 0 0 4px 0;
+  }
+  .doc-meta {
+    font-size: 12px;
+    color: #71717a;
+    font-weight: 600;
+  }
+  .card {
+    background: #fafaf9;
+    border: 1px solid #e4e4e7;
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin-bottom: 14px;
+    page-break-inside: avoid;
+  }
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    border-bottom: 1px solid #e4e4e7;
+    padding-bottom: 6px;
+  }
+  .card-num {
+    font-weight: 800;
+    font-size: 12px;
+    color: #71717a;
+    text-transform: uppercase;
+  }
+  .card-badge {
+    background: #e0f2fe;
+    color: #0369a1;
+    font-weight: 700;
+    font-size: 11px;
+    padding: 2px 8px;
+    border-radius: 999px;
+  }
+  .card-title {
+    font-size: 15px;
+    font-weight: 800;
+    color: #18181b;
+    margin: 0 0 10px 0;
+  }
+  .dialogue-box {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 10px 12px;
+    margin-bottom: 8px;
+    border: 1px solid #f4f4f5;
+  }
+  .dialogue-box:last-child {
+    margin-bottom: 0;
+  }
+  .speaker {
+    display: inline-block;
+    font-weight: 800;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 4px;
+  }
+  .speaker.vitaliy { color: #0284c7; }
+  .speaker.natalia { color: #b45309; }
+  ul.points {
+    padding-left: 18px;
+    margin: 0;
+  }
+  ul.points li {
+    margin-bottom: 4px;
+  }
+  .highlight-pill {
+    background: #fef3c7;
+    padding: 1px 6px;
+    border-radius: 4px;
+    font-weight: 700;
+  }
+  .footer-note {
+    margin-top: 24px;
+    border-top: 1px solid #e4e4e7;
+    padding-top: 8px;
+    font-size: 11px;
+    color: #a1a1aa;
+    display: flex;
+    justify-content: space-between;
+  }
+
+    .kpi-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+    .kpi-box {
+      background: #fafaf9;
+      border: 1px solid #e4e4e7;
+      border-radius: 8px;
+      padding: 10px 12px;
+      text-align: center;
+    }
+    .kpi-box-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: #71717a;
+      text-transform: uppercase;
+      margin-bottom: 3px;
+    }
+    .kpi-box-val {
+      font-size: 19px;
+      font-weight: 800;
+      color: #18181b;
+      letter-spacing: -0.02em;
+    }
+    .kpi-box-sub {
+      font-size: 11px;
+      color: #52525b;
+      margin-top: 2px;
+    }
+    .math-card {
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      border-radius: 10px;
+      padding: 12px 14px;
+      margin-bottom: 18px;
+    }
+    .math-title {
+      font-weight: 800;
+      font-size: 14px;
+      color: #166534;
+      margin: 0 0 8px 0;
+    }
+    .table-budget {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12.5px;
+    }
+    .table-budget th {
+      background: #18181b;
+      color: #ffffff;
+      padding: 7px 10px;
+      text-align: left;
+      font-weight: 700;
+      font-size: 12px;
+    }
+    .table-budget td {
+      padding: 6px 10px;
+      border-bottom: 1px solid #e4e4e7;
+    }
+    .table-budget tr:nth-child(even) {
+      background: #fcfcfc;
+    }
+    .table-budget tr.total-row {
+      background: #f4f4f5;
+      font-weight: 800;
+      border-top: 2px solid #18181b;
+      border-bottom: 2px solid #18181b;
+    }
+    .num {
+      text-align: right;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+  </style>
+</head>
+<body>
+  <div class="doc-header">
+    <div>
+      <div class="doc-brand">358 <span>Студія дизайну та ремонту • Львів</span></div>
+      <div class="doc-title">Економіка об'єкта, окупність та кошторис із блокнота</div>
+    </div>
+    <div style="text-align: right;">
+      <div class="doc-meta">YouTube «Розумний ремонт»</div>
+      <div class="doc-meta">Об'єкт: Смарт 27 м² • 2020–2026 рр.</div>
+    </div>
+  </div>
+
+  <div class="kpi-grid">
+    <div class="kpi-box">
+      <div class="kpi-box-label">Купівля (20.09.2020)</div>
+      <div class="kpi-box-val">14 500 $</div>
+      <div class="kpi-box-sub">Котлован, 27 м² (537 $/м²)</div>
+    </div>
+    <div class="kpi-box">
+      <div class="kpi-box-label">Без ремонту зараз</div>
+      <div class="kpi-box-val">~50 000 $</div>
+      <div class="kpi-box-sub">Ринкова ціна в будинку</div>
+    </div>
+    <div class="kpi-box">
+      <div class="kpi-box-label">Витрати з кишені</div>
+      <div class="kpi-box-val">16 000 $</div>
+      <div class="kpi-box-sub">~700 000 грн за блокнотом</div>
+    </div>
+    <div class="kpi-box">
+      <div class="kpi-box-label">Власна праця «358»</div>
+      <div class="kpi-box-val">~13 000 $</div>
+      <div class="kpi-box-sub">Ринкова оцінка робіт</div>
+    </div>
+    <div class="kpi-box">
+      <div class="kpi-box-label">Вкладено живих грошей</div>
+      <div class="kpi-box-val">30 500 $</div>
+      <div class="kpi-box-sub">14 500 $ + 16 000 $</div>
+    </div>
+    <div class="kpi-box">
+      <div class="kpi-box-label">Оцінка з цим ремонтом</div>
+      <div class="kpi-box-val">75 000 – 80 000 $</div>
+      <div class="kpi-box-sub">Повний фарш під ключ</div>
+    </div>
+  </div>
+
+  <div class="math-card">
+    <div class="math-title">Математика довгострокової оренди (при ставці ~500 $/міс. = 6 000 $/рік)</div>
+    <ul class="points" style="color: #14532d;">
+      <li><strong>Погляд 1 — Від фактично вкладених живих грошей (30 500 $):</strong> окупність складає рівно <span class="highlight-pill">5 років</span> при дохідності <span class="highlight-pill">~19,7% річних</span>.</li>
+      <li><strong>Погляд 2 — З урахуванням ринкової вартості власної праці (43 500 $):</strong> окупність складає <span class="highlight-pill">~7,2 року</span> при дохідності <span class="highlight-pill">~13,8% річних</span>.</li>
+      <li><strong>Погляд 3 — Від поточної ринкової вартості продажу готової квартири (75 000 – 80 000 $):</strong> окупність складає <span class="highlight-pill">12,5 – 13,3 року</span> при спокійній консервативній дохідності <span class="highlight-pill">7,5% – 8,0% річних</span>.</li>
+    </ul>
+  </div>
+
+  <table class="table-budget">
+    <thead>
+      <tr>
+        <th style="width: 72%;">Позиція з рукописного блокнота (матеріали, обладнання, підрядники)</th>
+        <th class="num" style="width: 28%;">Сума (грн)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Корпусні меблі на замовлення (кухня до стелі, 4-дверна шафа, тумби, столик)</td><td class="num">137 000 грн</td></tr>
+      <tr><td>Основна побутова техніка (пральна, сушильна, посудомийна, духовка, холодильник, плита)</td><td class="num">100 000 грн</td></tr>
+      <tr><td>Плиточні роботи та керамограніт (матеріали + робота майстра)</td><td class="num">100 000 грн</td></tr>
+      <tr><td>М'які меблі: диван біля вікна, ліжко двоспальне, обідній стіл, крісла</td><td class="num">46 000 грн</td></tr>
+      <tr><td>Чорнова сантехніка та водяна тепла підлога у 3 контури з Wi-Fi регуляторами</td><td class="num">40 000 грн</td></tr>
+      <tr><td>Кондиціонер інверторний</td><td class="num">30 000 грн</td></tr>
+      <tr><td>Міжкімнатні двері санвузла (відкривання всередину)</td><td class="num">27 000 грн</td></tr>
+      <tr><td>Змішувачі, душовий гарнітур, термозмішувальний клапан бойлера</td><td class="num">26 000 грн</td></tr>
+      <tr><td>Телевізор 50" TCL QLED MiniLED</td><td class="num">24 000 грн</td></tr>
+      <tr><td>Електромонтажні матеріали (кабелі, щит, автоматика Hager)</td><td class="num">20 000 грн</td></tr>
+      <tr><td>Світло: люстри, бра, підвісні світильники, трекові лінії</td><td class="num">20 000 грн</td></tr>
+      <tr><td>Машинна стяжка підлоги під нівелір (робота + матеріали)</td><td class="num">16 000 грн</td></tr>
+      <tr><td>Малярні матеріали: фарба для монолітної стелі та стін, ґрунти, склохолст</td><td class="num">15 000 грн</td></tr>
+      <tr><td>Санфаянс: підвісний унітаз, прихована інсталяція, гігієнічний душ</td><td class="num">15 000 грн</td></tr>
+      <tr><td>Горизонтальний бойлер 80 л під стелю над пральною машиною</td><td class="num">15 000 грн</td></tr>
+      <tr><td>Стельові карнизи / багети під фарбування</td><td class="num">12 000 грн</td></tr>
+      <tr><td>Штукатурка та шпаклівка (сухі суміші, фінішні склади)</td><td class="num">12 000 грн</td></tr>
+      <tr><td>Система вентиляції (канали, вентрешітки, витяжні вентилятори)</td><td class="num">11 600 грн</td></tr>
+      <tr><td>Підлогові плінтуси (матеріали та фурнітура)</td><td class="num">9 000 грн</td></tr>
+      <tr><td>Дзеркала: 2 вертикальні смуги до стелі біля ТВ + велике дзеркало у ванній</td><td class="num">9 000 грн</td></tr>
+      <tr><td>Повноцінна акрилова ванна зі скляною шторкою</td><td class="num">8 000 грн</td></tr>
+      <tr><td>Текстиль: блекаут-штори, тюль на панорамне вікно</td><td class="num">8 000 грн</td></tr>
+      <tr><td>Постільна білизна, подушки, матрац</td><td class="num">7 000 грн</td></tr>
+      <tr><td>Гідроізоляція вологих зон, епоксидна фуга, сантехнічні короби</td><td class="num">6 000 грн</td></tr>
+      <tr><td>Килимки зонувальні біля ліжка та дивана</td><td class="num">6 000 грн</td></tr>
+      <tr><td>Накладний умивальник на стільницю у ванній</td><td class="num">5 000 грн</td></tr>
+      <tr><td>Безпека: редуктор тиску Caleffi + система антипотопу (2 датчики)</td><td class="num">4 600 грн</td></tr>
+      <tr><td>Дводіапазонний Wi-Fi роутер</td><td class="num">3 500 грн</td></tr>
+      <tr><td>Приліжкові тумбочки</td><td class="num">2 000 грн</td></tr>
+      <tr class="total-row">
+        <td>РАЗОМ ВИТРАЧЕНО ГРОШИМА ЗА БЛОКНОТОМ («З КИШЕНІ»)</td>
+        <td class="num">~700 000 грн (~16 000 $)</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="footer-note">
+    <span>Студія архітектури та ремонту «358» • Львів</span>
+    <span>Документ 2 із 3 • Фінанси та кошторис</span>
+  </div>
+</body>
+</html>
