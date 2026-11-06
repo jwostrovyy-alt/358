@@ -190,24 +190,33 @@ const SHARED_CSS = `
   .logo-link {
     display: inline-flex;
     flex-direction: column;
-    align-items: flex-start;
-    gap: 0.1rem;
+    align-items: center;
+    text-align: center;
+    gap: 0.15rem;
     text-decoration: none;
     color: #1c1917;
     flex-shrink: 0;
   }
   .logo-mark {
-    font-size: var(--step-h2) !important;
-    font-weight: 800;
-    letter-spacing: -0.04em;
+    font-family: 'Poiret One', cursive, -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 32px !important;
+    font-weight: 400;
+    letter-spacing: 0.02em;
+    -webkit-text-stroke: 0.7px currentColor;
     color: #1c1917;
     line-height: 1;
+    text-align: center;
   }
   .logo-sub {
-    font-size: var(--step-small) !important;
+    font-size: 9px !important;
     color: #78716c;
-    font-weight: 500;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    margin-right: -0.22em;
     line-height: 1.15;
+    text-align: center;
+    white-space: nowrap;
   }
   .site-nav {
     display: flex;
@@ -472,9 +481,10 @@ const SHARED_CSS = `
       gap: 0.5rem;
     }
     .logo-link {
-      flex-direction: row;
-      align-items: baseline;
-      gap: 0.55rem;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 0.15rem;
     }
     .mobile-menu-toggle {
       display: inline-flex;
@@ -701,6 +711,9 @@ function renderLayout(opts: {
   <meta property="og:title" content="${title}">
   <meta property="og:description" content="${description}">
   <meta property="og:url" content="${canonicalUrl}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
   ${schemaTags}
   <style>${SHARED_CSS}</style>
 </head>

@@ -22,7 +22,7 @@ export interface SiteConfig {
 
 export const SITE_CONFIG: SiteConfig = {
   brandName: '358',
-  tagline: 'дизайн та ремонт • Львів',
+  tagline: 'дизайн та ремонт',
   city: 'Львів',
   country: 'Україна',
   siteUrl: 'https://jwostrovyy-alt.github.io/358',
