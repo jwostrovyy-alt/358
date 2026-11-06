@@ -254,8 +254,8 @@ const SHARED_CSS = `
     flex-shrink: 0;
   }
   .chip-link {
-    background: #1c1917;
-    color: #ffffff;
+    background: #f5f5f4;
+    color: #1c1917;
     text-decoration: none;
     font-size: var(--step-small) !important;
     font-weight: 600;
@@ -269,14 +269,14 @@ const SHARED_CSS = `
     color: #1c1917;
   }
   .chip-link--yt {
-    background: #fef2f2;
-    color: #b91c1c;
+    background: #f5f5f4;
+    color: #1c1917;
   }
   .chip-link:active { transform: scale(0.97); }
   @media (hover: hover) and (pointer: fine) {
-    .chip-link:hover { background: #292524; }
+    .chip-link:hover { background: #e7e5e4; }
     .chip-link--outline:hover { background: #e7e5e4; }
-    .chip-link--yt:hover { background: #fee2e2; }
+    .chip-link--yt:hover { background: #e7e5e4; }
   }
 
   /* Buttons */
@@ -732,7 +732,7 @@ function renderLayout(opts: {
         ${navLinks}
       </nav>
       <div class="header-contacts" aria-label="Прямий зв'язок">
-        <a href="${SITE_CONFIG.phoneHref}" class="chip-link">${SITE_CONFIG.phoneDisplay}</a>
+        <a href="${SITE_CONFIG.phoneHref}" class="chip-link chip-link--outline">${SITE_CONFIG.phoneDisplay}</a>
         <a href="${SITE_CONFIG.telegramUrl}" target="_blank" rel="noopener noreferrer" class="chip-link chip-link--outline">Telegram</a>
         <a href="${SITE_CONFIG.viberUrl}" class="chip-link chip-link--outline">Viber</a>
         <a href="${SITE_CONFIG.youtubeUrl}" target="_blank" rel="noopener noreferrer" class="chip-link chip-link--yt">YouTube</a>
