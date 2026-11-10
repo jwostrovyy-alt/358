@@ -1555,8 +1555,8 @@ function buildPricingPage(): string {
 
   <section class="section-limestone">
     <div class="container-358">
-      <h2 style="font-size: 1.65rem; font-weight: 700; margin: 0 0 0.65rem 0;">Прайс-лист за одиницю робіт у Львові</h2>
-      <p style="color: #57534e; margin: 0 0 1.5rem 0;">Оберіть категорію або введіть назву роботи (наприклад: монолітна стеля, керамограніт, тепла підлога, бойлер).</p>
+      <h2 style="font-size: 1.65rem; font-weight: 700; margin: 0 0 0.65rem 0;">Розцінки на внутрішні роботи</h2>
+      <p style="color: #57534e; margin: 0 0 1.5rem 0;">Оберіть розділ робіт або скористайтеся пошуком за назвою позиції (усі 295+ позицій прайсу).</p>
 
       <div class="filter-bar">
         ${PRICE_CATEGORIES.map(
@@ -1567,7 +1567,7 @@ function buildPricingPage(): string {
           type="search"
           id="priceSearchInput"
           class="search-input"
-          placeholder="Пошук по роботах (напр. керамограніт)..."
+          placeholder="Пошук по роботах (напр. шпаклівка, плитка, щит)..."
           aria-label="Пошук роботи у прайс-листі"
           oninput="applyPriceFilter()"
         />
@@ -1579,8 +1579,8 @@ function buildPricingPage(): string {
             <tr>
               <th>Вид робіт</th>
               <th>Категорія</th>
-              <th>Од. вим.</th>
-              <th>Вартість</th>
+              <th>Одиниця виміру</th>
+              <th>Ціна, грн</th>
             </tr>
           </thead>
           <tbody id="priceTableBody">

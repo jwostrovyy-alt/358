@@ -888,16 +888,16 @@
 
   <section class="section-limestone">
     <div class="container-358">
-      <h2 style="font-size: 1.65rem; font-weight: 700; margin: 0 0 0.65rem 0;">Прайс-лист за одиницю робіт у Львові</h2>
-      <p style="color: #57534e; margin: 0 0 1.5rem 0;">Оберіть категорію або введіть назву роботи (наприклад: монолітна стеля, керамограніт, тепла підлога, бойлер).</p>
+      <h2 style="font-size: 1.65rem; font-weight: 700; margin: 0 0 0.65rem 0;">Розцінки на внутрішні роботи</h2>
+      <p style="color: #57534e; margin: 0 0 1.5rem 0;">Оберіть розділ робіт або скористайтеся пошуком за назвою позиції (усі 295+ позицій прайсу).</p>
 
       <div class="filter-bar">
-        <button type="button" class="filter-btn active" data-cat="all" onclick="setPriceCategory('all', this)">Усі види робіт</button><button type="button" class="filter-btn " data-cat="finishing" onclick="setPriceCategory('finishing', this)">Шпаклювальні та малярні роботи</button><button type="button" class="filter-btn " data-cat="tiling" onclick="setPriceCategory('tiling', this)">Плиточні роботи</button><button type="button" class="filter-btn " data-cat="plumbing" onclick="setPriceCategory('plumbing', this)">Сантехніка та опалення</button><button type="button" class="filter-btn " data-cat="electrical" onclick="setPriceCategory('electrical', this)">Електромонтажні роботи</button><button type="button" class="filter-btn " data-cat="drywall" onclick="setPriceCategory('drywall', this)">Гіпсокартон та перегородки</button><button type="button" class="filter-btn " data-cat="screed" onclick="setPriceCategory('screed', this)">Стяжка та штукатурка</button>
+        <button type="button" class="filter-btn active" data-cat="all" onclick="setPriceCategory('all', this)">Усі види робіт</button><button type="button" class="filter-btn " data-cat="soundproofing" onclick="setPriceCategory('soundproofing', this)">Звукоізоляція</button><button type="button" class="filter-btn " data-cat="waterproofing" onclick="setPriceCategory('waterproofing', this)">Гідроізоляція</button><button type="button" class="filter-btn " data-cat="plaster" onclick="setPriceCategory('plaster', this)">Штукатурка</button><button type="button" class="filter-btn " data-cat="decor-plaster" onclick="setPriceCategory('decor-plaster', this)">Декоративна штукатурка</button><button type="button" class="filter-btn " data-cat="finishing" onclick="setPriceCategory('finishing', this)">Внутрішнє оздоблення приміщень</button><button type="button" class="filter-btn " data-cat="masonry" onclick="setPriceCategory('masonry', this)">Кладка</button><button type="button" class="filter-btn " data-cat="drywall" onclick="setPriceCategory('drywall', this)">Гіпсокартон</button><button type="button" class="filter-btn " data-cat="tiling" onclick="setPriceCategory('tiling', this)">Плиточні роботи</button><button type="button" class="filter-btn " data-cat="screed" onclick="setPriceCategory('screed', this)">Стяжка</button><button type="button" class="filter-btn " data-cat="flooring" onclick="setPriceCategory('flooring', this)">Підлога</button><button type="button" class="filter-btn " data-cat="electrical" onclick="setPriceCategory('electrical', this)">Електрика</button><button type="button" class="filter-btn " data-cat="heating" onclick="setPriceCategory('heating', this)">Опалення</button><button type="button" class="filter-btn " data-cat="water" onclick="setPriceCategory('water', this)">Водопостачання</button><button type="button" class="filter-btn " data-cat="sewage" onclick="setPriceCategory('sewage', this)">Каналізація</button><button type="button" class="filter-btn " data-cat="sanitary" onclick="setPriceCategory('sanitary', this)">Сантехніка (загальне)</button>
         <input
           type="search"
           id="priceSearchInput"
           class="search-input"
-          placeholder="Пошук по роботах (напр. керамограніт)..."
+          placeholder="Пошук по роботах (напр. шпаклівка, плитка, щит)..."
           aria-label="Пошук роботи у прайс-листі"
           oninput="applyPriceFilter()"
         />
@@ -909,191 +909,2729 @@
             <tr>
               <th>Вид робіт</th>
               <th>Категорія</th>
-              <th>Од. вим.</th>
-              <th>Вартість</th>
+              <th>Одиниця виміру</th>
+              <th>Ціна, грн</th>
             </tr>
           </thead>
           <tbody id="priceTableBody">
             
-            <tr class="price-row" data-category="finishing" data-search="підготовка та фінішне шпаклювання монолітної бетонної стелі під фарбування шпаклювальні та малярні роботи зі збереженням повної висоти приміщення без гіпсокартону">
+            <tr class="price-row" data-category="soundproofing" data-search="звукоізоляція стін мінеральною ватою звукоізоляція ">
               <td>
-                <strong>Підготовка та фінішне шпаклювання монолітної бетонної стелі під фарбування</strong>
-                <div style="font-size: 0.82rem; color: #78716c; margin-top: 0.2rem;">Зі збереженням повної висоти приміщення без гіпсокартону</div>
+                <strong>Звукоізоляція стін мінеральною ватою</strong>
+                
               </td>
-              <td>Шпаклювальні та малярні роботи</td>
+              <td>Звукоізоляція</td>
               <td>м²</td>
-              <td><strong>480 грн</strong></td>
+              <td><strong>300 грн</strong></td>
             </tr>
-            <tr class="price-row" data-category="finishing" data-search="фінішне шпаклювання стін під високоякісне фарбування (зі склохолстом) шпаклювальні та малярні роботи виконує особисто віталій">
+            <tr class="price-row" data-category="soundproofing" data-search="безкаркасна звукоізоляція стін звукоізоляція ">
               <td>
-                <strong>Фінішне шпаклювання стін під високоякісне фарбування (зі склохолстом)</strong>
-                <div style="font-size: 0.82rem; color: #78716c; margin-top: 0.2rem;">Виконує особисто Віталій</div>
+                <strong>Безкаркасна звукоізоляція стін</strong>
+                
               </td>
-              <td>Шпаклювальні та малярні роботи</td>
+              <td>Звукоізоляція</td>
               <td>м²</td>
-              <td><strong>420 грн</strong></td>
+              <td><strong>550 грн</strong></td>
             </tr>
-            <tr class="price-row" data-category="finishing" data-search="фарбування стін та монолітних стель у 2 шари з підготовкою та ґрунтуванням шпаклювальні та малярні роботи рівномірне покриття стійкими миючими фарбами">
+            <tr class="price-row" data-category="soundproofing" data-search="безкаркасна звукоізоляція стелі звукоізоляція ">
               <td>
-                <strong>Фарбування стін та монолітних стель у 2 шари з підготовкою та ґрунтуванням</strong>
-                <div style="font-size: 0.82rem; color: #78716c; margin-top: 0.2rem;">Рівномірне покриття стійкими миючими фарбами</div>
+                <strong>Безкаркасна звукоізоляція стелі</strong>
+                
               </td>
-              <td>Шпаклювальні та малярні роботи</td>
+              <td>Звукоізоляція</td>
+              <td>м²</td>
+              <td><strong>650 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="soundproofing" data-search="каркасна звукоізоляція (гкл в два слоя) стін звукоізоляція ">
+              <td>
+                <strong>Каркасна звукоізоляція (ГКЛ в два слоя) стін</strong>
+                
+              </td>
+              <td>Звукоізоляція</td>
+              <td>м²</td>
+              <td><strong>650 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="soundproofing" data-search="каркасна звукоізоляція (гкл в два слоя) стелі звукоізоляція ">
+              <td>
+                <strong>Каркасна звукоізоляція (ГКЛ в два слоя) стелі</strong>
+                
+              </td>
+              <td>Звукоізоляція</td>
+              <td>м²</td>
+              <td><strong>850 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="waterproofing" data-search="гідроізоляція підлоги/стін в санвузлі (мастика) гідроізоляція ">
+              <td>
+                <strong>Гідроізоляція підлоги/стін в санвузлі (мастика)</strong>
+                
+              </td>
+              <td>Гідроізоляція</td>
+              <td>м²</td>
+              <td><strong>300 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="waterproofing" data-search="гідроізоляція плівкова гідроізоляція ">
+              <td>
+                <strong>Гідроізоляція плівкова</strong>
+                
+              </td>
+              <td>Гідроізоляція</td>
+              <td>м²</td>
+              <td><strong>60 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="waterproofing" data-search="гідроізоляція сухою сумішшю гідроізоляція ">
+              <td>
+                <strong>Гідроізоляція сухою сумішшю</strong>
+                
+              </td>
+              <td>Гідроізоляція</td>
+              <td>м²</td>
+              <td><strong>220 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="plaster" data-search="виконання робіт на висоті понад 3м штукатурка ">
+              <td>
+                <strong>Виконання робіт на висоті понад 3м</strong>
+                
+              </td>
+              <td>Штукатурка</td>
+              <td>%</td>
+              <td><strong>20%</strong></td>
+            </tr>
+            <tr class="price-row" data-category="plaster" data-search="грунтовка поверхонь перед штукатуркою, армуванням штукатурка ">
+              <td>
+                <strong>Грунтовка поверхонь перед штукатуркою, армуванням</strong>
+                
+              </td>
+              <td>Штукатурка</td>
+              <td>м²</td>
+              <td><strong>45 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="plaster" data-search="грунтовка поверхонь бетоноконтактом штукатурка ">
+              <td>
+                <strong>Грунтовка поверхонь бетоноконтактом</strong>
+                
+              </td>
+              <td>Штукатурка</td>
+              <td>м²</td>
+              <td><strong>100 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="plaster" data-search="армування сіткою штукатурка ">
+              <td>
+                <strong>Армування сіткою</strong>
+                
+              </td>
+              <td>Штукатурка</td>
+              <td>м²</td>
+              <td><strong>150 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="plaster" data-search="штукатурка стін (до 2 см) штукатурка ">
+              <td>
+                <strong>Штукатурка стін (до 2 см)</strong>
+                
+              </td>
+              <td>Штукатурка</td>
+              <td>м²</td>
+              <td><strong>400 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="plaster" data-search="штукатурка стін (від 2 см) штукатурка ">
+              <td>
+                <strong>Штукатурка стін (від 2 см)</strong>
+                
+              </td>
+              <td>Штукатурка</td>
+              <td>м²</td>
+              <td><strong>450 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="plaster" data-search="штукатурка стін (від 5 см) штукатурка ">
+              <td>
+                <strong>Штукатурка стін (від 5 см)</strong>
+                
+              </td>
+              <td>Штукатурка</td>
+              <td>м²</td>
+              <td><strong>500 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="plaster" data-search="штукатурка стін (до 2 см) об'ємом до 50м2 штукатурка ">
+              <td>
+                <strong>Штукатурка стін (до 2 см) об'ємом до 50м2</strong>
+                
+              </td>
+              <td>Штукатурка</td>
+              <td>м²</td>
+              <td><strong>500 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="plaster" data-search="штукатурка стін (від 2 см) об'ємом до 50м2 штукатурка ">
+              <td>
+                <strong>Штукатурка стін (від 2 см) об'ємом до 50м2</strong>
+                
+              </td>
+              <td>Штукатурка</td>
+              <td>м²</td>
+              <td><strong>550 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="plaster" data-search="шліфування стін після штукатурки (зробленої не нами) штукатурка ">
+              <td>
+                <strong>Шліфування стін після штукатурки (зробленої не нами)</strong>
+                
+              </td>
+              <td>Штукатурка</td>
+              <td>м²</td>
+              <td><strong>120 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="decor-plaster" data-search="нанесення декоративної штукатурки "гротто", "1000 ліній" декоративна штукатурка ">
+              <td>
+                <strong>Нанесення декоративної штукатурки "гротто", "1000 ліній"</strong>
+                
+              </td>
+              <td>Декоративна штукатурка</td>
+              <td>м²</td>
+              <td><strong>700 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="decor-plaster" data-search="нанесення декоративної штукатурки "травертин" декоративна штукатурка ">
+              <td>
+                <strong>Нанесення декоративної штукатурки "травертин"</strong>
+                
+              </td>
+              <td>Декоративна штукатурка</td>
+              <td>м²</td>
+              <td><strong>750 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="decor-plaster" data-search="нанесення декоративної штукатурки "ефект бетону", "арт бетон" декоративна штукатурка ">
+              <td>
+                <strong>Нанесення декоративної штукатурки "ефект бетону", "арт бетон"</strong>
+                
+              </td>
+              <td>Декоративна штукатурка</td>
+              <td>м²</td>
+              <td><strong>750 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="decor-plaster" data-search="нанесення декоративної штукатурки "мікробетон" декоративна штукатурка ">
+              <td>
+                <strong>Нанесення декоративної штукатурки "мікробетон"</strong>
+                
+              </td>
+              <td>Декоративна штукатурка</td>
+              <td>м²</td>
+              <td><strong>1000 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="finishing" data-search="виконання робіт на висоті понад 3м внутрішнє оздоблення приміщень ">
+              <td>
+                <strong>Виконання робіт на висоті понад 3м</strong>
+                
+              </td>
+              <td>Внутрішнє оздоблення приміщень</td>
+              <td>%</td>
+              <td><strong>20%</strong></td>
+            </tr>
+            <tr class="price-row" data-category="finishing" data-search="чищення бетонних плит /підготовчі роботи/ внутрішнє оздоблення приміщень ">
+              <td>
+                <strong>Чищення бетонних плит /підготовчі роботи/</strong>
+                
+              </td>
+              <td>Внутрішнє оздоблення приміщень</td>
+              <td>м²</td>
+              <td><strong>80 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="finishing" data-search="заробка тріщин, раковин, шліфування внутрішнє оздоблення приміщень ">
+              <td>
+                <strong>Заробка тріщин, раковин, шліфування</strong>
+                
+              </td>
+              <td>Внутрішнє оздоблення приміщень</td>
+              <td>м²</td>
+              <td><strong>100 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="finishing" data-search="збирання сміття в мішки (після демонтажу) внутрішнє оздоблення приміщень ">
+              <td>
+                <strong>Збирання сміття в мішки (після демонтажу)</strong>
+                
+              </td>
+              <td>Внутрішнє оздоблення приміщень</td>
+              <td>штука</td>
+              <td><strong>20 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="finishing" data-search="захист підлоги картоном внутрішнє оздоблення приміщень ">
+              <td>
+                <strong>Захист підлоги картоном</strong>
+                
+              </td>
+              <td>Внутрішнє оздоблення приміщень</td>
+              <td>м²</td>
+              <td><strong>40 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="finishing" data-search="захист вікна плівкою, картоном внутрішнє оздоблення приміщень ">
+              <td>
+                <strong>Захист вікна плівкою, картоном</strong>
+                
+              </td>
+              <td>Внутрішнє оздоблення приміщень</td>
+              <td>штука</td>
+              <td><strong>300 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="finishing" data-search="паробар'єр, гідробар'єр внутрішнє оздоблення приміщень ">
+              <td>
+                <strong>Паробар'єр, гідробар'єр</strong>
+                
+              </td>
+              <td>Внутрішнє оздоблення приміщень</td>
+              <td>м²</td>
+              <td><strong>80 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="finishing" data-search="стелі "грильято" внутрішнє оздоблення приміщень ">
+              <td>
+                <strong>Стелі "Грильято"</strong>
+                
+              </td>
+              <td>Внутрішнє оздоблення приміщень</td>
+              <td>м²</td>
+              <td><strong>450 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="finishing" data-search="стеля "армстронг" внутрішнє оздоблення приміщень ">
+              <td>
+                <strong>Стеля "Армстронг"</strong>
+                
+              </td>
+              <td>Внутрішнє оздоблення приміщень</td>
+              <td>м²</td>
+              <td><strong>400 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="finishing" data-search="монтаж на стелю пластикової вагонки внутрішнє оздоблення приміщень ">
+              <td>
+                <strong>Монтаж на стелю пластикової вагонки</strong>
+                
+              </td>
+              <td>Внутрішнє оздоблення приміщень</td>
+              <td>м²</td>
+              <td><strong>500 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="finishing" data-search="монтаж дерев'яної вагонки на стіну внутрішнє оздоблення приміщень ">
+              <td>
+                <strong>Монтаж дерев'яної вагонки на стіну</strong>
+                
+              </td>
+              <td>Внутрішнє оздоблення приміщень</td>
+              <td>м²</td>
+              <td><strong>500 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="finishing" data-search="монтаж дерев'яної вагонки на стелю внутрішнє оздоблення приміщень ">
+              <td>
+                <strong>Монтаж дерев'яної вагонки на стелю</strong>
+                
+              </td>
+              <td>Внутрішнє оздоблення приміщень</td>
+              <td>м²</td>
+              <td><strong>600 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="finishing" data-search="фарбування дерев'яної вагонки внутрішнє оздоблення приміщень ">
+              <td>
+                <strong>Фарбування дерев'яної вагонки</strong>
+                
+              </td>
+              <td>Внутрішнє оздоблення приміщень</td>
+              <td>м²</td>
+              <td><strong>250 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="finishing" data-search="обрешітка дерев'яною рейкою внутрішнє оздоблення приміщень ">
+              <td>
+                <strong>Обрешітка дерев'яною рейкою</strong>
+                
+              </td>
+              <td>Внутрішнє оздоблення приміщень</td>
+              <td>м²</td>
+              <td><strong>220 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="finishing" data-search="обшивка орієнтовано-стружковою плитою (осп), фанерою внутрішнє оздоблення приміщень ">
+              <td>
+                <strong>Обшивка орієнтовано-стружковою плитою (ОСП), фанерою</strong>
+                
+              </td>
+              <td>Внутрішнє оздоблення приміщень</td>
+              <td>м²</td>
+              <td><strong>350 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="finishing" data-search="обшивка стелі шалівкою (кроком від 40-60 см) внутрішнє оздоблення приміщень ">
+              <td>
+                <strong>Обшивка стелі шалівкою (кроком від 40-60 см)</strong>
+                
+              </td>
+              <td>Внутрішнє оздоблення приміщень</td>
+              <td>м²</td>
+              <td><strong>150 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="finishing" data-search="укладання ламінату на стіну на обрешітку внутрішнє оздоблення приміщень ">
+              <td>
+                <strong>Укладання ламінату на стіну на обрешітку</strong>
+                
+              </td>
+              <td>Внутрішнє оздоблення приміщень</td>
+              <td>м²</td>
+              <td><strong>800 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="finishing" data-search="поклейка ламінату на стіну внутрішнє оздоблення приміщень ">
+              <td>
+                <strong>Поклейка ламінату на стіну</strong>
+                
+              </td>
+              <td>Внутрішнє оздоблення приміщень</td>
+              <td>м²</td>
+              <td><strong>600 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="finishing" data-search="вирівнювання стін (зроблених не нами, за погодженням) внутрішнє оздоблення приміщень ">
+              <td>
+                <strong>Вирівнювання стін (зроблених не нами, за погодженням)</strong>
+                
+              </td>
+              <td>Внутрішнє оздоблення приміщень</td>
+              <td>м²</td>
+              <td><strong>300 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="finishing" data-search="дефектовка стін (зроблених не нами, за погодженням) внутрішнє оздоблення приміщень ">
+              <td>
+                <strong>Дефектовка стін (зроблених не нами, за погодженням)</strong>
+                
+              </td>
+              <td>Внутрішнє оздоблення приміщень</td>
+              <td>м²</td>
+              <td><strong>100 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="finishing" data-search="ошкурення стін після шпаклівки (зробленої не нами, за погодженням) внутрішнє оздоблення приміщень ">
+              <td>
+                <strong>Ошкурення стін після шпаклівки (зробленої не нами, за погодженням)</strong>
+                
+              </td>
+              <td>Внутрішнє оздоблення приміщень</td>
+              <td>м²</td>
+              <td><strong>100 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="finishing" data-search="шпаклівка (старт) по цементній штукатурці внутрішнє оздоблення приміщень ">
+              <td>
+                <strong>Шпаклівка (старт) по цементній штукатурці</strong>
+                
+              </td>
+              <td>Внутрішнє оздоблення приміщень</td>
+              <td>м²</td>
+              <td><strong>300 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="finishing" data-search="шпаклівка стін під склополотно/шпалери внутрішнє оздоблення приміщень ">
+              <td>
+                <strong>Шпаклівка стін під склополотно/шпалери</strong>
+                
+              </td>
+              <td>Внутрішнє оздоблення приміщень</td>
+              <td>м²</td>
+              <td><strong>350 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="finishing" data-search="шпаклівка стелі під склополотно/шпалери внутрішнє оздоблення приміщень ">
+              <td>
+                <strong>Шпаклівка стелі під склополотно/шпалери</strong>
+                
+              </td>
+              <td>Внутрішнє оздоблення приміщень</td>
+              <td>м²</td>
+              <td><strong>400 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="finishing" data-search="шпаклівка стелі під фарбування внутрішнє оздоблення приміщень ">
+              <td>
+                <strong>Шпаклівка стелі під фарбування</strong>
+                
+              </td>
+              <td>Внутрішнє оздоблення приміщень</td>
+              <td>м²</td>
+              <td><strong>450 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="finishing" data-search="шпаклівка стін під фарбування внутрішнє оздоблення приміщень ">
+              <td>
+                <strong>Шпаклівка стін під фарбування</strong>
+                
+              </td>
+              <td>Внутрішнє оздоблення приміщень</td>
+              <td>м²</td>
+              <td><strong>400 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="finishing" data-search="поклейка склополотна внутрішнє оздоблення приміщень ">
+              <td>
+                <strong>Поклейка склополотна</strong>
+                
+              </td>
+              <td>Внутрішнє оздоблення приміщень</td>
+              <td>м²</td>
+              <td><strong>200 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="finishing" data-search="поклейка шпалер шириною 100 см на стіну (без підбору) внутрішнє оздоблення приміщень ">
+              <td>
+                <strong>Поклейка шпалер шириною 100 см на стіну (без підбору)</strong>
+                
+              </td>
+              <td>Внутрішнє оздоблення приміщень</td>
+              <td>м²</td>
+              <td><strong>240 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="finishing" data-search="поклейка шпалер шириною 100 см на стіну (з підбором) внутрішнє оздоблення приміщень ">
+              <td>
+                <strong>Поклейка шпалер шириною 100 см на стіну (з підбором)</strong>
+                
+              </td>
+              <td>Внутрішнє оздоблення приміщень</td>
               <td>м²</td>
               <td><strong>260 грн</strong></td>
             </tr>
-            <tr class="price-row" data-category="finishing" data-search="монтаж стельових багетів (карнизів) із шпаклюванням стиків та фарбуванням шпаклювальні та малярні роботи ">
+            <tr class="price-row" data-category="finishing" data-search="поклейка шпалер шириною 50 см на стіну (без підбору) внутрішнє оздоблення приміщень ">
               <td>
-                <strong>Монтаж стельових багетів (карнизів) із шпаклюванням стиків та фарбуванням</strong>
+                <strong>Поклейка шпалер шириною 50 см на стіну (без підбору)</strong>
                 
               </td>
-              <td>Шпаклювальні та малярні роботи</td>
-              <td>м.п.</td>
-              <td><strong>280 грн</strong></td>
+              <td>Внутрішнє оздоблення приміщень</td>
+              <td>м²</td>
+              <td><strong>260 грн</strong></td>
             </tr>
-            <tr class="price-row" data-category="finishing" data-search="монтаж підлогового плінтуса (мдф / полімер) із герметизацією примикань шпаклювальні та малярні роботи ">
+            <tr class="price-row" data-category="finishing" data-search="поклейка шпалер шириною 50 см на стіну (з підбором) внутрішнє оздоблення приміщень ">
               <td>
-                <strong>Монтаж підлогового плінтуса (МДФ / полімер) із герметизацією примикань</strong>
+                <strong>Поклейка шпалер шириною 50 см на стіну (з підбором)</strong>
                 
               </td>
-              <td>Шпаклювальні та малярні роботи</td>
-              <td>м.п.</td>
+              <td>Внутрішнє оздоблення приміщень</td>
+              <td>м²</td>
+              <td><strong>300 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="finishing" data-search="поклейка фотошпалер внутрішнє оздоблення приміщень ">
+              <td>
+                <strong>Поклейка фотошпалер</strong>
+                
+              </td>
+              <td>Внутрішнє оздоблення приміщень</td>
+              <td>м²</td>
+              <td><strong>500 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="finishing" data-search="фарбування грунт-фарбою внутрішнє оздоблення приміщень ">
+              <td>
+                <strong>Фарбування грунт-фарбою</strong>
+                
+              </td>
+              <td>Внутрішнє оздоблення приміщень</td>
+              <td>м²</td>
+              <td><strong>130 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="finishing" data-search="фарбування стін водоемульсійною фарбою внутрішнє оздоблення приміщень ">
+              <td>
+                <strong>Фарбування стін водоемульсійною фарбою</strong>
+                
+              </td>
+              <td>Внутрішнє оздоблення приміщень</td>
+              <td>м²</td>
+              <td><strong>220 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="finishing" data-search="фарбування стелі водоемульсійною фарбою внутрішнє оздоблення приміщень ">
+              <td>
+                <strong>Фарбування стелі водоемульсійною фарбою</strong>
+                
+              </td>
+              <td>Внутрішнє оздоблення приміщень</td>
+              <td>м²</td>
               <td><strong>240 грн</strong></td>
             </tr>
-            <tr class="price-row" data-category="tiling" data-search="укладання великоформатного керамограніту на підлогу та стіни (з свп) плиточні роботи точна площина та мінімальний шов">
+            <tr class="price-row" data-category="finishing" data-search="опуск дверної пройми внутрішнє оздоблення приміщень ">
               <td>
-                <strong>Укладання великоформатного керамограніту на підлогу та стіни (з СВП)</strong>
-                <div style="font-size: 0.82rem; color: #78716c; margin-top: 0.2rem;">Точна площина та мінімальний шов</div>
+                <strong>Опуск дверної пройми</strong>
+                
+              </td>
+              <td>Внутрішнє оздоблення приміщень</td>
+              <td>штука</td>
+              <td><strong>800 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="finishing" data-search="установка люка з драбиною на горище внутрішнє оздоблення приміщень ">
+              <td>
+                <strong>Установка люка з драбиною на горище</strong>
+                
+              </td>
+              <td>Внутрішнє оздоблення приміщень</td>
+              <td>штука</td>
+              <td><strong>4500 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="finishing" data-search="монтаж 3 д панелей з підготовкою під фарбування внутрішнє оздоблення приміщень ">
+              <td>
+                <strong>Монтаж 3 Д панелей з підготовкою під фарбування</strong>
+                
+              </td>
+              <td>Внутрішнє оздоблення приміщень</td>
+              <td>м²</td>
+              <td><strong>4500 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="finishing" data-search="фарбування 3 д панелей з підготовкою внутрішнє оздоблення приміщень ">
+              <td>
+                <strong>Фарбування 3 Д панелей з підготовкою</strong>
+                
+              </td>
+              <td>Внутрішнє оздоблення приміщень</td>
+              <td>м²</td>
+              <td><strong>600 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="masonry" data-search="кладка перегородки з піноблоку, газоблоку (до 50м2) кладка ">
+              <td>
+                <strong>Кладка перегородки з піноблоку, газоблоку (до 50м2)</strong>
+                
+              </td>
+              <td>Кладка</td>
+              <td>м²</td>
+              <td><strong>600 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="masonry" data-search="кладка перегородки з піноблоку, газоблоку (від 50м2) кладка ">
+              <td>
+                <strong>Кладка перегородки з піноблоку, газоблоку (від 50м2)</strong>
+                
+              </td>
+              <td>Кладка</td>
+              <td>м²</td>
+              <td><strong>400 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="masonry" data-search="кладка перегородки з цегли (до 50м2) кладка ">
+              <td>
+                <strong>Кладка перегородки з цегли (до 50м2)</strong>
+                
+              </td>
+              <td>Кладка</td>
+              <td>м²</td>
+              <td><strong>900 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="masonry" data-search="кладка перегородки з цегли (від 50м2) кладка ">
+              <td>
+                <strong>Кладка перегородки з цегли (від 50м2)</strong>
+                
+              </td>
+              <td>Кладка</td>
+              <td>м²</td>
+              <td><strong>750 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="masonry" data-search="анкерування однієї стіни до іншої кладка ">
+              <td>
+                <strong>Анкерування однієї стіни до іншої</strong>
+                
+              </td>
+              <td>Кладка</td>
+              <td>штука</td>
+              <td><strong>45 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="masonry" data-search="облаштування дверного пройому (звуження, розширення) кладка ">
+              <td>
+                <strong>Облаштування дверного пройому (звуження, розширення)</strong>
+                
+              </td>
+              <td>Кладка</td>
+              <td>штука</td>
+              <td><strong>1000 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="masonry" data-search="кладка цегляної підстави під ванну кладка ">
+              <td>
+                <strong>Кладка цегляної підстави під ванну</strong>
+                
+              </td>
+              <td>Кладка</td>
+              <td>штука</td>
+              <td><strong>1500 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="drywall" data-search="монтаж на висоті (більше 3м) гіпсокартон ">
+              <td>
+                <strong>Монтаж на висоті (більше 3м)</strong>
+                
+              </td>
+              <td>Гіпсокартон</td>
+              <td>%</td>
+              <td><strong>20%</strong></td>
+            </tr>
+            <tr class="price-row" data-category="drywall" data-search="монтаж гіпсокартону на стелю зі скосами гіпсокартон ">
+              <td>
+                <strong>Монтаж гіпсокартону на стелю зі скосами</strong>
+                
+              </td>
+              <td>Гіпсокартон</td>
+              <td>м²</td>
+              <td><strong>800 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="drywall" data-search="монтаж гіпсокартону на стелю рівну гіпсокартон ">
+              <td>
+                <strong>Монтаж гіпсокартону на стелю рівну</strong>
+                
+              </td>
+              <td>Гіпсокартон</td>
+              <td>м²</td>
+              <td><strong>650 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="drywall" data-search="монтаж гіпсокартону на стіни гіпсокартон ">
+              <td>
+                <strong>Монтаж гіпсокартону на стіни</strong>
+                
+              </td>
+              <td>Гіпсокартон</td>
+              <td>м²</td>
+              <td><strong>600 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="drywall" data-search="монтаж конструкцій (перегородки 2 сторони) із гіпсокартону в 1 шар гіпсокартон ">
+              <td>
+                <strong>Монтаж конструкцій (перегородки 2 сторони) із гіпсокартону в 1 шар</strong>
+                
+              </td>
+              <td>Гіпсокартон</td>
+              <td>м²</td>
+              <td><strong>800 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="drywall" data-search="монтаж конструкцій (перегородки 2 сторони) із гіпсокартону в 2 шари гіпсокартон ">
+              <td>
+                <strong>Монтаж конструкцій (перегородки 2 сторони) із гіпсокартону в 2 шари</strong>
+                
+              </td>
+              <td>Гіпсокартон</td>
+              <td>м²</td>
+              <td><strong>900 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="drywall" data-search="монтаж радіусних конструкцій (перегородки) із гіпсокартону в 1 шар гіпсокартон ">
+              <td>
+                <strong>Монтаж радіусних конструкцій (перегородки) із гіпсокартону в 1 шар</strong>
+                
+              </td>
+              <td>Гіпсокартон</td>
+              <td>м²</td>
+              <td><strong>900 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="drywall" data-search="монтаж радіусних конструкцій (перегородки) із гіпсокартону в 2 шари гіпсокартон ">
+              <td>
+                <strong>Монтаж радіусних конструкцій (перегородки) із гіпсокартону в 2 шари</strong>
+                
+              </td>
+              <td>Гіпсокартон</td>
+              <td>м²</td>
+              <td><strong>1000 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="drywall" data-search="утеплення мінватою в один шар гіпсокартон ">
+              <td>
+                <strong>Утеплення мінватою в один шар</strong>
+                
+              </td>
+              <td>Гіпсокартон</td>
+              <td>м²</td>
+              <td><strong>220 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="drywall" data-search="вирізка отворів в гіпсокартоні гіпсокартон ">
+              <td>
+                <strong>Вирізка отворів в гіпсокартоні</strong>
+                
+              </td>
+              <td>Гіпсокартон</td>
+              <td>штука</td>
+              <td><strong>150 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="drywall" data-search="обшивка інсталяції, в т. ч. отвори гіпсокартон ">
+              <td>
+                <strong>Обшивка інсталяції, в т. ч. отвори</strong>
+                
+              </td>
+              <td>Гіпсокартон</td>
+              <td>штука</td>
+              <td><strong>2500 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="drywall" data-search="монтаж екрану ванни з підступком гіпсокартон ">
+              <td>
+                <strong>Монтаж екрану ванни з підступком</strong>
+                
+              </td>
+              <td>Гіпсокартон</td>
+              <td>штука</td>
+              <td><strong>3500 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="tiling" data-search="грунтовка поверхонь (проста) плиточні роботи ">
+              <td>
+                <strong>Грунтовка поверхонь (проста)</strong>
+                
+              </td>
+              <td>Плиточні роботи</td>
+              <td>м²</td>
+              <td><strong>45 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="tiling" data-search="грунтовка поверхонь (бетоноконтактом) плиточні роботи ">
+              <td>
+                <strong>Грунтовка поверхонь (бетоноконтактом)</strong>
+                
+              </td>
+              <td>Плиточні роботи</td>
+              <td>м²</td>
+              <td><strong>100 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="tiling" data-search="укладання плитки по діагоналі (+ до ціни укладання) плиточні роботи ">
+              <td>
+                <strong>Укладання плитки по діагоналі (+ до ціни укладання)</strong>
+                
+              </td>
+              <td>Плиточні роботи</td>
+              <td>%</td>
+              <td><strong>20%</strong></td>
+            </tr>
+            <tr class="price-row" data-category="tiling" data-search="укладання плитки (об'ємом менше 20 м2) плиточні роботи ">
+              <td>
+                <strong>Укладання плитки (об'ємом менше 20 м2)</strong>
+                
+              </td>
+              <td>Плиточні роботи</td>
+              <td>м²</td>
+              <td><strong>1500 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="tiling" data-search="укладання плитки на слой (більше 1см) плиточні роботи ">
+              <td>
+                <strong>Укладання плитки на слой (більше 1см)</strong>
+                
+              </td>
+              <td>Плиточні роботи</td>
+              <td>%</td>
+              <td><strong>20%</strong></td>
+            </tr>
+            <tr class="price-row" data-category="tiling" data-search="укладання плитки керамічної плиточні роботи ">
+              <td>
+                <strong>Укладання плитки керамічної</strong>
+                
               </td>
               <td>Плиточні роботи</td>
               <td>м²</td>
               <td><strong>950 грн</strong></td>
             </tr>
-            <tr class="price-row" data-category="tiling" data-search="зарізка зовнішніх кутів керамограніту під 45 градусів (заусовка) плиточні роботи ">
+            <tr class="price-row" data-category="tiling" data-search="укладання плитки мілкоформатної плиточні роботи ">
               <td>
-                <strong>Зарізка зовнішніх кутів керамограніту під 45 градусів (заусовка)</strong>
-                
-              </td>
-              <td>Плиточні роботи</td>
-              <td>м.п.</td>
-              <td><strong>650 грн</strong></td>
-            </tr>
-            <tr class="price-row" data-category="tiling" data-search="обмазувальна гідроізоляція вологих зон санвузла зі стрічкою примикань плиточні роботи ">
-              <td>
-                <strong>Обмазувальна гідроізоляція вологих зон санвузла зі стрічкою примикань</strong>
+                <strong>Укладання плитки мілкоформатної</strong>
                 
               </td>
               <td>Плиточні роботи</td>
               <td>м²</td>
-              <td><strong>220 грн</strong></td>
+              <td><strong>1350 грн</strong></td>
             </tr>
-            <tr class="price-row" data-category="tiling" data-search="заповнення швів двокомпонентною епоксидною або цементною фугою плиточні роботи ">
+            <tr class="price-row" data-category="tiling" data-search="укладання плитки 600*600 плиточні роботи керамограніт / кахель">
               <td>
-                <strong>Заповнення швів двокомпонентною епоксидною або цементною фугою</strong>
+                <strong>Укладання плитки 600*600</strong>
+                <div style="font-size: 0.82rem; color: #78716c; margin-top: 0.2rem;">Керамограніт / кахель</div>
+              </td>
+              <td>Плиточні роботи</td>
+              <td>м²</td>
+              <td><strong>950 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="tiling" data-search="укладання плитки 1200*200 плиточні роботи ">
+              <td>
+                <strong>Укладання плитки 1200*200</strong>
                 
               </td>
               <td>Плиточні роботи</td>
               <td>м²</td>
-              <td><strong>180 грн</strong></td>
+              <td><strong>950 грн</strong></td>
             </tr>
-            <tr class="price-row" data-category="plumbing" data-search="монтаж водяної або електричної теплої підлоги з зональним wi-fi терморегулятором сантехніка та опалення окреме керування зонами зі смартфона">
+            <tr class="price-row" data-category="tiling" data-search="укладання плитки 1200*200 ялинкою плиточні роботи ">
               <td>
-                <strong>Монтаж водяної або електричної теплої підлоги з зональним Wi-Fi терморегулятором</strong>
-                <div style="font-size: 0.82rem; color: #78716c; margin-top: 0.2rem;">Окреме керування зонами зі смартфона</div>
+                <strong>Укладання плитки 1200*200 ялинкою</strong>
+                
               </td>
-              <td>Сантехніка та опалення</td>
-              <td>контур / м²</td>
+              <td>Плиточні роботи</td>
+              <td>м²</td>
+              <td><strong>1500 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="tiling" data-search="укладання плитки 1200*600 плиточні роботи керамограніт">
+              <td>
+                <strong>Укладання плитки 1200*600</strong>
+                <div style="font-size: 0.82rem; color: #78716c; margin-top: 0.2rem;">Керамограніт</div>
+              </td>
+              <td>Плиточні роботи</td>
+              <td>м²</td>
+              <td><strong>1100 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="tiling" data-search="укладання плитки 800*800 плиточні роботи ">
+              <td>
+                <strong>Укладання плитки 800*800</strong>
+                
+              </td>
+              <td>Плиточні роботи</td>
+              <td>м²</td>
+              <td><strong>1100 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="tiling" data-search="укладання плитки 900*900 плиточні роботи ">
+              <td>
+                <strong>Укладання плитки 900*900</strong>
+                
+              </td>
+              <td>Плиточні роботи</td>
+              <td>м²</td>
+              <td><strong>1200 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="tiling" data-search="укладання плитки 1500*750 плиточні роботи ">
+              <td>
+                <strong>Укладання плитки 1500*750</strong>
+                
+              </td>
+              <td>Плиточні роботи</td>
+              <td>м²</td>
+              <td><strong>1200 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="tiling" data-search="укладання плитки 1000*1000 плиточні роботи ">
+              <td>
+                <strong>Укладання плитки 1000*1000</strong>
+                
+              </td>
+              <td>Плиточні роботи</td>
+              <td>м²</td>
+              <td><strong>1200 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="tiling" data-search="укладання плитки 1200*1200 плиточні роботи ">
+              <td>
+                <strong>Укладання плитки 1200*1200</strong>
+                
+              </td>
+              <td>Плиточні роботи</td>
+              <td>м²</td>
+              <td><strong>1350 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="tiling" data-search="укладання плитки 1500*1500 плиточні роботи ">
+              <td>
+                <strong>Укладання плитки 1500*1500</strong>
+                
+              </td>
+              <td>Плиточні роботи</td>
+              <td>м²</td>
+              <td><strong>1500 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="tiling" data-search="укладання плитки 1200*2500 плиточні роботи ">
+              <td>
+                <strong>Укладання плитки 1200*2500</strong>
+                
+              </td>
+              <td>Плиточні роботи</td>
+              <td>м²</td>
+              <td><strong>5000 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="tiling" data-search="укладання плитки 1200*3000 плиточні роботи ">
+              <td>
+                <strong>Укладання плитки 1200*3000</strong>
+                
+              </td>
+              <td>Плиточні роботи</td>
+              <td>м²</td>
+              <td><strong>6000 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="tiling" data-search="укладання плитки "кабанчик" плиточні роботи ">
+              <td>
+                <strong>Укладання плитки "кабанчик"</strong>
+                
+              </td>
+              <td>Плиточні роботи</td>
+              <td>м²</td>
+              <td><strong>1500 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="tiling" data-search="укладання клінкерної плитки плиточні роботи ">
+              <td>
+                <strong>Укладання клінкерної плитки</strong>
+                
+              </td>
+              <td>Плиточні роботи</td>
+              <td>м²</td>
+              <td><strong>1350 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="tiling" data-search="укладання мозаїки плиточні роботи ">
+              <td>
+                <strong>Укладання мозаїки</strong>
+                
+              </td>
+              <td>Плиточні роботи</td>
+              <td>м²</td>
+              <td><strong>3000 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="tiling" data-search="вирізка отворів в плитці плиточні роботи ">
+              <td>
+                <strong>Вирізка отворів в плитці</strong>
+                
+              </td>
+              <td>Плиточні роботи</td>
+              <td>штука</td>
+              <td><strong>300 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="tiling" data-search="затирка швів сухою сумішшю плиточні роботи ">
+              <td>
+                <strong>Затирка швів сухою сумішшю</strong>
+                
+              </td>
+              <td>Плиточні роботи</td>
+              <td>м²</td>
+              <td><strong>250 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="tiling" data-search="піддон з плитки з бортиком (комплекс робіт) плиточні роботи ">
+              <td>
+                <strong>Піддон з плитки з бортиком (комплекс робіт)</strong>
+                
+              </td>
+              <td>Плиточні роботи</td>
+              <td>штука</td>
+              <td><strong>16000 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="tiling" data-search="піддон з плитки в рівень з підлогою (комплекс робіт) плиточні роботи ">
+              <td>
+                <strong>Піддон з плитки в рівень з підлогою (комплекс робіт)</strong>
+                
+              </td>
+              <td>Плиточні роботи</td>
+              <td>штука</td>
+              <td><strong>10000 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="tiling" data-search="установка люка-ревізія на магнітах - від плиточні роботи ">
+              <td>
+                <strong>Установка люка-ревізія на магнітах - від</strong>
+                
+              </td>
+              <td>Плиточні роботи</td>
+              <td>штука</td>
+              <td><strong>1200 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="tiling" data-search="виготовлення та монтаж ревізійного люка з плитки плиточні роботи ">
+              <td>
+                <strong>Виготовлення та монтаж ревізійного люка з плитки</strong>
+                
+              </td>
+              <td>Плиточні роботи</td>
+              <td>штука</td>
+              <td><strong>2200 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="tiling" data-search="виготовлення поличок з плитки в три сторони (шириною до 30см) плиточні роботи ">
+              <td>
+                <strong>Виготовлення поличок з плитки в три сторони (шириною до 30см)</strong>
+                
+              </td>
+              <td>Плиточні роботи</td>
+              <td>штука</td>
+              <td><strong>3000 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="tiling" data-search="виготовлення поличок з плитки в чотири сторони (шириною до 30см) плиточні роботи ">
+              <td>
+                <strong>Виготовлення поличок з плитки в чотири сторони (шириною до 30см)</strong>
+                
+              </td>
+              <td>Плиточні роботи</td>
+              <td>штука</td>
+              <td><strong>3500 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="tiling" data-search="виготовлення поличок з плитки в три сторони (шириною від 30см) плиточні роботи ">
+              <td>
+                <strong>Виготовлення поличок з плитки в три сторони (шириною від 30см)</strong>
+                
+              </td>
+              <td>Плиточні роботи</td>
+              <td>штука</td>
+              <td><strong>3500 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="tiling" data-search="монтаж поличок з плитки плиточні роботи ">
+              <td>
+                <strong>Монтаж поличок з плитки</strong>
+                
+              </td>
+              <td>Плиточні роботи</td>
+              <td>штука</td>
+              <td><strong>500 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="tiling" data-search="виготовлення та монтаж вбудованої витяжки плиточні роботи ">
+              <td>
+                <strong>Виготовлення та монтаж вбудованої витяжки</strong>
+                
+              </td>
+              <td>Плиточні роботи</td>
+              <td>штука</td>
+              <td><strong>3500 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="tiling" data-search="виготовлення та монтаж кнопка інсталяції з плитки плиточні роботи ">
+              <td>
+                <strong>Виготовлення та монтаж кнопка інсталяції з плитки</strong>
+                
+              </td>
+              <td>Плиточні роботи</td>
+              <td>штука</td>
+              <td><strong>9000 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="tiling" data-search="виготовлення раковини одинарної плиточні роботи ">
+              <td>
+                <strong>Виготовлення раковини одинарної</strong>
+                
+              </td>
+              <td>Плиточні роботи</td>
+              <td>штука</td>
+              <td><strong>20000 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="tiling" data-search="виготовлення раковини подвійної плиточні роботи ">
+              <td>
+                <strong>Виготовлення раковини подвійної</strong>
+                
+              </td>
+              <td>Плиточні роботи</td>
+              <td>штука</td>
+              <td><strong>35000 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="tiling" data-search="монтаж раковини з плитки плиточні роботи ">
+              <td>
+                <strong>Монтаж раковини з плитки</strong>
+                
+              </td>
+              <td>Плиточні роботи</td>
+              <td>штука</td>
+              <td><strong>2000 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="screed" data-search="шліфування бетону/стяжки стяжка ">
+              <td>
+                <strong>Шліфування бетону/стяжки</strong>
+                
+              </td>
+              <td>Стяжка</td>
+              <td>м²</td>
+              <td><strong>300 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="screed" data-search="підготовка поверхні (очищення і т.п.) стяжка ">
+              <td>
+                <strong>Підготовка поверхні (очищення і т.п.)</strong>
+                
+              </td>
+              <td>Стяжка</td>
+              <td>м²</td>
+              <td><strong>60 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="screed" data-search="грунтовка під стяжку стяжка ">
+              <td>
+                <strong>Грунтовка під стяжку</strong>
+                
+              </td>
+              <td>Стяжка</td>
+              <td>м²</td>
+              <td><strong>45 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="screed" data-search="плівкова ізоляція під стяжку стяжка ">
+              <td>
+                <strong>Плівкова ізоляція під стяжку</strong>
+                
+              </td>
+              <td>Стяжка</td>
+              <td>м²</td>
+              <td><strong>80 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="screed" data-search="армування підлоги сіткою під стяжку стяжка ">
+              <td>
+                <strong>Армування підлоги сіткою під стяжку</strong>
+                
+              </td>
+              <td>Стяжка</td>
+              <td>м²</td>
+              <td><strong>130 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="screed" data-search="монтаж утеплювача стяжка ">
+              <td>
+                <strong>Монтаж утеплювача</strong>
+                
+              </td>
+              <td>Стяжка</td>
+              <td>м²</td>
+              <td><strong>130 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="screed" data-search="монтаж демпферної стрічки стяжка ">
+              <td>
+                <strong>Монтаж демпферної стрічки</strong>
+                
+              </td>
+              <td>Стяжка</td>
+              <td>м²</td>
+              <td><strong>50 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="screed" data-search="цементно-піщана стяжка (до 20м2) стяжка ">
+              <td>
+                <strong>Цементно-піщана стяжка (до 20м2)</strong>
+                
+              </td>
+              <td>Стяжка</td>
+              <td>м²</td>
+              <td><strong>500 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="screed" data-search="цементно-піщана стяжка (понад 20м2) стяжка ">
+              <td>
+                <strong>Цементно-піщана стяжка (понад 20м2)</strong>
+                
+              </td>
+              <td>Стяжка</td>
+              <td>м²</td>
+              <td><strong>400 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="screed" data-search="вирівнювання підлоги самовирівнюючим розчином стяжка ">
+              <td>
+                <strong>Вирівнювання підлоги самовирівнюючим розчином</strong>
+                
+              </td>
+              <td>Стяжка</td>
+              <td>м²</td>
+              <td><strong>400 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="flooring" data-search="чистка підлоги порохотягом (підготовка) підлога ">
+              <td>
+                <strong>Чистка підлоги порохотягом (підготовка)</strong>
+                
+              </td>
+              <td>Підлога</td>
+              <td>м²</td>
+              <td><strong>25 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="flooring" data-search="грунтовка підлоги (підготовчі роботи) підлога ">
+              <td>
+                <strong>Грунтовка підлоги (підготовчі роботи)</strong>
+                
+              </td>
+              <td>Підлога</td>
+              <td>м²</td>
+              <td><strong>45 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="flooring" data-search="шліфування дерев'яної підлоги підлога ">
+              <td>
+                <strong>Шліфування дерев'яної підлоги</strong>
+                
+              </td>
+              <td>Підлога</td>
+              <td>м²</td>
+              <td><strong>300 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="flooring" data-search="настил лінолеуму/ковроліну підлога ">
+              <td>
+                <strong>Настил лінолеуму/ковроліну</strong>
+                
+              </td>
+              <td>Підлога</td>
+              <td>м²</td>
+              <td><strong>250 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="flooring" data-search="настил лінолеуму/ковроліну на клей підлога ">
+              <td>
+                <strong>Настил лінолеуму/ковроліну на клей</strong>
+                
+              </td>
+              <td>Підлога</td>
+              <td>м²</td>
+              <td><strong>300 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="flooring" data-search="влаштування дерев'яних лаг підлога ">
+              <td>
+                <strong>Влаштування дерев'яних лаг</strong>
+                
+              </td>
+              <td>Підлога</td>
+              <td>м²</td>
+              <td><strong>300 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="flooring" data-search="настил підлоги із дошки підлога ">
+              <td>
+                <strong>Настил підлоги із дошки</strong>
+                
+              </td>
+              <td>Підлога</td>
+              <td>м²</td>
+              <td><strong>400 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="flooring" data-search="укладка ламінату проста підлога ">
+              <td>
+                <strong>Укладка ламінату проста</strong>
+                
+              </td>
+              <td>Підлога</td>
+              <td>м²</td>
+              <td><strong>350 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="flooring" data-search="укладка ламінату по діагоналі підлога ">
+              <td>
+                <strong>Укладка ламінату по діагоналі</strong>
+                
+              </td>
+              <td>Підлога</td>
+              <td>м²</td>
+              <td><strong>400 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="flooring" data-search="укладка кварцвінілу на підкладку підлога ">
+              <td>
+                <strong>Укладка кварцвінілу на підкладку</strong>
+                
+              </td>
+              <td>Підлога</td>
+              <td>м²</td>
+              <td><strong>400 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="flooring" data-search="укладка кварцвінілу на клей підлога ">
+              <td>
+                <strong>Укладка кварцвінілу на клей</strong>
+                
+              </td>
+              <td>Підлога</td>
+              <td>м²</td>
               <td><strong>450 грн</strong></td>
             </tr>
-            <tr class="price-row" data-category="plumbing" data-search="монтаж бойлера (вертикального / горизонтального) із термозмішувальним клапаном сантехніка та опалення стабільна температура та збільшений запас гарячої води">
+            <tr class="price-row" data-category="flooring" data-search="монтаж терасної дошки підлога ">
               <td>
-                <strong>Монтаж бойлера (вертикального / горизонтального) із термозмішувальним клапаном</strong>
-                <div style="font-size: 0.82rem; color: #78716c; margin-top: 0.2rem;">Стабільна температура та збільшений запас гарячої води</div>
-              </td>
-              <td>Сантехніка та опалення</td>
-              <td>компл.</td>
-              <td><strong>3 800 грн</strong></td>
-            </tr>
-            <tr class="price-row" data-category="plumbing" data-search="встановлення ввідного вузла: редуктор тиску, фільтр та система антипотопу з датчиками сантехніка та опалення ">
-              <td>
-                <strong>Встановлення ввідного вузла: редуктор тиску, фільтр та система антипотопу з датчиками</strong>
+                <strong>Монтаж терасної дошки</strong>
                 
               </td>
-              <td>Сантехніка та опалення</td>
-              <td>вузол</td>
-              <td><strong>4 200 грн</strong></td>
+              <td>Підлога</td>
+              <td>м²</td>
+              <td><strong>650 грн</strong></td>
             </tr>
-            <tr class="price-row" data-category="plumbing" data-search="монтаж інсталяції та підвісного унітаза з гігієнічним душем сантехніка та опалення ">
+            <tr class="price-row" data-category="flooring" data-search="нанесення лаку/тонера на підлогу підлога ">
               <td>
-                <strong>Монтаж інсталяції та підвісного унітаза з гігієнічним душем</strong>
+                <strong>Нанесення лаку/тонера на підлогу</strong>
                 
               </td>
-              <td>Сантехніка та опалення</td>
-              <td>компл.</td>
-              <td><strong>3 200 грн</strong></td>
+              <td>Підлога</td>
+              <td>м²</td>
+              <td><strong>500 грн</strong></td>
             </tr>
-            <tr class="price-row" data-category="electrical" data-search="прокладання силових та слабострумних кабельних ліній у новобудові (точка) електромонтажні роботи ">
+            <tr class="price-row" data-category="flooring" data-search="приклеювання стиків в місцях порожків, герметизація силіконом підлога ">
               <td>
-                <strong>Прокладання силових та слабострумних кабельних ліній у новобудові (точка)</strong>
+                <strong>Приклеювання стиків в місцях порожків, герметизація силіконом</strong>
                 
               </td>
-              <td>Електромонтажні роботи</td>
+              <td>Підлога</td>
+              <td>шт</td>
+              <td><strong>500 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="electrical" data-search="монтаж електричного котла електрика ">
+              <td>
+                <strong>Монтаж електричного котла</strong>
+                
+              </td>
+              <td>Електрика</td>
+              <td>штука</td>
+              <td><strong>5000 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="electrical" data-search="електромонтаж контура заземлення електрика ">
+              <td>
+                <strong>Електромонтаж контура заземлення</strong>
+                
+              </td>
+              <td>Електрика</td>
+              <td>контур</td>
+              <td><strong>9000 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="electrical" data-search="перевірка цілісності електричного кола шляхом продзвонки для квартир електрика ">
+              <td>
+                <strong>Перевірка цілісності електричного кола шляхом продзвонки для квартир</strong>
+                
+              </td>
+              <td>Електрика</td>
+              <td>м²</td>
+              <td><strong>100 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="electrical" data-search="перевірка цілісності електричного кола для будинків - індивідуальний підхід електрика ">
+              <td>
+                <strong>Перевірка цілісності електричного кола для будинків - індивідуальний підхід</strong>
+                
+              </td>
+              <td>Електрика</td>
+              <td>комплекс</td>
+              <td><strong>7000 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="electrical" data-search="установка тимчасового освітлення та розеток (на час ремонту) електрика ">
+              <td>
+                <strong>Установка тимчасового освітлення та розеток (на час ремонту)</strong>
+                
+              </td>
+              <td>Електрика</td>
+              <td>штука</td>
+              <td><strong>100 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="electrical" data-search="вирізка ніші під електрощит (12-36 модулів) електрика ">
+              <td>
+                <strong>Вирізка ніші під електрощит (12-36 модулів)</strong>
+                
+              </td>
+              <td>Електрика</td>
+              <td>штука</td>
+              <td><strong>1000 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="electrical" data-search="вирізка ніші під електрощит (48-60 модулів) електрика ">
+              <td>
+                <strong>Вирізка ніші під електрощит (48-60 модулів)</strong>
+                
+              </td>
+              <td>Електрика</td>
+              <td>штука</td>
+              <td><strong>1800 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="electrical" data-search="монтаж електрощита в нішу електрика ">
+              <td>
+                <strong>Монтаж електрощита в нішу</strong>
+                
+              </td>
+              <td>Електрика</td>
+              <td>штука</td>
+              <td><strong>1000 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="electrical" data-search="монтаж електрощита накладного (12-36 модулів) електрика ">
+              <td>
+                <strong>Монтаж електрощита накладного (12-36 модулів)</strong>
+                
+              </td>
+              <td>Електрика</td>
+              <td>штука</td>
+              <td><strong>900 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="electrical" data-search="монтаж електрощита накладного (48-60 модулів) електрика ">
+              <td>
+                <strong>Монтаж електрощита накладного (48-60 модулів)</strong>
+                
+              </td>
+              <td>Електрика</td>
+              <td>штука</td>
+              <td><strong>1300 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="electrical" data-search="монтаж електрощита накладного (72-90 модулів) електрика ">
+              <td>
+                <strong>Монтаж електрощита накладного (72-90 модулів)</strong>
+                
+              </td>
+              <td>Електрика</td>
+              <td>штука</td>
+              <td><strong>1800 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="electrical" data-search="монтаж електрощита накладного (120-180 модулів) електрика ">
+              <td>
+                <strong>Монтаж електрощита накладного (120-180 модулів)</strong>
+                
+              </td>
+              <td>Електрика</td>
+              <td>штука</td>
+              <td><strong>2200 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="electrical" data-search="установка контактора 220 в електрика ">
+              <td>
+                <strong>Установка контактора 220 В</strong>
+                
+              </td>
+              <td>Електрика</td>
+              <td>штука</td>
+              <td><strong>500 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="electrical" data-search="установка контактора 380 в електрика ">
+              <td>
+                <strong>Установка контактора 380 В</strong>
+                
+              </td>
+              <td>Електрика</td>
+              <td>штука</td>
+              <td><strong>700 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="electrical" data-search="монтаж нульової шини електрика ">
+              <td>
+                <strong>Монтаж нульової шини</strong>
+                
+              </td>
+              <td>Електрика</td>
+              <td>штука</td>
+              <td><strong>250 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="electrical" data-search="встановлення розподільчого блоку на динрейку електрика ">
+              <td>
+                <strong>Встановлення розподільчого блоку на динрейку</strong>
+                
+              </td>
+              <td>Електрика</td>
+              <td>штука</td>
+              <td><strong>400 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="electrical" data-search="установка автомата однополюсного електрика ">
+              <td>
+                <strong>Установка автомата однополюсного</strong>
+                
+              </td>
+              <td>Електрика</td>
+              <td>штука</td>
+              <td><strong>250 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="electrical" data-search="установка автомата двополюсного електрика ">
+              <td>
+                <strong>Установка автомата двополюсного</strong>
+                
+              </td>
+              <td>Електрика</td>
+              <td>штука</td>
+              <td><strong>500 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="electrical" data-search="установка автомата трьохполюсного електрика ">
+              <td>
+                <strong>Установка автомата трьохполюсного</strong>
+                
+              </td>
+              <td>Електрика</td>
+              <td>штука</td>
+              <td><strong>750 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="electrical" data-search="установка автомата чотирьохполюсного електрика ">
+              <td>
+                <strong>Установка автомата чотирьохполюсного</strong>
+                
+              </td>
+              <td>Електрика</td>
+              <td>штука</td>
+              <td><strong>1000 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="electrical" data-search="установка автомата перекидного двухполюсного електрика ">
+              <td>
+                <strong>Установка автомата перекидного двухполюсного</strong>
+                
+              </td>
+              <td>Електрика</td>
+              <td>штука</td>
+              <td><strong>600 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="electrical" data-search="установка автомата перекидного чотирьохполюсного електрика ">
+              <td>
+                <strong>Установка автомата перекидного чотирьохполюсного</strong>
+                
+              </td>
+              <td>Електрика</td>
+              <td>штука</td>
+              <td><strong>1200 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="electrical" data-search="установка реле перекидного чотирьохполюсного електрика ">
+              <td>
+                <strong>Установка реле перекидного чотирьохполюсного</strong>
+                
+              </td>
+              <td>Електрика</td>
+              <td>штука</td>
+              <td><strong>1000 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="electrical" data-search="установка пристрою захисного відключення (пзв) - двухполюсний електрика ">
+              <td>
+                <strong>Установка пристрою захисного відключення (ПЗВ) - двухполюсний</strong>
+                
+              </td>
+              <td>Електрика</td>
+              <td>штука</td>
+              <td><strong>600 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="electrical" data-search="установка авр електрика ">
+              <td>
+                <strong>Установка АВР</strong>
+                
+              </td>
+              <td>Електрика</td>
+              <td>штука</td>
+              <td><strong>1200 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="electrical" data-search="установка рубильника реверсивного електрика ">
+              <td>
+                <strong>Установка рубильника реверсивного</strong>
+                
+              </td>
+              <td>Електрика</td>
+              <td>штука</td>
+              <td><strong>1200 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="electrical" data-search="установка автомата диференційного електрика ">
+              <td>
+                <strong>Установка автомата диференційного</strong>
+                
+              </td>
+              <td>Електрика</td>
+              <td>штука</td>
+              <td><strong>450 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="electrical" data-search="установка реле напруги (однофазне) електрика ">
+              <td>
+                <strong>Установка реле напруги (однофазне)</strong>
+                
+              </td>
+              <td>Електрика</td>
+              <td>штука</td>
+              <td><strong>600 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="electrical" data-search="установка реле напруги (трифазне) електрика ">
+              <td>
+                <strong>Установка реле напруги (трифазне)</strong>
+                
+              </td>
+              <td>Електрика</td>
+              <td>штука</td>
+              <td><strong>1700 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="electrical" data-search="установка крос-модуля електрика ">
+              <td>
+                <strong>Установка крос-модуля</strong>
+                
+              </td>
+              <td>Електрика</td>
+              <td>штука</td>
+              <td><strong>650 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="electrical" data-search="опресовка наконечників кабельних електрика ">
+              <td>
+                <strong>Опресовка наконечників кабельних</strong>
+                
+              </td>
+              <td>Електрика</td>
+              <td>штука</td>
+              <td><strong>120 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="electrical" data-search="пайка кабелю електрика ">
+              <td>
+                <strong>Пайка кабелю</strong>
+                
+              </td>
+              <td>Електрика</td>
+              <td>стик</td>
+              <td><strong>120 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="electrical" data-search="отвір для підрозетника (в гіпсокартоні) електрика ">
+              <td>
+                <strong>Отвір для підрозетника (в гіпсокартоні)</strong>
+                
+              </td>
+              <td>Електрика</td>
+              <td>штука</td>
+              <td><strong>100 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="electrical" data-search="отвір для підрозетника (в цеглі) електрика ">
+              <td>
+                <strong>Отвір для підрозетника (в цеглі)</strong>
+                
+              </td>
+              <td>Електрика</td>
+              <td>штука</td>
+              <td><strong>160 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="electrical" data-search="отвір для підрозетника (в бетоні) електрика ">
+              <td>
+                <strong>Отвір для підрозетника (в бетоні)</strong>
+                
+              </td>
+              <td>Електрика</td>
+              <td>штука</td>
+              <td><strong>250 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="electrical" data-search="монтаж підрозетника електрика ">
+              <td>
+                <strong>Монтаж підрозетника</strong>
+                
+              </td>
+              <td>Електрика</td>
+              <td>штука</td>
+              <td><strong>70 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="electrical" data-search="отвір для розподільчої коробки (в гіпсокартоні) електрика ">
+              <td>
+                <strong>Отвір для розподільчої коробки (в гіпсокартоні)</strong>
+                
+              </td>
+              <td>Електрика</td>
+              <td>штука</td>
+              <td><strong>140 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="electrical" data-search="отвір для розподільчої коробки (в цеглі) електрика ">
+              <td>
+                <strong>Отвір для розподільчої коробки (в цеглі)</strong>
+                
+              </td>
+              <td>Електрика</td>
+              <td>штука</td>
+              <td><strong>160 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="electrical" data-search="отвір для розподільчої коробки (в бетоні) електрика ">
+              <td>
+                <strong>Отвір для розподільчої коробки (в бетоні)</strong>
+                
+              </td>
+              <td>Електрика</td>
+              <td>штука</td>
+              <td><strong>250 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="electrical" data-search="монтаж розподільчої коробки (в стіну) електрика ">
+              <td>
+                <strong>Монтаж розподільчої коробки (в стіну)</strong>
+                
+              </td>
+              <td>Електрика</td>
+              <td>штука</td>
+              <td><strong>90 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="electrical" data-search="монтаж розподільчої коробки (на стелю) електрика ">
+              <td>
+                <strong>Монтаж розподільчої коробки (на стелю)</strong>
+                
+              </td>
+              <td>Електрика</td>
+              <td>штука</td>
+              <td><strong>80 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="electrical" data-search="збірка розподільчої коробки, розпаювання проводів електрика ">
+              <td>
+                <strong>Збірка розподільчої коробки, розпаювання проводів</strong>
+                
+              </td>
+              <td>Електрика</td>
+              <td>штука</td>
+              <td><strong>400 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="electrical" data-search="комутація в підрозетнику електрика ">
+              <td>
+                <strong>Комутація в підрозетнику</strong>
+                
+              </td>
+              <td>Електрика</td>
+              <td>штука</td>
+              <td><strong>450 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="electrical" data-search="монтаж люка-ревізія під тв, інтернет електрика ">
+              <td>
+                <strong>Монтаж люка-ревізія під ТВ, інтернет</strong>
+                
+              </td>
+              <td>Електрика</td>
+              <td>штука</td>
+              <td><strong>450 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="electrical" data-search="монтаж вилки кабельної електрика ">
+              <td>
+                <strong>Монтаж вилки кабельної</strong>
+                
+              </td>
+              <td>Електрика</td>
+              <td>штука</td>
+              <td><strong>80 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="electrical" data-search="установка та підключення промислової розетки на фасаді електрика ">
+              <td>
+                <strong>Установка та підключення промислової розетки на фасаді</strong>
+                
+              </td>
+              <td>Електрика</td>
+              <td>штука</td>
+              <td><strong>450 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="electrical" data-search="установка та підключення розеток та вимикачів електрика ">
+              <td>
+                <strong>Установка та підключення розеток та вимикачів</strong>
+                
+              </td>
+              <td>Електрика</td>
+              <td>штука</td>
+              <td><strong>150 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="electrical" data-search="установка та підключення прохідних, перехресних вимикачів електрика ">
+              <td>
+                <strong>Установка та підключення прохідних, перехресних вимикачів</strong>
+                
+              </td>
+              <td>Електрика</td>
+              <td>штука</td>
+              <td><strong>320 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="electrical" data-search="установка накладних розетки, вимикача, розподільчої коробки електрика ">
+              <td>
+                <strong>Установка накладних розетки, вимикача, розподільчої коробки</strong>
+                
+              </td>
+              <td>Електрика</td>
+              <td>штука</td>
+              <td><strong>200 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="electrical" data-search="установка розетки для тв, розгалуджувача або підсилювача тв електрика ">
+              <td>
+                <strong>Установка розетки для ТВ, розгалуджувача або підсилювача ТВ</strong>
+                
+              </td>
+              <td>Електрика</td>
+              <td>штука</td>
+              <td><strong>270 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="electrical" data-search="установка розетки комп'ютерної електрика ">
+              <td>
+                <strong>Установка розетки комп'ютерної</strong>
+                
+              </td>
+              <td>Електрика</td>
+              <td>штука</td>
+              <td><strong>270 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="electrical" data-search="свердління під встановлення точкового світильника в гіпсокартоні електрика ">
+              <td>
+                <strong>Свердління під встановлення точкового світильника в гіпсокартоні</strong>
+                
+              </td>
+              <td>Електрика</td>
+              <td>штука</td>
+              <td><strong>200 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="electrical" data-search="свердління під встановлення точкового світильника в рейковій стелі електрика ">
+              <td>
+                <strong>Свердління під встановлення точкового світильника в рейковій стелі</strong>
+                
+              </td>
+              <td>Електрика</td>
+              <td>штука</td>
+              <td><strong>250 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="electrical" data-search="установка та підключення точкового світильника, софіта електрика ">
+              <td>
+                <strong>Установка та підключення точкового світильника, софіта</strong>
+                
+              </td>
+              <td>Електрика</td>
+              <td>штука</td>
+              <td><strong>250 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="electrical" data-search="установка та підключення трансформатора електрика ">
+              <td>
+                <strong>Установка та підключення трансформатора</strong>
+                
+              </td>
+              <td>Електрика</td>
+              <td>штука</td>
+              <td><strong>250 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="electrical" data-search="установка та підключення стабілізатора напруги електрика ">
+              <td>
+                <strong>Установка та підключення стабілізатора напруги</strong>
+                
+              </td>
+              <td>Електрика</td>
+              <td>штука</td>
+              <td><strong>1500 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="electrical" data-search="укладка підлоги електричної (до 10м2) електрика ">
+              <td>
+                <strong>Укладка підлоги електричної (до 10м2)</strong>
+                
+              </td>
+              <td>Електрика</td>
+              <td>м²</td>
+              <td><strong>750 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="electrical" data-search="укладка підлоги електричної (від 10м2) електрика ">
+              <td>
+                <strong>Укладка підлоги електричної (від 10м2)</strong>
+                
+              </td>
+              <td>Електрика</td>
+              <td>м²</td>
+              <td><strong>600 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="electrical" data-search="фіксація нагрівального мата спеціальним клеєм електрика ">
+              <td>
+                <strong>Фіксація нагрівального мата спеціальним клеєм</strong>
+                
+              </td>
+              <td>Електрика</td>
+              <td>м²</td>
+              <td><strong>80 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="electrical" data-search="укладка підлоги електричної (інфрачервона плівкова) електрика ">
+              <td>
+                <strong>Укладка підлоги електричної (інфрачервона плівкова)</strong>
+                
+              </td>
+              <td>Електрика</td>
+              <td>м²</td>
+              <td><strong>600 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="electrical" data-search="установка та підключення терморегулятора теплої підлоги електрика ">
+              <td>
+                <strong>Установка та підключення терморегулятора теплої підлоги</strong>
+                
+              </td>
+              <td>Електрика</td>
+              <td>штука</td>
+              <td><strong>600 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="electrical" data-search="спайка світлодіодної стрічки електрика ">
+              <td>
+                <strong>Спайка світлодіодної стрічки</strong>
+                
+              </td>
+              <td>Електрика</td>
+              <td>штука</td>
+              <td><strong>150 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="electrical" data-search="складання люстри простої електрика ">
+              <td>
+                <strong>Складання люстри простої</strong>
+                
+              </td>
+              <td>Електрика</td>
+              <td>штука</td>
+              <td><strong>1000 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="electrical" data-search="установка та підключення підвісного світильника, люстри простої електрика ">
+              <td>
+                <strong>Установка та підключення підвісного світильника, люстри простої</strong>
+                
+              </td>
+              <td>Електрика</td>
+              <td>штука</td>
+              <td><strong>750 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="electrical" data-search="установка та підключення настінного світильника, бра електрика ">
+              <td>
+                <strong>Установка та підключення настінного світильника, бра</strong>
+                
+              </td>
+              <td>Електрика</td>
+              <td>штука</td>
+              <td><strong>450 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="electrical" data-search="установка та підключення світлодіодного світильника електрика ">
+              <td>
+                <strong>Установка та підключення світлодіодного світильника</strong>
+                
+              </td>
+              <td>Електрика</td>
+              <td>штука</td>
+              <td><strong>450 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="electrical" data-search="установка та підключення трекового світильника електрика ">
+              <td>
+                <strong>Установка та підключення трекового світильника</strong>
+                
+              </td>
+              <td>Електрика</td>
+              <td>штука</td>
+              <td><strong>250 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="electrical" data-search="установка та підключення дверного дзвінка дротового електрика ">
+              <td>
+                <strong>Установка та підключення дверного дзвінка дротового</strong>
+                
+              </td>
+              <td>Електрика</td>
+              <td>штука</td>
+              <td><strong>600 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="electrical" data-search="установка та підключення дверного дзвінка бездротового електрика ">
+              <td>
+                <strong>Установка та підключення дверного дзвінка бездротового</strong>
+                
+              </td>
+              <td>Електрика</td>
+              <td>штука</td>
+              <td><strong>500 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="electrical" data-search="установка кнопки дверного дзвінка електрика ">
+              <td>
+                <strong>Установка кнопки дверного дзвінка</strong>
+                
+              </td>
+              <td>Електрика</td>
+              <td>штука</td>
+              <td><strong>300 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="electrical" data-search="установка та підключення електроплити, варочної поверхні електрика ">
+              <td>
+                <strong>Установка та підключення електроплити, варочної поверхні</strong>
+                
+              </td>
+              <td>Електрика</td>
+              <td>штука</td>
+              <td><strong>1500 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="electrical" data-search="установка та підключення відеодомофона електрика ">
+              <td>
+                <strong>Установка та підключення відеодомофона</strong>
+                
+              </td>
+              <td>Електрика</td>
+              <td>штука</td>
+              <td><strong>1700 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="electrical" data-search="установка датчиків руху, датчиків світла електрика ">
+              <td>
+                <strong>Установка датчиків руху, датчиків світла</strong>
+                
+              </td>
+              <td>Електрика</td>
+              <td>штука</td>
+              <td><strong>600 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="heating" data-search="обв'язка котла (один котел - 4 точки) - від опалення ">
+              <td>
+                <strong>Обв'язка котла (один котел - 4 точки) - від</strong>
+                
+              </td>
+              <td>Опалення</td>
               <td>точка</td>
-              <td><strong>380 грн</strong></td>
+              <td><strong>1200 грн</strong></td>
             </tr>
-            <tr class="price-row" data-category="electrical" data-search="збірка та комутація квартирного електрощита з реле напруги та пзв електромонтажні роботи ">
+            <tr class="price-row" data-category="heating" data-search="монтаж котельної (котел, бойлер, насоси, крани, фільтра) - від опалення ">
               <td>
-                <strong>Збірка та комутація квартирного електрощита з реле напруги та ПЗВ</strong>
+                <strong>Монтаж котельної (котел, бойлер, насоси, крани, фільтра) - від</strong>
                 
               </td>
-              <td>Електромонтажні роботи</td>
-              <td>компл.</td>
-              <td><strong>4 500 грн</strong></td>
+              <td>Опалення</td>
+              <td>штука</td>
+              <td><strong>25000 грн</strong></td>
             </tr>
-            <tr class="price-row" data-category="electrical" data-search="чистовий монтаж розеток, вимикачів, трекових та підвісних світильників електромонтажні роботи ">
+            <tr class="price-row" data-category="heating" data-search="установка настінного двоконтурного котла опалення ">
               <td>
-                <strong>Чистовий монтаж розеток, вимикачів, трекових та підвісних світильників</strong>
+                <strong>Установка настінного двоконтурного котла</strong>
                 
               </td>
-              <td>Електромонтажні роботи</td>
+              <td>Опалення</td>
+              <td>штука</td>
+              <td><strong>6000 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="heating" data-search="установка настінного одноконтурного котла з бойлером опалення ">
+              <td>
+                <strong>Установка настінного одноконтурного котла з бойлером</strong>
+                
+              </td>
+              <td>Опалення</td>
+              <td>штука</td>
+              <td><strong>9000 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="heating" data-search="установка твердопаливного котла опалення ">
+              <td>
+                <strong>Установка твердопаливного котла</strong>
+                
+              </td>
+              <td>Опалення</td>
+              <td>штука</td>
+              <td><strong>14000 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="heating" data-search="монтаж гідрострілки опалення ">
+              <td>
+                <strong>Монтаж гідрострілки</strong>
+                
+              </td>
+              <td>Опалення</td>
+              <td>штука</td>
+              <td><strong>2500 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="heating" data-search="монтаж насосної групи опалення ">
+              <td>
+                <strong>Монтаж насосної групи</strong>
+                
+              </td>
+              <td>Опалення</td>
+              <td>штука</td>
+              <td><strong>2000 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="heating" data-search="запуск системи опалення опалення ">
+              <td>
+                <strong>Запуск системи опалення</strong>
+                
+              </td>
+              <td>Опалення</td>
+              <td>штука</td>
+              <td><strong>2000 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="heating" data-search="перевірка системи опалення тиском опалення ">
+              <td>
+                <strong>Перевірка системи опалення тиском</strong>
+                
+              </td>
+              <td>Опалення</td>
+              <td>штука</td>
+              <td><strong>2000 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="heating" data-search="монтаж трубної системи "тепла підлога" з утеплювачем опалення ">
+              <td>
+                <strong>Монтаж трубної системи "тепла підлога" з утеплювачем</strong>
+                
+              </td>
+              <td>Опалення</td>
+              <td>м²</td>
+              <td><strong>600 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="heating" data-search="виготовлення ніші під шафу колектора/гребінки (в цеглі) опалення ">
+              <td>
+                <strong>Виготовлення ніші під шафу колектора/гребінки (в цеглі)</strong>
+                
+              </td>
+              <td>Опалення</td>
+              <td>штука</td>
+              <td><strong>1500 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="heating" data-search="виготовлення ніші під шафу колектора/гребінки (в бетоні) опалення ">
+              <td>
+                <strong>Виготовлення ніші під шафу колектора/гребінки (в бетоні)</strong>
+                
+              </td>
+              <td>Опалення</td>
+              <td>штука</td>
+              <td><strong>2300 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="heating" data-search="монтаж колектора/гребінки опалення ">
+              <td>
+                <strong>Монтаж колектора/гребінки</strong>
+                
+              </td>
+              <td>Опалення</td>
+              <td>контур</td>
+              <td><strong>800 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="heating" data-search="установка та підключення унібокса опалення ">
+              <td>
+                <strong>Установка та підключення унібокса</strong>
+                
+              </td>
+              <td>Опалення</td>
+              <td>штука</td>
+              <td><strong>2500 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="heating" data-search="установка радіатора опалення простого опалення ">
+              <td>
+                <strong>Установка радіатора опалення простого</strong>
+                
+              </td>
+              <td>Опалення</td>
+              <td>штука</td>
+              <td><strong>800 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="heating" data-search="установка радіатора опалення вертикального, чавунного опалення ">
+              <td>
+                <strong>Установка радіатора опалення вертикального, чавунного</strong>
+                
+              </td>
+              <td>Опалення</td>
+              <td>штука</td>
+              <td><strong>1300 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="heating" data-search="установка ніжок під радіатор із нижнім підключенням опалення ">
+              <td>
+                <strong>Установка ніжок під радіатор із нижнім підключенням</strong>
+                
+              </td>
+              <td>Опалення</td>
+              <td>штука</td>
+              <td><strong>300 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="heating" data-search="установка терморегулятора на радіатор опалення ">
+              <td>
+                <strong>Установка терморегулятора на радіатор</strong>
+                
+              </td>
+              <td>Опалення</td>
+              <td>штука</td>
+              <td><strong>250 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="heating" data-search="обв'язка радіатора (один радіатор - 2 точки) опалення ">
+              <td>
+                <strong>Обв'язка радіатора (один радіатор - 2 точки)</strong>
+                
+              </td>
+              <td>Опалення</td>
               <td>точка</td>
-              <td><strong>190 грн</strong></td>
+              <td><strong>1000 грн</strong></td>
             </tr>
-            <tr class="price-row" data-category="drywall" data-search="монтаж інженерних коробів під інсталяцію, вентиляцію та стояки гіпсокартон та перегородки ">
+            <tr class="price-row" data-category="heating" data-search="нарізання різьби на стояку опалення опалення ">
               <td>
-                <strong>Монтаж інженерних коробів під інсталяцію, вентиляцію та стояки</strong>
+                <strong>Нарізання різьби на стояку опалення</strong>
                 
               </td>
-              <td>Гіпсокартон та перегородки</td>
-              <td>м.п.</td>
-              <td><strong>550 грн</strong></td>
+              <td>Опалення</td>
+              <td>різець</td>
+              <td><strong>2800 грн</strong></td>
             </tr>
-            <tr class="price-row" data-category="drywall" data-search="зведення звукоізольованих перегородок із подвійною зашивкою гкл гіпсокартон та перегородки ">
+            <tr class="price-row" data-category="water" data-search="запуск системи водопроводу водопостачання ">
               <td>
-                <strong>Зведення звукоізольованих перегородок із подвійною зашивкою ГКЛ</strong>
+                <strong>Запуск системи водопроводу</strong>
                 
               </td>
-              <td>Гіпсокартон та перегородки</td>
-              <td>м²</td>
-              <td><strong>680 грн</strong></td>
+              <td>Водопостачання</td>
+              <td>штука</td>
+              <td><strong>2000 грн</strong></td>
             </tr>
-            <tr class="price-row" data-category="screed" data-search="напівсуха машинна стяжка підлоги за лазерним рівнем під плитку та кварцвініл стяжка та штукатурка ">
+            <tr class="price-row" data-category="water" data-search="перевірка системи водопроводу тиском водопостачання ">
               <td>
-                <strong>Напівсуха машинна стяжка підлоги за лазерним рівнем під плитку та кварцвініл</strong>
+                <strong>Перевірка системи водопроводу тиском</strong>
                 
               </td>
-              <td>Стяжка та штукатурка</td>
-              <td>м²</td>
-              <td><strong>390 грн</strong></td>
+              <td>Водопостачання</td>
+              <td>штука</td>
+              <td><strong>2000 грн</strong></td>
             </tr>
-            <tr class="price-row" data-category="screed" data-search="маячна штукатурка стін із виведенням кутів 90° у зоні кухні та санвузла стяжка та штукатурка ">
+            <tr class="price-row" data-category="water" data-search="виводи по точках (з встановленням кінцевого елементу) водопостачання ">
               <td>
-                <strong>Маячна штукатурка стін із виведенням кутів 90° у зоні кухні та санвузла</strong>
+                <strong>Виводи по точках (з встановленням кінцевого елементу)</strong>
                 
               </td>
-              <td>Стяжка та штукатурка</td>
-              <td>м²</td>
-              <td><strong>360 грн</strong></td>
+              <td>Водопостачання</td>
+              <td>точка</td>
+              <td><strong>1000 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="water" data-search="монтаж фільтра очищення води (легка система) - 2 точки водопостачання ">
+              <td>
+                <strong>Монтаж фільтра очищення води (легка система) - 2 точки</strong>
+                
+              </td>
+              <td>Водопостачання</td>
+              <td>точка</td>
+              <td><strong>1000 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="water" data-search="монтаж фільтра самопромивного водопостачання ">
+              <td>
+                <strong>Монтаж фільтра самопромивного</strong>
+                
+              </td>
+              <td>Водопостачання</td>
+              <td>точка</td>
+              <td><strong>1200 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="water" data-search="монтаж редуктора тиску води водопостачання ">
+              <td>
+                <strong>Монтаж редуктора тиску води</strong>
+                
+              </td>
+              <td>Водопостачання</td>
+              <td>штука</td>
+              <td><strong>1000 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="water" data-search="монтаж гідрокомпенсатора водопостачання ">
+              <td>
+                <strong>Монтаж гідрокомпенсатора</strong>
+                
+              </td>
+              <td>Водопостачання</td>
+              <td>штука</td>
+              <td><strong>900 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="water" data-search="установка та підключення манометра водопостачання ">
+              <td>
+                <strong>Установка та підключення манометра</strong>
+                
+              </td>
+              <td>Водопостачання</td>
+              <td>штука</td>
+              <td><strong>200 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="water" data-search="установка та підключення лічильника води простої складності водопостачання ">
+              <td>
+                <strong>Установка та підключення лічильника води простої складності</strong>
+                
+              </td>
+              <td>Водопостачання</td>
+              <td>штука</td>
+              <td><strong>1100 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="water" data-search="установка та підключення лічильника води підвищеної складності водопостачання ">
+              <td>
+                <strong>Установка та підключення лічильника води підвищеної складності</strong>
+                
+              </td>
+              <td>Водопостачання</td>
+              <td>штука</td>
+              <td><strong>1700 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="water" data-search="установка зворотного осмосу водопостачання ">
+              <td>
+                <strong>Установка зворотного осмосу</strong>
+                
+              </td>
+              <td>Водопостачання</td>
+              <td>штука</td>
+              <td><strong>3000 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="water" data-search="монтаж системи від протікання води водопостачання ">
+              <td>
+                <strong>Монтаж системи від протікання води</strong>
+                
+              </td>
+              <td>Водопостачання</td>
+              <td>штука</td>
+              <td><strong>2000 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="water" data-search="врізка в стояк водопровода водопостачання ">
+              <td>
+                <strong>Врізка в стояк водопровода</strong>
+                
+              </td>
+              <td>Водопостачання</td>
+              <td>врізка</td>
+              <td><strong>1500 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="water" data-search="монтаж гідроакумулятора та автоматики водопостачання ">
+              <td>
+                <strong>Монтаж гідроакумулятора та автоматики</strong>
+                
+              </td>
+              <td>Водопостачання</td>
+              <td>комплекс</td>
+              <td><strong>8500 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="water" data-search="монтаж насоса свердловини (труби, трос, оголовок) водопостачання ">
+              <td>
+                <strong>Монтаж насоса свердловини (труби, трос, оголовок)</strong>
+                
+              </td>
+              <td>Водопостачання</td>
+              <td>комплекс</td>
+              <td><strong>6000 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="sewage" data-search="розводка труб (точка) каналізація ">
+              <td>
+                <strong>Розводка труб (точка)</strong>
+                
+              </td>
+              <td>Каналізація</td>
+              <td>точка</td>
+              <td><strong>1000 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="sewage" data-search="заміна стояка каналізації (панель, 1 поверх) каналізація ">
+              <td>
+                <strong>Заміна стояка каналізації (панель, 1 поверх)</strong>
+                
+              </td>
+              <td>Каналізація</td>
+              <td>стояк</td>
+              <td><strong>4000 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="sewage" data-search="заміна стояка каналізації (панелі, прохідний) каналізація ">
+              <td>
+                <strong>Заміна стояка каналізації (панелі, прохідний)</strong>
+                
+              </td>
+              <td>Каналізація</td>
+              <td>стояк</td>
+              <td><strong>4500 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="sewage" data-search="заміна стояка каналізації з ревізією (панель) каналізація ">
+              <td>
+                <strong>Заміна стояка каналізації з ревізією (панель)</strong>
+                
+              </td>
+              <td>Каналізація</td>
+              <td>стояк</td>
+              <td><strong>5000 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="sewage" data-search="заміна стояка каналізації з хрестовиною (панелі) каналізація ">
+              <td>
+                <strong>Заміна стояка каналізації з хрестовиною (панелі)</strong>
+                
+              </td>
+              <td>Каналізація</td>
+              <td>стояк</td>
+              <td><strong>6000 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="sewage" data-search="монтаж зворотного клапана каналізації ф50 каналізація ">
+              <td>
+                <strong>Монтаж зворотного клапана каналізації Ф50</strong>
+                
+              </td>
+              <td>Каналізація</td>
+              <td>штука</td>
+              <td><strong>1500 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="sewage" data-search="монтаж зворотного клапана каналізації ф110 каналізація ">
+              <td>
+                <strong>Монтаж зворотного клапана каналізації Ф110</strong>
+                
+              </td>
+              <td>Каналізація</td>
+              <td>штука</td>
+              <td><strong>1800 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="sewage" data-search="установка компенсатора каналізаційного каналізація ">
+              <td>
+                <strong>Установка компенсатора каналізаційного</strong>
+                
+              </td>
+              <td>Каналізація</td>
+              <td>штука</td>
+              <td><strong>800 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="sewage" data-search="монтаж сололіфта каналізація ">
+              <td>
+                <strong>Монтаж сололіфта</strong>
+                
+              </td>
+              <td>Каналізація</td>
+              <td>штука</td>
+              <td><strong>4000 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="sewage" data-search="врізка в стояк каналізації каналізація ">
+              <td>
+                <strong>Врізка в стояк каналізації</strong>
+                
+              </td>
+              <td>Каналізація</td>
+              <td>врізка</td>
+              <td><strong>2000 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="sanitary" data-search="установка ванни простої сантехніка (загальне) ">
+              <td>
+                <strong>Установка ванни простої</strong>
+                
+              </td>
+              <td>Сантехніка (загальне)</td>
+              <td>штука</td>
+              <td><strong>3600 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="sanitary" data-search="установка ванни асиметричної сантехніка (загальне) ">
+              <td>
+                <strong>Установка ванни асиметричної</strong>
+                
+              </td>
+              <td>Сантехніка (загальне)</td>
+              <td>штука</td>
+              <td><strong>4500 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="sanitary" data-search="установка ванни із гідромасажем сантехніка (загальне) ">
+              <td>
+                <strong>Установка ванни із гідромасажем</strong>
+                
+              </td>
+              <td>Сантехніка (загальне)</td>
+              <td>штука</td>
+              <td><strong>7500 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="sanitary" data-search="монтаж скляних шторок на ванну сантехніка (загальне) ">
+              <td>
+                <strong>Монтаж скляних шторок на ванну</strong>
+                
+              </td>
+              <td>Сантехніка (загальне)</td>
+              <td>штука</td>
+              <td><strong>2500 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="sanitary" data-search="шумоізоляція ванни сантехніка (загальне) ">
+              <td>
+                <strong>Шумоізоляція ванни</strong>
+                
+              </td>
+              <td>Сантехніка (загальне)</td>
+              <td>штука</td>
+              <td><strong>2000 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="sanitary" data-search="установка декоративного екрану під ванну сантехніка (загальне) ">
+              <td>
+                <strong>Установка декоративного екрану під ванну</strong>
+                
+              </td>
+              <td>Сантехніка (загальне)</td>
+              <td>штука</td>
+              <td><strong>2800 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="sanitary" data-search="установка скляних розсувних дверей сантехніка (загальне) ">
+              <td>
+                <strong>Установка скляних розсувних дверей</strong>
+                
+              </td>
+              <td>Сантехніка (загальне)</td>
+              <td>штука</td>
+              <td><strong>4500 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="sanitary" data-search="установка душової кабіни простої сантехніка (загальне) ">
+              <td>
+                <strong>Установка душової кабіни простої</strong>
+                
+              </td>
+              <td>Сантехніка (загальне)</td>
+              <td>штука</td>
+              <td><strong>5000 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="sanitary" data-search="установка душової кабіни бокс сантехніка (загальне) ">
+              <td>
+                <strong>Установка душової кабіни бокс</strong>
+                
+              </td>
+              <td>Сантехніка (загальне)</td>
+              <td>штука</td>
+              <td><strong>6500 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="sanitary" data-search="монтаж гігієнічного душу сантехніка (загальне) ">
+              <td>
+                <strong>Монтаж гігієнічного душу</strong>
+                
+              </td>
+              <td>Сантехніка (загальне)</td>
+              <td>штука</td>
+              <td><strong>2200 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="sanitary" data-search="монтаж тропічного душу сантехніка (загальне) ">
+              <td>
+                <strong>Монтаж тропічного душу</strong>
+                
+              </td>
+              <td>Сантехніка (загальне)</td>
+              <td>штука</td>
+              <td><strong>750 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="sanitary" data-search="монтаж зливного трапа для душу сантехніка (загальне) ">
+              <td>
+                <strong>Монтаж зливного трапа для душу</strong>
+                
+              </td>
+              <td>Сантехніка (загальне)</td>
+              <td>штука</td>
+              <td><strong>2200 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="sanitary" data-search="установка простого унітазу, біде сантехніка (загальне) ">
+              <td>
+                <strong>Установка простого унітазу, біде</strong>
+                
+              </td>
+              <td>Сантехніка (загальне)</td>
+              <td>штука</td>
+              <td><strong>2000 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="sanitary" data-search="монтаж інсталяції для унітазу сантехніка (загальне) ">
+              <td>
+                <strong>Монтаж інсталяції для унітазу</strong>
+                
+              </td>
+              <td>Сантехніка (загальне)</td>
+              <td>штука</td>
+              <td><strong>2800 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="sanitary" data-search="установка унітазу на готову інсталяцію сантехніка (загальне) ">
+              <td>
+                <strong>Установка унітазу на готову інсталяцію</strong>
+                
+              </td>
+              <td>Сантехніка (загальне)</td>
+              <td>штука</td>
+              <td><strong>1800 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="sanitary" data-search="монтаж панелі з клавішами змиву сантехніка (загальне) ">
+              <td>
+                <strong>Монтаж панелі з клавішами змиву</strong>
+                
+              </td>
+              <td>Сантехніка (загальне)</td>
+              <td>штука</td>
+              <td><strong>600 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="sanitary" data-search="установка кранів сантехніка (загальне) ">
+              <td>
+                <strong>Установка кранів</strong>
+                
+              </td>
+              <td>Сантехніка (загальне)</td>
+              <td>штука</td>
+              <td><strong>500 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="sanitary" data-search="установка змішувача простого сантехніка (загальне) ">
+              <td>
+                <strong>Установка змішувача простого</strong>
+                
+              </td>
+              <td>Сантехніка (загальне)</td>
+              <td>штука</td>
+              <td><strong>1000 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="sanitary" data-search="установка змішувача окремостоячого (підлоговий) сантехніка (загальне) ">
+              <td>
+                <strong>Установка змішувача окремостоячого (підлоговий)</strong>
+                
+              </td>
+              <td>Сантехніка (загальне)</td>
+              <td>штука</td>
+              <td><strong>2500 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="sanitary" data-search="установка змішувача прихованого типу для душа (біде) сантехніка (загальне) ">
+              <td>
+                <strong>Установка змішувача прихованого типу для душа (біде)</strong>
+                
+              </td>
+              <td>Сантехніка (загальне)</td>
+              <td>штука</td>
+              <td><strong>2000 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="sanitary" data-search="установка фурнітури на змішувач прихованого типу (біде) сантехніка (загальне) ">
+              <td>
+                <strong>Установка фурнітури на змішувач прихованого типу (біде)</strong>
+                
+              </td>
+              <td>Сантехніка (загальне)</td>
+              <td>штука</td>
+              <td><strong>800 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="sanitary" data-search="установка змішувача прихованого типу (умивальник) сантехніка (загальне) ">
+              <td>
+                <strong>Установка змішувача прихованого типу (умивальник)</strong>
+                
+              </td>
+              <td>Сантехніка (загальне)</td>
+              <td>штука</td>
+              <td><strong>2000 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="sanitary" data-search="установка фурнітури на змішувач прихованого типу (умивальник) сантехніка (загальне) ">
+              <td>
+                <strong>Установка фурнітури на змішувач прихованого типу (умивальник)</strong>
+                
+              </td>
+              <td>Сантехніка (загальне)</td>
+              <td>штука</td>
+              <td><strong>800 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="sanitary" data-search="монтаж душової системи прихованого типу smart box сантехніка (загальне) ">
+              <td>
+                <strong>Монтаж душової системи прихованого типу Smart Box</strong>
+                
+              </td>
+              <td>Сантехніка (загальне)</td>
+              <td>штука</td>
+              <td><strong>4000 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="sanitary" data-search="установка фурнітури на змішувач прихованого типу (smart box) сантехніка (загальне) ">
+              <td>
+                <strong>Установка фурнітури на змішувач прихованого типу (Smart Box)</strong>
+                
+              </td>
+              <td>Сантехніка (загальне)</td>
+              <td>штука</td>
+              <td><strong>1500 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="sanitary" data-search="установка штанги сантехніка (загальне) ">
+              <td>
+                <strong>Установка штанги</strong>
+                
+              </td>
+              <td>Сантехніка (загальне)</td>
+              <td>штука</td>
+              <td><strong>1000 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="sanitary" data-search="установка люка-ревізія (простого) сантехніка (загальне) ">
+              <td>
+                <strong>Установка люка-ревізія (простого)</strong>
+                
+              </td>
+              <td>Сантехніка (загальне)</td>
+              <td>штука</td>
+              <td><strong>600 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="sanitary" data-search="установка умивальника сантехніка (загальне) ">
+              <td>
+                <strong>Установка умивальника</strong>
+                
+              </td>
+              <td>Сантехніка (загальне)</td>
+              <td>штука</td>
+              <td><strong>2000 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="sanitary" data-search="установка дзеркала простого сантехніка (загальне) ">
+              <td>
+                <strong>Установка дзеркала простого</strong>
+                
+              </td>
+              <td>Сантехніка (загальне)</td>
+              <td>штука</td>
+              <td><strong>1200 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="sanitary" data-search="установка сифона сантехніка (загальне) ">
+              <td>
+                <strong>Установка сифона</strong>
+                
+              </td>
+              <td>Сантехніка (загальне)</td>
+              <td>штука</td>
+              <td><strong>600 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="sanitary" data-search="монтаж металевого сифона сантехніка (загальне) ">
+              <td>
+                <strong>Монтаж металевого сифона</strong>
+                
+              </td>
+              <td>Сантехніка (загальне)</td>
+              <td>штука</td>
+              <td><strong>800 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="sanitary" data-search="установка та підключення рушникосушки сантехніка (загальне) ">
+              <td>
+                <strong>Установка та підключення рушникосушки</strong>
+                
+              </td>
+              <td>Сантехніка (загальне)</td>
+              <td>штука</td>
+              <td><strong>1800 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="sanitary" data-search="установка та підключення вентилятора сантехніка (загальне) ">
+              <td>
+                <strong>Установка та підключення вентилятора</strong>
+                
+              </td>
+              <td>Сантехніка (загальне)</td>
+              <td>штука</td>
+              <td><strong>800 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="sanitary" data-search="установка та підключення бойлера сантехніка (загальне) ">
+              <td>
+                <strong>Установка та підключення бойлера</strong>
+                
+              </td>
+              <td>Сантехніка (загальне)</td>
+              <td>штука</td>
+              <td><strong>3000 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="sanitary" data-search="установка та підключення бойлера непрямого нагріву сантехніка (загальне) ">
+              <td>
+                <strong>Установка та підключення бойлера непрямого нагріву</strong>
+                
+              </td>
+              <td>Сантехніка (загальне)</td>
+              <td>штука</td>
+              <td><strong>4500 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="sanitary" data-search="установка та підключення пральної, сушильної машини сантехніка (загальне) ">
+              <td>
+                <strong>Установка та підключення пральної, сушильної машини</strong>
+                
+              </td>
+              <td>Сантехніка (загальне)</td>
+              <td>штука</td>
+              <td><strong>1200 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="sanitary" data-search="підключення посудомийної машини сантехніка (загальне) ">
+              <td>
+                <strong>Підключення посудомийної машини</strong>
+                
+              </td>
+              <td>Сантехніка (загальне)</td>
+              <td>штука</td>
+              <td><strong>1200 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="sanitary" data-search="установка та підключення душового піддону (готового) сантехніка (загальне) ">
+              <td>
+                <strong>Установка та підключення душового піддону (готового)</strong>
+                
+              </td>
+              <td>Сантехніка (загальне)</td>
+              <td>штука</td>
+              <td><strong>5000 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="sanitary" data-search="монтаж витяжки (без відведення або до існуючого вентканала) сантехніка (загальне) ">
+              <td>
+                <strong>Монтаж витяжки (без відведення або до існуючого вентканала)</strong>
+                
+              </td>
+              <td>Сантехніка (загальне)</td>
+              <td>штука</td>
+              <td><strong>2000 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="sanitary" data-search="монтаж вентиляційної решітки сантехніка (загальне) ">
+              <td>
+                <strong>Монтаж вентиляційної решітки</strong>
+                
+              </td>
+              <td>Сантехніка (загальне)</td>
+              <td>штука</td>
+              <td><strong>500 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="sanitary" data-search="виготовлення ніші під радіатор опалення в цегляній стіні сантехніка (загальне) ">
+              <td>
+                <strong>Виготовлення ніші під радіатор опалення в цегляній стіні</strong>
+                
+              </td>
+              <td>Сантехніка (загальне)</td>
+              <td>штука</td>
+              <td><strong>4500 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="sanitary" data-search="зняття і встановлення радіатора (під час ремонту - один раз) сантехніка (загальне) ">
+              <td>
+                <strong>Зняття і встановлення радіатора (під час ремонту - один раз)</strong>
+                
+              </td>
+              <td>Сантехніка (загальне)</td>
+              <td>штука</td>
+              <td><strong>450 грн</strong></td>
+            </tr>
+            <tr class="price-row" data-category="sanitary" data-search="установка дверного доводчика сантехніка (загальне) ">
+              <td>
+                <strong>Установка дверного доводчика</strong>
+                
+              </td>
+              <td>Сантехніка (загальне)</td>
+              <td>штука</td>
+              <td><strong>2000 грн</strong></td>
             </tr>
           </tbody>
         </table>
