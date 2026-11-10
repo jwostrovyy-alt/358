@@ -397,6 +397,12 @@
   }
 
   /* Grids & Sections */
+  .hero-section {
+    position: relative;
+    overflow: clip;
+    padding: clamp(2.5rem, 5vw, 4.5rem) 0;
+    background: #ffffff;
+  }
   .section-white {
     background: #ffffff;
     padding: clamp(3rem, 6vw, 5.25rem) 0;
@@ -574,7 +580,25 @@
   }
 
   @media (max-width: 960px) {
-    .hero-responsive-grid,
+    .hero-section {
+      display: grid;
+      grid-template-columns: 1fr;
+      padding: 1.15rem 0 0 0;
+    }
+    .hero-responsive-grid {
+      display: contents;
+    }
+    .hero-text-col {
+      grid-row: 1;
+      grid-column: 1;
+      padding: 0 clamp(1.15rem, 4vw, 3rem) 0.35rem;
+    }
+    .hero-text-col h1 {
+      margin-bottom: 0.8rem !important;
+    }
+    .hero-text-col p {
+      line-height: 1.52 !important;
+    }
     .services-clean-grid,
     .team-clean-grid,
     .cards-2col-grid {
@@ -588,30 +612,35 @@
       gap: 0.5rem;
     }
     .hero-ambient-pane {
-      position: absolute;
-      right: 0;
-      bottom: 0;
+      grid-row: 2;
+      grid-column: 1;
+      position: relative;
+      right: auto;
+      bottom: auto;
       top: auto;
       width: 100%;
-      height: 50%;
-      opacity: 0.32;
+      height: 290px;
+      opacity: 0.95;
     }
     .hero-ambient-crossfade {
-      -webkit-mask-image: linear-gradient(to top, transparent 0%, black 25%, black 75%, transparent 100%);
-      mask-image: linear-gradient(to top, transparent 0%, black 25%, black 75%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.15) 8%, rgba(0,0,0,0.6) 20%, black 34%);
+      mask-image: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.15) 8%, rgba(0,0,0,0.6) 20%, black 34%);
     }
     .hero-caption-col {
-      min-height: auto;
-      align-items: stretch;
-      margin-top: 1rem;
+      grid-row: 2;
+      grid-column: 1;
+      min-height: 290px;
+      align-items: center;
+      justify-content: flex-end;
+      margin-top: 0;
+      padding: 0 1rem 0.95rem;
+      pointer-events: none;
     }
     .hero-caption-box {
+      pointer-events: auto;
       max-width: 100%;
       margin-bottom: 0;
       background: transparent;
-      animation: none !important;
-      color: #1c1917;
-      text-shadow: 0 1px 10px rgba(255, 255, 255, 0.95), 0 0 3px rgba(255, 255, 255, 0.95);
     }
     .logo-link {
       flex-direction: column;
@@ -817,7 +846,7 @@
 
   <main>
     
-  <section style="position: relative; overflow: clip; padding: clamp(2.5rem, 5vw, 4.5rem) 0; background: #ffffff;">
+  <section class="hero-section">
     <!-- Напівпрозора архітектурна підкладка у правому крилі Hero (без рамок) -->
     <div class="hero-ambient-pane" aria-hidden="true">
       <div class="hero-ambient-crossfade">
@@ -840,11 +869,11 @@
     </div>
 
     <div class="container-358 hero-responsive-grid">
-      <div style="position: relative; z-index: 2;">
+      <div class="hero-text-col" style="position: relative; z-index: 2;">
         <h1 data-load style="--d: 40ms; margin: 0 0 1.25rem 0;">
           Дизайн інтер'єру та ремонт приміщень у Львові
         </h1>
-        <p data-load style="--d: 120ms; color: #292524; margin: 0 0 1rem 0; max-width: 600px;">
+        <p data-load style="--d: 120ms; color: #292524; margin: 0 0 0.85rem 0; max-width: 600px;">
           У ремонті часто бояться трьох речей: витратити зайві кошти, отримати красиву картинку, яку неможливо реалізувати, і загрузнути в нескінченних переробках та суперечках із дизайнером та майстрами. Ми працюємо за принципом розумного ремонту, де все намагаємось підпорядкувати здоровому глузду — саме ця рівновага між естетикою, зручністю і бюджетом закладена в назву 358 (послідовність золотого перерізу).
         </p>
         <p data-load style="--d: 160ms; color: #292524; margin: 0; max-width: 600px;">
