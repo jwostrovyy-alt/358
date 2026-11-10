@@ -13,7 +13,7 @@
   <meta property="og:url" content="https://jwostrovyy-alt.github.io/358/">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&family=Poiret+One&display=swap" rel="stylesheet">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"HomeAndConstructionBusiness","name":"Студія дизайну та ремонту «358»","description":"Архітектурний дизайн інтер'єру та комплексний ремонт квартир під ключ у Львові. Розробка робочих креслень за ДБН, інженерія та чистове оздоблення.","url":"https://jwostrovyy-alt.github.io/358","telephone":"+380973580000","address":{"@type":"PostalAddress","addressLocality":"Львів","addressRegion":"Львівська область","addressCountry":"UA"},"areaServed":["Львів","Україна"],"sameAs":["https://t.me/studio358_lviv","https://www.youtube.com/@rozumnyy-remont"]}</script>
   <style>
   *, *::before, *::after { box-sizing: border-box; }
@@ -64,8 +64,22 @@
   ::selection { background: #1c1917; color: #ffffff; }
   :focus-visible { outline: 2px solid #1c1917; outline-offset: 3px; }
 
-  h1 { font-size: var(--step-display) !important; line-height: 1.12; letter-spacing: -0.028em; font-weight: 700; color: #1c1917; }
-  h2 { font-size: var(--step-h2) !important; line-height: 1.18; letter-spacing: -0.02em; font-weight: 700; color: #1c1917; }
+  h1 {
+    font-family: 'Nunito', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: var(--step-display) !important;
+    line-height: 1.15;
+    letter-spacing: -0.015em;
+    font-weight: 600;
+    color: #1c1917;
+  }
+  h2 {
+    font-family: 'Nunito', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: var(--step-h2) !important;
+    line-height: 1.2;
+    letter-spacing: -0.015em;
+    font-weight: 600;
+    color: #1c1917;
+  }
   h3 { font-size: var(--step-h3) !important; line-height: 1.25; font-weight: 700; color: #1c1917; }
   p, li, td { font-size: var(--step-body) !important; line-height: 1.6; }
   .text-small, th { font-size: var(--step-small) !important; }
@@ -100,16 +114,30 @@
     72%, 92% { opacity: 1; transform: scale(1); }
     100% { opacity: 0; transform: scale(1.04); }
   }
+  @keyframes adaptiveHeroCaption {
+    0%, 28% {
+      color: #1c1917;
+      text-shadow: 0 1px 10px rgba(255, 255, 255, 0.95), 0 0 3px rgba(255, 255, 255, 0.95);
+    }
+    38%, 92% {
+      color: #ffffff;
+      text-shadow: 0 1px 12px rgba(0, 0, 0, 0.88), 0 0 4px rgba(0, 0, 0, 0.82);
+    }
+    100% {
+      color: #1c1917;
+      text-shadow: 0 1px 10px rgba(255, 255, 255, 0.95), 0 0 3px rgba(255, 255, 255, 0.95);
+    }
+  }
   @keyframes tasteLoadRise {
     from { opacity: 0.01; transform: translate3d(0, 16px, 0); }
     to { opacity: 1; transform: translate3d(0, 0, 0); }
   }
   .hero-crossfade {
     position: relative;
-    height: 360px;
+    height: 380px;
     width: 100%;
     overflow: clip;
-    background: #1c1917;
+    background: transparent;
   }
   .hero-crossfade img {
     position: absolute;
@@ -120,10 +148,44 @@
     display: block;
     will-change: transform, opacity;
   }
+  /* Архітектурне злиття з білим фоном першого екрана (без рамок та без карток) */
+  .hero-ambient-pane {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 58%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    overflow: clip;
+  }
+  .hero-ambient-crossfade {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.95;
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.12) 9%, rgba(0,0,0,0.5) 22.5%, rgba(0,0,0,0.9) 37.5%, black 48%);
+    mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.12) 9%, rgba(0,0,0,0.5) 22.5%, rgba(0,0,0,0.9) 37.5%, black 48%);
+  }
+  .hero-ambient-crossfade img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    will-change: transform, opacity;
+  }
   @media (prefers-reduced-motion: no-preference) {
+    .hero-ambient-crossfade img.cf-1,
     .hero-crossfade img.cf-1 { animation: slowCrossfade1 16s var(--ease-soft) infinite; }
+    .hero-ambient-crossfade img.cf-2,
     .hero-crossfade img.cf-2 { animation: slowCrossfade2 16s var(--ease-soft) infinite; }
+    .hero-ambient-crossfade img.cf-3,
     .hero-crossfade img.cf-3 { animation: slowCrossfade3 16s var(--ease-soft) infinite; }
+    .hero-caption-box { animation: adaptiveHeroCaption 16s var(--ease-soft) infinite; }
     .js [data-load] {
       animation: tasteLoadRise 680ms var(--ease-expo) both;
       animation-delay: var(--d, 60ms);
@@ -141,24 +203,26 @@
   }
   @media (prefers-reduced-motion: reduce) {
     .golden-spiral-floating { animation: none !important; }
+    .hero-ambient-crossfade img.cf-2,
+    .hero-ambient-crossfade img.cf-3,
     .hero-crossfade img.cf-2,
     .hero-crossfade img.cf-3 { display: none; }
   }
   .golden-spiral-wrapper {
     position: absolute;
-    left: -60px;
-    top: -60px;
-    width: 1040px;
-    height: 100%;
-    max-height: 540px;
+    left: 2%;
+    top: 30px;
+    width: 680px;
+    height: 520px;
+    max-height: 520px;
     pointer-events: none;
     z-index: 1;
-    opacity: 0.22;
+    opacity: 0.28;
   }
   .golden-spiral-floating {
-    animation: floatSpiralFullScreen 22s ease-in-out infinite;
+    animation: none;
+    transform: scaleX(-1) rotate(-14deg);
     transform-origin: 320px 300px;
-    will-change: transform;
   }
 
   .container-358 {
@@ -351,7 +415,40 @@
     gap: 3rem;
     align-items: center;
     position: relative;
-    min-height: 420px;
+    min-height: 440px;
+  }
+  .hero-caption-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    min-height: 400px;
+  }
+  .hero-caption-box {
+    margin-top: auto;
+    margin-bottom: -3.6rem;
+    background: transparent;
+    padding: 0.4rem 0 0 0;
+    border: none;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.25rem;
+    text-decoration: none;
+    color: #1c1917;
+    text-shadow: 0 1px 10px rgba(255, 255, 255, 0.95), 0 0 3px rgba(255, 255, 255, 0.95);
+    transition: opacity 0.15s ease;
+  }
+  .hero-caption-box:hover {
+    opacity: 0.72;
+  }
+  .hero-caption-link {
+    font-size: var(--step-small) !important;
+    font-weight: 600;
+    color: inherit;
+    text-decoration: none;
+    white-space: nowrap;
   }
   .services-clean-grid {
     display: grid;
@@ -490,6 +587,32 @@
     .site-header__inner {
       gap: 0.5rem;
     }
+    .hero-ambient-pane {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      top: auto;
+      width: 100%;
+      height: 50%;
+      opacity: 0.32;
+    }
+    .hero-ambient-crossfade {
+      -webkit-mask-image: linear-gradient(to top, transparent 0%, black 25%, black 75%, transparent 100%);
+      mask-image: linear-gradient(to top, transparent 0%, black 25%, black 75%, transparent 100%);
+    }
+    .hero-caption-col {
+      min-height: auto;
+      align-items: stretch;
+      margin-top: 1rem;
+    }
+    .hero-caption-box {
+      max-width: 100%;
+      margin-bottom: 0;
+      background: transparent;
+      animation: none !important;
+      color: #1c1917;
+      text-shadow: 0 1px 10px rgba(255, 255, 255, 0.95), 0 0 3px rgba(255, 255, 255, 0.95);
+    }
     .logo-link {
       flex-direction: column;
       align-items: center;
@@ -602,15 +725,15 @@
       color: #ffffff;
     }
     .golden-spiral-wrapper {
-      left: calc(50% - 155px);
-      top: 10px;
-      width: 310px;
-      height: 255px;
-      max-height: 255px;
-      opacity: 0.20;
+      left: -20px;
+      top: -10px;
+      width: 280px;
+      height: 230px;
+      max-height: 230px;
+      opacity: 0.16;
     }
     .golden-spiral-floating {
-      animation: floatSpiralMobile 18s ease-in-out infinite;
+      animation: none;
       transform-origin: 50% 54%;
     }
     .header-contacts {
@@ -695,62 +818,49 @@
   <main>
     
   <section style="position: relative; overflow: clip; padding: clamp(2.5rem, 5vw, 4.5rem) 0; background: #ffffff;">
-    
-  <div id="spiralWrapper4" class="golden-spiral-wrapper">
-    <div id="spiralFloatingEl" class="golden-spiral-floating" style="width: 100%; height: 100%;">
-      <svg viewBox="0 0 700 550" width="100%" height="100%" fill="none" xmlns="http://www.w3.org/2000/svg" style="overflow: visible;">
-        <defs>
-          <linearGradient id="spiralDarkGrad4" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stop-color="#0c0a09" stop-opacity="1" />
-            <stop offset="50%" stop-color="#1c1917" stop-opacity="0.9" />
-            <stop offset="85%" stop-color="#292524" stop-opacity="0.75" />
-            <stop offset="100%" stop-color="#57534e" stop-opacity="0.4" />
-          </linearGradient>
-        </defs>
-        <g stroke="#1c1917" stroke-width="1" stroke-dasharray="4 4" opacity="0.25">
-          <circle cx="320" cy="300" r="144" />
-          <circle cx="320" cy="300" r="233" />
-        </g>
-        <path d="M 322.5 300.0 L 322.6 300.4 L 322.6 300.9 L 322.6 301.3 L 322.4 301.9 L 322.2 302.4 L 321.9 302.7 L 321.6 303.1 L 321.2 303.5 L 320.7 303.8 L 320.2 304.0 L 319.7 304.1 L 319.2 304.2 L 318.6 304.2 L 318.1 304.2 L 317.5 304.1 L 316.9 303.9 L 316.3 303.6 L 315.8 303.3 L 315.2 302.9 L 314.8 302.4 L 314.3 301.8 L 313.9 301.1 L 313.6 300.4 L 313.3 299.6 L 313.2 298.8 L 313.1 297.9 L 313.2 297.0 L 313.4 296.0 L 313.7 295.1 L 314.1 294.2 L 314.6 293.3 L 315.1 292.7 L 315.8 291.8 L 316.4 291.3 L 317.4 290.6 L 318.5 290.0 L 319.7 289.5 L 321.0 289.2 L 322.3 289.0 L 323.8 288.9 L 325.3 289.1 L 326.8 289.4 L 328.3 289.9 L 329.8 290.6 L 331.3 291.6 L 332.6 292.7 L 333.9 294.1 L 335.1 295.6 L 336.1 297.4 L 336.9 299.3 L 337.5 301.3 L 337.8 303.6 L 337.9 305.9 L 337.7 308.3 L 337.3 310.7 L 336.4 313.2 L 335.3 315.6 L 333.8 318.0 L 332.0 320.3 L 329.8 322.4 L 327.3 324.3 L 324.6 325.9 L 321.5 327.2 L 318.1 328.2 L 314.6 328.8 L 310.8 329.0 L 306.9 328.8 L 303.0 328.0 L 299.0 326.7 L 295.0 324.9 L 291.2 322.6 L 287.5 319.7 L 284.1 316.2 L 281.0 312.3 L 278.3 307.8 L 276.1 302.8 L 274.4 297.5 L 273.4 291.7 L 273.1 285.7 L 273.4 279.4 L 274.5 273.0 L 276.5 266.6 L 279.4 260.2 L 283.1 253.9 L 287.7 248.0 L 293.2 242.4 L 299.5 237.4 L 306.7 232.9 L 314.6 229.3 L 323.3 226.5 L 332.5 224.7 L 342.2 224.0 L 352.3 224.5 L 362.7 226.2 L 373.1 229.3 L 383.5 233.8 L 393.6 239.7 L 403.3 247.0 L 412.4 255.8 L 420.7 265.9 L 427.9 277.4 L 434.0 290.1 L 438.6 304.0 L 441.7 318.8 L 443.0 334.5 L 442.4 350.8 L 439.7 367.5 L 434.9 384.4 L 427.9 401.2 L 418.5 417.7 L 406.9 433.4 L 392.9 448.2 L 376.7 461.7 L 358.3 473.6 L 337.9 483.6 L 315.6 491.3 L 291.7 496.5 L 266.5 498.9 L 240.2 498.2 L 213.2 494.2 L 185.8 486.8 L 158.6 475.7 L 132.0 461.0 L 106.3 442.4 L 82.2 420.2 L 60.2 394.2 L 40.7 364.8 L 24.3 332.1 L 11.4 296.3 L 2.6 257.8 L -1.7 217.2 L -1.0 174.7 L 4.9 131.1 L 16.4 86.9 L 33.8 42.8 L 57.2 -0.4 L 86.6 -42.1 L 122.1 -81.3 L 163.5 -117.4 L 210.6 -149.3 L 263.2 -176.4 L 300.9 -191.3"
-          stroke="url(#spiralDarkGrad4)" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" />
-      </svg>
+    <!-- Напівпрозора архітектурна підкладка у правому крилі Hero (без рамок) -->
+    <div class="hero-ambient-pane" aria-hidden="true">
+      <div class="hero-ambient-crossfade">
+        <img
+          class="cf-1"
+          src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1200&q=80"
+          alt="Реалізований об'єкт студії 358 у Львові: смарт-квартира 27 м²"
+        />
+        <img
+          class="cf-2"
+          src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80"
+          alt="Реалізований об'єкт студії 358 у Львові: ЖК Велика Британія"
+        />
+        <img
+          class="cf-3"
+          src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1200&q=80"
+          alt="Чистове оздоблення та інженерні вузли студії 358"
+        />
+      </div>
     </div>
-  </div>
+
     <div class="container-358 hero-responsive-grid">
       <div style="position: relative; z-index: 2;">
         <h1 data-load style="--d: 40ms; margin: 0 0 1.25rem 0;">
-          Дизайн інтер'єру та ремонт квартир у Львові
+          Дизайн інтер'єру та ремонт приміщень у Львові
         </h1>
-        <p data-load style="--d: 120ms; color: #292524; margin: 0; max-width: 560px;">
-          Розробляємо архітектурні дизайн-проєкти та виконуємо комплексний ремонт під ключ. Робочі креслення за чинними будівельними нормами, продумана інженерія, чистове оздоблення та єдина відповідальність за кінцевий результат.
+        <p data-load style="--d: 120ms; color: #292524; margin: 0 0 1rem 0; max-width: 600px;">
+          У ремонті часто бояться трьох речей: витратити зайві кошти, отримати красиву картинку, яку неможливо реалізувати, і загрузнути в нескінченних переробках та суперечках із дизайнером та майстрами. Ми працюємо за принципом розумного ремонту, де все намагаємось підпорядкувати здоровому глузду — саме ця рівновага між естетикою, зручністю і бюджетом закладена в назву 358 (послідовність золотого перерізу).
+        </p>
+        <p data-load style="--d: 160ms; color: #292524; margin: 0; max-width: 600px;">
+          На практиці це працює просто: спочатку продумуємо і погоджуємо проєкт, а потім за кресленнями виконуємо весь цикл ремонту — спокійно і послідовно. Замовити можна як повний комплекс робіт від бетонних стін до меблів, так і окремо дизайн-проєкт чи ремонт. А всі наші розцінки та реальні витрати по об'єктах відкриті на сайті.
         </p>
       </div>
 
-      <div data-load style="--d: 160ms; position: relative; z-index: 2; border-radius: 12px; overflow: hidden; background: #f5f5f4;">
-        <div class="hero-crossfade">
-          <img
-            class="cf-1"
-            src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=1000&q=80"
-            alt="Реалізований об'єкт студії 358 у Львові: смарт-квартира 27 м²"
-          />
-          <img
-            class="cf-2"
-            src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=80"
-            alt="Реалізований об'єкт студії 358 у Львові: ЖК Велика Британія"
-          />
-          <img
-            class="cf-3"
-            src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1000&q=80"
-            alt="Чистове оздоблення та інженерні вузли студії 358"
-          />
-        </div>
-        <div style="background: #1c1917; color: #ffffff; padding: 1.15rem 1.5rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem;">
-          <div>
-            <div style="font-weight: 600;">Смарт-квартира 27 м² та ЖК Велика Британія • 76 м²</div>
-            <div class="text-small" style="color: #d6d3d1; margin-top: 0.15rem;">Флагманські кейси 358 • Львів</div>
-          </div>
-          <a href="./portfolio/smart-27m2-lviv/" class="text-small" style="color: #ffffff; font-weight: 600; text-decoration: underline;">Огляд та кошторис →</a>
-        </div>
+      <div class="hero-caption-col" data-load style="--d: 180ms; position: relative; z-index: 2;">
+        <a href="./portfolio/smart-27m2-lviv/" class="hero-caption-box">
+          <span style="font-weight: 600; font-size: 15px; color: inherit; letter-spacing: -0.01em;">
+            Смарт-квартира 27 м² Ріел Сіті
+          </span>
+          <span class="hero-caption-link">
+            Опис і кошторис →
+          </span>
+        </a>
       </div>
     </div>
   </section>

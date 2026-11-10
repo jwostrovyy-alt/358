@@ -13,7 +13,7 @@
   <meta property="og:url" content="https://jwostrovyy-alt.github.io/358/renovation">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&family=Poiret+One&display=swap" rel="stylesheet">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"HomeAndConstructionBusiness","name":"Студія дизайну та ремонту «358»","description":"Архітектурний дизайн інтер'єру та комплексний ремонт квартир під ключ у Львові. Розробка робочих креслень за ДБН, інженерія та чистове оздоблення.","url":"https://jwostrovyy-alt.github.io/358","telephone":"+380973580000","address":{"@type":"PostalAddress","addressLocality":"Львів","addressRegion":"Львівська область","addressCountry":"UA"},"areaServed":["Львів","Україна"],"sameAs":["https://t.me/studio358_lviv","https://www.youtube.com/@rozumnyy-remont"]}</script>
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"Service","name":"Ремонтні роботи","description":"Виконання ремонтних робіт у Львові за готовим дизайн-проєктом під особистим керівництвом Віталія (10+ років практичного досвіду). Власноручне чистове оздоблення та залучення перевірених майстрів.","provider":{"@type":"HomeAndConstructionBusiness","name":"Студія дизайну та ремонту «358»","telephone":"+380973580000"},"areaServed":["Львів"],"url":"https://jwostrovyy-alt.github.io/358/renovation"}</script>
   <style>
@@ -65,8 +65,22 @@
   ::selection { background: #1c1917; color: #ffffff; }
   :focus-visible { outline: 2px solid #1c1917; outline-offset: 3px; }
 
-  h1 { font-size: var(--step-display) !important; line-height: 1.12; letter-spacing: -0.028em; font-weight: 700; color: #1c1917; }
-  h2 { font-size: var(--step-h2) !important; line-height: 1.18; letter-spacing: -0.02em; font-weight: 700; color: #1c1917; }
+  h1 {
+    font-family: 'Nunito', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: var(--step-display) !important;
+    line-height: 1.15;
+    letter-spacing: -0.015em;
+    font-weight: 600;
+    color: #1c1917;
+  }
+  h2 {
+    font-family: 'Nunito', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: var(--step-h2) !important;
+    line-height: 1.2;
+    letter-spacing: -0.015em;
+    font-weight: 600;
+    color: #1c1917;
+  }
   h3 { font-size: var(--step-h3) !important; line-height: 1.25; font-weight: 700; color: #1c1917; }
   p, li, td { font-size: var(--step-body) !important; line-height: 1.6; }
   .text-small, th { font-size: var(--step-small) !important; }
@@ -101,16 +115,30 @@
     72%, 92% { opacity: 1; transform: scale(1); }
     100% { opacity: 0; transform: scale(1.04); }
   }
+  @keyframes adaptiveHeroCaption {
+    0%, 28% {
+      color: #1c1917;
+      text-shadow: 0 1px 10px rgba(255, 255, 255, 0.95), 0 0 3px rgba(255, 255, 255, 0.95);
+    }
+    38%, 92% {
+      color: #ffffff;
+      text-shadow: 0 1px 12px rgba(0, 0, 0, 0.88), 0 0 4px rgba(0, 0, 0, 0.82);
+    }
+    100% {
+      color: #1c1917;
+      text-shadow: 0 1px 10px rgba(255, 255, 255, 0.95), 0 0 3px rgba(255, 255, 255, 0.95);
+    }
+  }
   @keyframes tasteLoadRise {
     from { opacity: 0.01; transform: translate3d(0, 16px, 0); }
     to { opacity: 1; transform: translate3d(0, 0, 0); }
   }
   .hero-crossfade {
     position: relative;
-    height: 360px;
+    height: 380px;
     width: 100%;
     overflow: clip;
-    background: #1c1917;
+    background: transparent;
   }
   .hero-crossfade img {
     position: absolute;
@@ -121,10 +149,44 @@
     display: block;
     will-change: transform, opacity;
   }
+  /* Архітектурне злиття з білим фоном першого екрана (без рамок та без карток) */
+  .hero-ambient-pane {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 58%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    overflow: clip;
+  }
+  .hero-ambient-crossfade {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.95;
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.12) 9%, rgba(0,0,0,0.5) 22.5%, rgba(0,0,0,0.9) 37.5%, black 48%);
+    mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.12) 9%, rgba(0,0,0,0.5) 22.5%, rgba(0,0,0,0.9) 37.5%, black 48%);
+  }
+  .hero-ambient-crossfade img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    will-change: transform, opacity;
+  }
   @media (prefers-reduced-motion: no-preference) {
+    .hero-ambient-crossfade img.cf-1,
     .hero-crossfade img.cf-1 { animation: slowCrossfade1 16s var(--ease-soft) infinite; }
+    .hero-ambient-crossfade img.cf-2,
     .hero-crossfade img.cf-2 { animation: slowCrossfade2 16s var(--ease-soft) infinite; }
+    .hero-ambient-crossfade img.cf-3,
     .hero-crossfade img.cf-3 { animation: slowCrossfade3 16s var(--ease-soft) infinite; }
+    .hero-caption-box { animation: adaptiveHeroCaption 16s var(--ease-soft) infinite; }
     .js [data-load] {
       animation: tasteLoadRise 680ms var(--ease-expo) both;
       animation-delay: var(--d, 60ms);
@@ -142,24 +204,26 @@
   }
   @media (prefers-reduced-motion: reduce) {
     .golden-spiral-floating { animation: none !important; }
+    .hero-ambient-crossfade img.cf-2,
+    .hero-ambient-crossfade img.cf-3,
     .hero-crossfade img.cf-2,
     .hero-crossfade img.cf-3 { display: none; }
   }
   .golden-spiral-wrapper {
     position: absolute;
-    left: -60px;
-    top: -60px;
-    width: 1040px;
-    height: 100%;
-    max-height: 540px;
+    left: 2%;
+    top: 30px;
+    width: 680px;
+    height: 520px;
+    max-height: 520px;
     pointer-events: none;
     z-index: 1;
-    opacity: 0.22;
+    opacity: 0.28;
   }
   .golden-spiral-floating {
-    animation: floatSpiralFullScreen 22s ease-in-out infinite;
+    animation: none;
+    transform: scaleX(-1) rotate(-14deg);
     transform-origin: 320px 300px;
-    will-change: transform;
   }
 
   .container-358 {
@@ -352,7 +416,40 @@
     gap: 3rem;
     align-items: center;
     position: relative;
-    min-height: 420px;
+    min-height: 440px;
+  }
+  .hero-caption-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    min-height: 400px;
+  }
+  .hero-caption-box {
+    margin-top: auto;
+    margin-bottom: -3.6rem;
+    background: transparent;
+    padding: 0.4rem 0 0 0;
+    border: none;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 0.25rem;
+    text-decoration: none;
+    color: #1c1917;
+    text-shadow: 0 1px 10px rgba(255, 255, 255, 0.95), 0 0 3px rgba(255, 255, 255, 0.95);
+    transition: opacity 0.15s ease;
+  }
+  .hero-caption-box:hover {
+    opacity: 0.72;
+  }
+  .hero-caption-link {
+    font-size: var(--step-small) !important;
+    font-weight: 600;
+    color: inherit;
+    text-decoration: none;
+    white-space: nowrap;
   }
   .services-clean-grid {
     display: grid;
@@ -491,6 +588,32 @@
     .site-header__inner {
       gap: 0.5rem;
     }
+    .hero-ambient-pane {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      top: auto;
+      width: 100%;
+      height: 50%;
+      opacity: 0.32;
+    }
+    .hero-ambient-crossfade {
+      -webkit-mask-image: linear-gradient(to top, transparent 0%, black 25%, black 75%, transparent 100%);
+      mask-image: linear-gradient(to top, transparent 0%, black 25%, black 75%, transparent 100%);
+    }
+    .hero-caption-col {
+      min-height: auto;
+      align-items: stretch;
+      margin-top: 1rem;
+    }
+    .hero-caption-box {
+      max-width: 100%;
+      margin-bottom: 0;
+      background: transparent;
+      animation: none !important;
+      color: #1c1917;
+      text-shadow: 0 1px 10px rgba(255, 255, 255, 0.95), 0 0 3px rgba(255, 255, 255, 0.95);
+    }
     .logo-link {
       flex-direction: column;
       align-items: center;
@@ -603,15 +726,15 @@
       color: #ffffff;
     }
     .golden-spiral-wrapper {
-      left: calc(50% - 155px);
-      top: 10px;
-      width: 310px;
-      height: 255px;
-      max-height: 255px;
-      opacity: 0.20;
+      left: -20px;
+      top: -10px;
+      width: 280px;
+      height: 230px;
+      max-height: 230px;
+      opacity: 0.16;
     }
     .golden-spiral-floating {
-      animation: floatSpiralMobile 18s ease-in-out infinite;
+      animation: none;
       transform-origin: 50% 54%;
     }
     .header-contacts {
