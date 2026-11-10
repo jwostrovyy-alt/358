@@ -535,6 +535,14 @@ const SHARED_CSS = `
   table.arch-table tr:nth-child(even) td {
     background: #fafaf9;
   }
+  table.arch-table tr.price-group-header td {
+    background: #f5f5f4 !important;
+    color: #1c1917;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    padding: 0.85rem 1rem;
+  }
 
   /* Lite YouTube */
   .lite-yt-card {
@@ -1578,24 +1586,30 @@ function buildPricingPage(): string {
           <thead>
             <tr>
               <th>Вид робіт</th>
-              <th>Категорія</th>
               <th>Одиниця виміру</th>
               <th>Ціна, грн</th>
             </tr>
           </thead>
           <tbody id="priceTableBody">
-            ${UNIT_PRICE_ITEMS.map(
-              (item) => `
+            ${PRICE_CATEGORIES.filter((c) => c.id !== 'all')
+              .map((cat) => {
+                const groupItems = UNIT_PRICE_ITEMS.filter((item) => item.category === cat.id);
+                return `
+            <tr class="price-group-header" data-group-cat="${cat.id}">
+              <td colspan="3">${cat.label}</td>
+            </tr>
+            ${groupItems
+              .map(
+                (item) => `
             <tr class="price-row" data-category="${item.category}" data-search="${(item.name + ' ' + item.categoryLabel + ' ' + (item.note || '')).toLowerCase()}">
-              <td>
-                <strong>${item.name}</strong>
-                ${item.note ? `<div style="font-size: 0.82rem; color: #78716c; margin-top: 0.2rem;">${item.note}</div>` : ''}
-              </td>
-              <td>${item.categoryLabel}</td>
+              <td>${item.name}</td>
               <td>${item.unit}</td>
               <td><strong>${item.price}</strong></td>
             </tr>`
-            ).join('')}
+              )
+              .join('')}`;
+              })
+              .join('')}
           </tbody>
         </table>
       </div>
@@ -1618,12 +1632,21 @@ function buildPricingPage(): string {
     function applyPriceFilter() {
       const q = (document.getElementById('priceSearchInput').value || '').trim().toLowerCase();
       let visible = 0;
+      const visibleByCat = {};
       document.querySelectorAll('.price-row').forEach(row => {
-        const catMatch = currentPriceCat === 'all' || row.getAttribute('data-category') === currentPriceCat;
+        const rowCat = row.getAttribute('data-category');
+        const catMatch = currentPriceCat === 'all' || rowCat === currentPriceCat;
         const searchMatch = !q || (row.getAttribute('data-search') || '').includes(q);
         const show = catMatch && searchMatch;
         row.style.display = show ? '' : 'none';
-        if (show) visible++;
+        if (show) {
+          visible++;
+          visibleByCat[rowCat] = (visibleByCat[rowCat] || 0) + 1;
+        }
+      });
+      document.querySelectorAll('.price-group-header').forEach(hdr => {
+        const gCat = hdr.getAttribute('data-group-cat');
+        hdr.style.display = visibleByCat[gCat] ? '' : 'none';
       });
       document.getElementById('priceTableContainer').style.display = visible === 0 ? 'none' : 'block';
       document.getElementById('priceEmptyState').style.display = visible === 0 ? 'block' : 'none';
